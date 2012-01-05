@@ -1,0 +1,694 @@
+#LyX file created by tex2lyx 2.0.0
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref 0
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+#This file was created by <michel> Thu Feb 25 05:58:37 1999 #
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+LyX
+\end_layout
+
+\end_inset
+
+ 0.12 (C) 1995-1998 Matthias Ettrich and the 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+LyX
+\end_layout
+
+\end_inset
+
+ Team 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+lyxformat
+\end_layout
+
+\end_inset
+
+ 2.15 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+textclass
+\end_layout
+
+\end_inset
+
+ report 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{}
+\end_layout
+
+\end_inset
+
+preamble 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+%%Das ist mein Vorspann
+\end_layout
+
+\begin_layout Standard
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+end{}
+\end_layout
+
+\end_inset
+
+preamble 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+language{g}
+\end_layout
+
+\end_inset
+
+erman atin1 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+fontscheme
+\end_layout
+
+\end_inset
+
+ default 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+graphics
+\end_layout
+
+\end_inset
+
+ dvips 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+float
+\end_layout
+
+\end_inset
+
+placement !htp 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+paperfontsize
+\end_layout
+
+\end_inset
+
+ default 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+spacing
+\end_layout
+
+\end_inset
+
+ onehalf 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+papersize
+\end_layout
+
+\end_inset
+
+ a4paper 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+paperpackage
+\end_layout
+
+\end_inset
+
+ a4 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+use
+\end_layout
+
+\end_inset
+
+geometry 0 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+use
+\end_layout
+
+\end_inset
+
+amsmath 1 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+paperorientation
+\end_layout
+
+\end_inset
+
+ portrait 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+secnumdepth
+\end_layout
+
+\end_inset
+
+ 3 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+tocdepth
+\end_layout
+
+\end_inset
+
+ 3 
+\end_layout
+
+\begin_layout Paragraph
+
+
+\end_layout
+
+\begin_layout Standard
+
+separation indent 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+defskip
+\end_layout
+
+\end_inset
+
+ medskip 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+quotes
+\end_layout
+
+\end_inset
+
+language german 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+quotes
+\end_layout
+
+\end_inset
+
+times 2 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+papercolumns
+\end_layout
+
+\end_inset
+
+ 1 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+papersides
+\end_layout
+
+\end_inset
+
+ 2 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+paperpagestyle
+\end_layout
+
+\end_inset
+
+ headings
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Title
+\end_layout
+
+\begin_layout Standard
+
+Titel 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Author
+\end_layout
+
+\begin_layout Standard
+
+Thomas Michel 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Date
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+latex
+\end_layout
+
+\end_inset
+
+ latex
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+backslash
+\end_layout
+
+\end_inset
+
+ today 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Part*
+\end_layout
+
+\begin_layout Standard
+
+2 leere Seiten 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Standard
+\end_layout
+
+\begin_layout Standard
+
+leere Seite, damit das Inhaltsverzeichnis auf der rechten Seite mit Nr 5 landet. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Standard
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{}
+\end_layout
+
+\end_inset
+
+inset LatexCommand 
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+end{}
+\end_layout
+
+\end_inset
+
+inset
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Standard
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+begin{}
+\end_layout
+
+\end_inset
+
+inset LatexCommand 
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+end{}
+\end_layout
+
+\end_inset
+
+inset
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Standard
+\end_layout
+
+\begin_layout Standard
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Chapter
+\end_layout
+
+\begin_layout Standard
+
+Einleitung 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Standard
+
+
+\backslash
+layout
+\end_layout
+
+\end_inset
+
+ Comment
+\end_layout
+
+\begin_layout Standard
+
+Einleitende Worte wie: Software-Engineering gewinnt an Bedeutung, momentan viel Hoffnung in Objekttechnologie als Zukunft des Software-Engineering, Arbeit befa
+\end_layout
+
+\end_body
+\end_document

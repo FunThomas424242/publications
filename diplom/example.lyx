@@ -1,0 +1,1953 @@
+#This file was created by <michel> Mon Aug  3 12:29:58 1998
+#LyX 0.12 (C) 1995-1998 Matthias Ettrich and the LyX Team
+\lyxformat 2,15
+\textclass book
+\language default
+\inputencoding default
+\fontscheme default
+\graphics default
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Subsection
+
+Die Spezifikationssprache
+\layout Subsubsection
+
+Der 
+\begin_inset Quotes gld
+\end_inset 
+
+Chart
+\begin_inset Quotes grd
+\end_inset 
+
+
+\layout Standard
+
+In 
+\latex latex 
+
+\backslash 
+cite{introduction:1992}
+\latex default 
+werden 
+\begin_inset Quotes gld
+\end_inset 
+
+Objectcharts
+\begin_inset Quotes grd
+\end_inset 
+
+ zur Beschreibung von Objektverhalten vorgestellt.
+ Objektcharts basieren auf einer graphischen Beschreibungstechnik.
+ Die hier vorgestellte Spezifikationssprache basiert auf einer textualen
+ Beschreibung und stellt nur eine Untermenge der Konstrukte eines Objektcharts
+ zur Verfügung.
+ Letztlich beschreibt die Sprache eine Menge von Zustandsübergangsgraphen.
+ 
+\layout Standard
+
+Eine Spezifikation wird definiert als eine Menge von Zustandsgraphen.
+ Ein Zustandsübergangsgraph wird, angelehnt an die Definitionen über Graphen
+ in [bronstein] wie folgt definiert.
+ 
+\layout Description
+
+Zustandsübergangsgraph Ein solcher ist ein geordnetes Paar (V,E), wobei
+ V eine Menge von Elementen 1.Art und E eine Menge von Elementen 2.Art darstellt.
+ Auf E ist eine Abbildung erklärt, welche jedem Element von E eindeutig
+ ein geordnetes Paar, nicht notwendig verschiedener Elemente von V, zuordnet.
+ Die Elemente von V heißen Zustände.
+ Die Elemente von E heißen Zustandsübergänge.
+ 
+\layout Description
+
+Initial-
+\protected_separator 
+und
+\protected_separator 
+Finalzustand Stellt E die Menge der Zuständsübergänge eines Zustandsübergangsgra
+phen dar, und gilt (v,w) 
+\begin_inset Formula \( \varepsilon  \)
+\end_inset 
+
+ E dann heißt v von (v,w) Initialzustand und w heißt Finalzustand von (v,w).
+ 
+\layout Description
+
+Schlingen Ist (v,w) ein Element aus der Menge der Zustandsübergänge eines
+ Zustandsübergangsgraphen und gilt v identisch mit w, so wird (v,w) Schlinge
+ genannt.
+ 
+\layout Description
+
+Transition Ist E die Menge der Zustandsübergänge eines Zustandsübergangsgraphen
+ und e 
+\begin_inset Formula \( \varepsilon  \)
+\end_inset 
+
+ E, wobei e ein 3-Tupel (V,S,N) zuordnet ist, so heißt e auch Transition.
+ V heißt Vor- und N Nachbedingung der Transiton.
+ S wird als Signatur der Transition bezeichnet.
+\layout Standard
+
+Die Spezifikationssprache soll die Möglichkeit bieten den Zustandsautomaten
+ der Objekte einer Klasse zu beschreiben.
+ Im ersten Teil des Abschnittes soll deshalb beschrieben werden, was unter
+ einem solchen Automaten verstanden wird.
+ 
+\layout Subsubsection
+
+Die Semantik der Sprache
+\layout Standard
+
+In der Programmiersprache 
+\begin_inset Formula \( Java^{TM} \)
+\end_inset 
+
+ werden Klassen selbst als Objekte betrachtet.
+ Deshalb muß zwischen Klassen- und Instanzobjekten einer Klasse unterschieden
+ werden.
+ Klassenobjekte werden erzeugt indem sie vom Laufzeitsystem oder über ein
+ spezielles Interface vom Anwendungsprogramm geladen werden.
+ Durch Ausführen von Konstruktoren werden Instanzobjekte der jeweiligen
+ Klasse erzeugt.
+ Die Methoden der Instanzobjekte (Instanzmethoden) können auf alle Klassenattrib
+ute und -methoden zugreifen.
+ Damit gehören auch alle vom Klassenobjekt gebildeten Zustände und Zustandsüberg
+änge zum Zustandsautomaten des Instanzenobjektes.
+ Dagegen können Klassenmethoden nicht auf Instanzattribute oder -methoden
+ zugreifen.
+ Somit ist der Zustandsautomat der Klassenobjekte vollständig in dem der
+ Instanzobjekte der selben Klasse enthalten.
+ Damit stellen Zustandsautomaten der Instanzobjekte eine Erweiterung der
+ Automaten der Klassenobjekte der jeweiligen Klasse dar.
+ Eine Klassendeklaration der Sprache 
+\begin_inset Formula \( Java^{TM} \)
+\end_inset 
+
+enthält damit die Beschreibung für zwei Zustandsautomaten.
+ Der in Abbildung 
+\begin_inset LatexCommand \ref{Beispiel eines Zustandsautomaten}
+
+\end_inset 
+
+ dargestellte Automat könnte den Zustandsautomaten der daneben angedeuteten
+ Klassenbeschreibung der Klasse 
+\begin_inset Quotes gld
+\end_inset 
+
+K
+\begin_inset Quotes grd
+\end_inset 
+
+ darstellen.
+ Aufgabe der Klasse soll es sein einen Zyklus, gebildet aus drei Zuständen,
+ zu durchlaufen.
+ Die Methode 
+\begin_inset Quotes gld
+\end_inset 
+
+a()
+\begin_inset Quotes grd
+\end_inset 
+
+ stellt eine Klassenmethode und gleichzeitig die einzige Methode der Klasse
+ dar.
+ Das einzige Attribut 
+\begin_inset Quotes gld
+\end_inset 
+
+i
+\begin_inset Quotes grd
+\end_inset 
+
+ der Klasse ist ein Klassenattribut, es dient der Speicherung des aktuellen
+ Zustandes.
+ Abhängig vom Wert des Attributes realisiert die Methode 
+\begin_inset Quotes gld
+\end_inset 
+
+a()
+\begin_inset Quotes grd
+\end_inset 
+
+ Zustandsübergänge entsprechend der Aufgabenstellung der Klasse.
+ Da explizit kein Konstruktor deklariert wird ist implizit der Standardkonstrukt
+or 
+\begin_inset Quotes gld
+\end_inset 
+
+K()
+\begin_inset Quotes grd
+\end_inset 
+
+ definiert.
+ 
+\layout Standard
+
+\begin_float fig 
+\layout Caption
+
+Beispiel eines Zustandsautomaten
+\layout Standard
+
+
+\begin_inset LatexCommand \label{Beispiel eines Zustandsautomaten}
+
+\end_inset 
+
+
+\layout Standard
+\align center 
+
+\begin_inset Figure size 369 127
+file images/Z-AutomatForm2.eps
+flags 9
+
+\end_inset 
+
+
+\end_float 
+\layout Standard
+
+Es wird vereinbart, daß der Initialzustand eines jeden Klassenobjektes der
+ Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ ist.
+ Diesen nimmt das Objekt nach seiner Erzeugung ein.
+ Wird davon ausgegangen, daß die Methode 
+\begin_inset Quotes gld
+\end_inset 
+
+a()
+\begin_inset Quotes grd
+\end_inset 
+
+ drei Zustandsübergänge realisiert, nämlich von 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ nach 
+\begin_inset Quotes gld
+\end_inset 
+
+state1
+\begin_inset Quotes grd
+\end_inset 
+
+ und von dort nach 
+\begin_inset Quotes gld
+\end_inset 
+
+state2
+\begin_inset Quotes grd
+\end_inset 
+
+ und anschließend zurück zum Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ So wird der Zustandsautomat des Klassenobjektes von diesen Übergängen und
+ den dabei besuchten Zuständen gebildet.
+ Diese Zustände und Zustandsübergänge müssen also auch im Automaten der
+ Instanzobjekte enthalten sein.
+ Der Z-automat der Instanzobjekte wird aus den Zuständen 
+\begin_inset Quotes gld
+\end_inset 
+
+state3
+\begin_inset Quotes grd
+\end_inset 
+
+, 
+\begin_inset Quotes gld
+\end_inset 
+
+state4
+\begin_inset Quotes grd
+\end_inset 
+
+ und 
+\begin_inset Quotes gld
+\end_inset 
+
+state5
+\begin_inset Quotes grd
+\end_inset 
+
+ sowie den entsprechenden Zustandsübergängen gebildet.
+ Bei der Erzeugung eines Instanzobjektes wird abhängig vom Zustand des Klassenob
+jektes ein anderer Initialzustand eingenommen.
+ Soll eine Spezifikation des Zustandsautomaten der Klasse K erfolgen, so
+ ist der gesamte in Abbildung 
+\begin_inset LatexCommand \ref{Beispiel eines Zustandsautomaten}
+
+\end_inset 
+
+ dargestellte Automat zu beschreiben.
+ Dieser läßt sich jedoch auch wie in Abbildung 
+\begin_inset LatexCommand \ref{Beispiel eines Zustandsautomaten mit Charts}
+
+\end_inset 
+
+ gezeigt, durch zwei nicht verbundene Zustandsübergangsgraphen darstellen.
+ Bei dieser Darstellung wird davon ausgegangen, daß je Graph genau ein Zustand
+ aktiv ist.
+ Der Vorteil dieser Darstellung liegt in ihrer Übersichtlichkeit.
+ Durch anwenden einer entsprechenden Vorschrift läßt sich wieder ein Graph,
+ wie er in Abbildung 
+\begin_inset LatexCommand \ref{Beispiel eines Zustandsautomaten}
+
+\end_inset 
+
+ gezeigt ist, generieren.
+ Aus diesem Grund wird als Spezifikation nur die Beschreibung aus Abbildung
+ 
+\begin_inset LatexCommand \ref{Beispiel eines Zustandsautomaten mit Charts}
+
+\end_inset 
+
+ benötigt.
+\begin_float fig 
+\layout Caption
+
+Beispiel eines Zustandsautomaten mittels Charts
+\layout Standard
+
+
+\begin_inset LatexCommand \label{Beispiel eines Zustandsautomaten mit Charts}
+
+\end_inset 
+
+
+\layout Standard
+\align center 
+
+\begin_inset Figure size 299 106
+file images/Z-Par-AutomatForm2.eps
+flags 9
+
+\end_inset 
+
+
+\end_float 
+ 
+\layout Standard
+
+Die Grammatik der Sprache ist im Abschnitt 
+\begin_inset LatexCommand \ref{Die Grammatik der Spezifikationssprache}
+
+\end_inset 
+
+ beschieben.
+ Die Semantik der Sprache soll in diesem Abschnitt Schritt für Schritt an
+ Beispielen erklärt werden.
+ Zunächst soll ein Dualzähler mit zwei Zählerstellen als Beispiel dienen.
+ Jede der Zählstellen kann die Ziffern 0 oder 1 darstellen.
+ Insgesamt kann der Zähler somit von 
+\begin_inset Formula \( 00_{2} \)
+\end_inset 
+
+ bis 
+\begin_inset Formula \( 11_{2} \)
+\end_inset 
+
+ oder von 
+\begin_inset Formula \( 0_{10} \)
+\end_inset 
+
+ bis 
+\begin_inset Formula \( 3_{10} \)
+\end_inset 
+
+ zählen.
+ Eine Stelle des Zählers kann als Instanzobjekt der Klasse Dezimalzählerstelle
+ aufgefaßt werden.
+ Die Implementierung der Klasse in 
+\begin_inset Formula \( Java1.1^{TM} \)
+\end_inset 
+
+ ist nachfolgend dargestellt.
+ 
+\layout Standard
+
+\begin_float fig 
+\layout Caption
+
+Quelltext der Klasse DualZaehler.Stelle
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+package DualZaehler;
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+public class Stelle{
+\layout Standard
+
+
+\protected_separator 
+ int value=0;
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ public boolean count(){
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ boolean carry=false;
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ if(value<1){
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ value++;
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ }else{
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ value=0;carry=true;
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ }
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ return carry;
+\layout Standard
+
+
+\protected_separator 
+ }
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+
+\protected_separator 
+ public String toString(){
+\layout Standard
+
+
+\protected_separator 
+
+\protected_separator 
+
+\protected_separator 
+ return Integer.toString(value);
+\layout Standard
+
+
+\protected_separator 
+ }
+\layout Standard
+
+}
+\layout Standard
+
+
+\protected_separator 
+
+\end_float 
+\layout Standard
+
+Das Verhalten von Objekten der Klasse wird durch das Zustandsübergangsdiagramm
+ in Abbildung
+\begin_inset LatexCommand \ref{Z-Automat Binärzählerstelle}
+
+\end_inset 
+
+ dargestellt.
+ Im Diagramm werden die Zustände als Kreise oder Elipsen dargestellt und
+ die Zustandsübergänge, nachfolgend auch Transitionen genannt, als gerichtete
+ Kanten.
+ Das Diagramm ist wie folgt zu interpretieren.
+ Das Instanzobjekt befindet sich zunächst im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ Das bedeutet, daß das Instanzobjekt noch nicht referenziert werden kann
+ und damit noch gar nicht existiert.
+ Erst nach der Ausführung des Konstruktors 
+\begin_inset Quotes gld
+\end_inset 
+
+Stelle()
+\begin_inset Quotes grd
+\end_inset 
+
+ wird ein Instanzobjekt der Klasse erzeugt und das Objekt existiert.
+ Nach seiner Erzeugung befindet es sich im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+unbelegt
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ Durch das Empfangen der Botschaft count() wird die Methode count() ausgeführt.
+ Die Ausführung der Methode verursacht einen Übergang in den Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+belegt
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ Der Ausdruck [$$==false] hinter der Methodensignatur bedeutet, daß sich
+ nach Ausführung der Methode der Rückgabewert im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+false
+\begin_inset Quotes grd
+\end_inset 
+
+ befindet.
+ Das Eintreffen einer weiteren count() Botschaft verusacht, durch die entspreche
+nde Ausführung der Methode, einen Übergang in den Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+unbelegt
+\begin_inset Quotes grd
+\end_inset 
+
+, wobei sich der Rückgabewert im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+true
+\begin_inset Quotes grd
+\end_inset 
+
+ befindet.
+ Anhand des Rückgabewertes kann ein Objekt der Klasse Dualzähler feststellen
+ ob ein Übertrag aufgetreten ist und bei Bedarf eine entsprechende count()
+ Botschaft an das Objekt der jeweils nachfolgenden Stelle senden.
+ Anderenfalls sendet das Objekt Dualzähler nur an die Stelle auf Position
+ 0 eine count() Botschaft, wenn der nächste Zählimpuls erzeugt werden soll.
+ Im folgenden soll der Zustandsautomat der Klasse DualZaehler.Stelle wie
+ er eben beschrieben wurde in der Spezifikationssprache notiert werden.
+ Dazu wird die Sprache zunächst grob erklärt und Feinheiten dann am Beispiel
+ gezeigt.
+ 
+\layout Standard
+
+Die Spezifikationssprache besitzt vier verschiedene Arten von Konstrukten.
+ Das sind Konstrukte zum Beschreiben des Spezifikationsgegenstandes, Konstrukte
+ zum Beschreiben der Zustände, Konstrukte zum Beschreiben der Zustandsübergänge
+ und Konstrukte zum Einbringen von Kommentaren in die Spezifikation.
+ Am Begin jeder Spezifikation muß der Spezifikationsgegenstand beschrieben
+ werden.
+ Spezifikationsgegenstände können Klassen und Interfaces der Programmiersprache
+ 
+\begin_inset Formula \( Java1.1^{TM} \)
+\end_inset 
+
+ sein.
+ Aus der Beschreibung muß der vollquantivizierte Name sowie die Art der
+ Klasse oder des Interfaces hervorgehen.
+ Die Einteilung der Art geschieht durch folgende Konstrukte:
+\layout Description
+
+@class Dieses Konstrukt soll verwendet werden, wenn eine öffentliche top-level
+ Klasse beschrieben werden soll.
+ Diese Klassen sind public und direkt als Member eines Packages deklariert.
+\layout Description
+
+@hideclass Dieses Konstrukt soll verwendet werden, wenn eine nicht öffentliche
+ top-level Klasse beschrieben werden soll.
+ Diese Klassen sind ebenfalls direkt als Member eines Packages deklariert.
+ Jedoch fehlt ihnen der Modifier public.
+\layout Description
+
+@innerclass Dieses Konstrukt soll verwendet werden, wenn eine Klasse beschrieben
+ werden soll, welche innerhalb einer anderen Klasse deklariert wurde.
+\layout Description
+
+@anonymclass Dieses Konstrukt soll verwendet werden, wenn eine Klasse beschriebe
+n werden solll, welche innerhalb eines Blockes als anonyme Klasse deklariert
+ wurde.
+\layout Description
+
+@interface Analog @class nur auf Interfaces übertragen.
+\layout Description
+
+@hideinterface Analog @hideclass nur auf Interfaces übertragen.
+\layout Description
+
+@innerinterface Analog @innerclass nur auf Interfaces übertragen.
+\layout Standard
+
+Alle hier aufgeführten Konstrukte mit Ausnahme von @anonymclass fordern
+ die Angabe des vollquantifizierten Namens des Spezifikationsgegenstandes
+ nach dem Konstrukt.
+ Auf das obige Beispiel angewendet bedeutet das, daß das Konstrukt @class
+ gefolgt vom Namen 
+\begin_inset Quotes gld
+\end_inset 
+
+DualZaehler.Stelle
+\begin_inset Quotes grd
+\end_inset 
+
+ verwendet werden muß.
+ Zu beachten ist außerdem das viele Konstrukte mit einem Punkt abgeschlossen
+ werden müssen.
+ So ist also folgender Text in die Spezifikation für das Beispiel einzutragen:
+ 
+\begin_inset Quotes gld
+\end_inset 
+
+@class DualZaehler.Stelle.
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ 
+\layout Standard
+
+Als nächstes wird in der Spezifikation die Beschreibung der Zustände erwartet.
+ Hierbei lassen sich Zustände deklarieren oder durch andere ersetzen.
+ Das Ersetzen eines Zustandes durch einen oder mehrere andere wird nachfolgend
+ Zerlegung genannt.
+ Neue Zustände können nur durch die Beschreibung eines neuen Teilgraphen
+ deklariert werden.
+ Ein Teilgraph wird durch das Konstrukt @subgraph neu deklariert.
+ Dem Konstrukt ist ein Bezeichner zu übergeben durch den der deklarierte
+ Teilgraph referenziert werden kann.
+ Außerdem ist eine Liste der zum Graphen gehörenden Zustände aufzuführen,
+ in welcher der jeweilige Initialzustand des Graphen durch das Voranstellen
+ eines Nummernzeichen gekennzeichnet wird.
+ Die Semantik des Zustandes 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ wird wie folgt fest vordefiniert.
+ Zustandsübergänge aus dem Zustand dürfen nur durch die Ausführung von Konstrukt
+oren realisiert werden.
+ Weiterhin darf der Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ niemals Finalzustand eines Zustandsüberganges sein.
+ Der Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ ist der einzige Zustand welcher in verschiedenen Teilgraphen zugleich deklarier
+t werden darf.
+ Bis auf diese Ausnahme sind die Zustandsmengen der Teilgraphen einer Spezifikat
+ion stets disjunkt.
+ Wird kein zusätzlicher Teilgraph benötigt, so kann die Deklaration eines
+ solchen entfallen.
+ Auf das Beispiel bezogen bedeutet das, es muß zunächst geprüft werden welche
+ Zustände aus Spezifikationen der Superklassen, der zu spezifizierenden
+ Klasse, bereits deklariert wurden und welche Zustände noch zu deklarieren
+ sind.
+ Die Klasse DualZaehler.Stelle besitzt keine explizite Angabe einer Superklasse
+ und bildet somit implizit eine direkte Subklasse der Klasse java.lang.Object.
+ Es wird angenommen das für diese Klasse keine Spezifikation vorliegt, somit
+ können auch keine Zustände an die Spezifikation der Klasse DualZaehler.Stelle
+ 
+\begin_inset Quotes gld
+\end_inset 
+
+vererbt
+\begin_inset Quotes grd
+\end_inset 
+
+ werden.
+ Demnach sind alle Zustände aus Abbildung 
+\begin_inset LatexCommand \ref{Z-Automat Binärzählerstelle}
+
+\end_inset 
+
+ neu zu deklarieren.
+ Da alle Zustände in einem Graphen enthalten sind genügt die Deklaration
+ eines Teilgraphen.
+ Folgender Text muß in der Spezifikation eingetragen werden: 
+\begin_inset Quotes gld
+\end_inset 
+
+@subgraph[Belegung]={#null,unbelegt, belegt}.
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ 
+\begin_float fig 
+\layout Caption
+
+Zustandsautomat einer Binärzählerstelle
+\layout Standard
+
+
+\begin_inset LatexCommand \label{Z-Automat Binärzählerstelle}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Figure size 303 62
+file images/BinaryStelle.eps
+subcaption Zählerstelle eines Dualzählers
+flags 9
+
+\end_inset 
+
+
+\end_float 
+ Dadurch wird ein Teilgraph unter dem Namen Belegung deklariert.
+ Dieser Teilgraph besteht aus den Zuständen 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+, 
+\begin_inset Quotes eld
+\end_inset 
+
+unbelegt
+\begin_inset Quotes erd
+\end_inset 
+
+ und 
+\begin_inset Quotes eld
+\end_inset 
+
+belegt
+\begin_inset Quotes erd
+\end_inset 
+
+, wobei 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ den Initialzustand darstellt.
+\layout Standard
+
+Nun folgen die Zerlegungen von Zuständen.
+ Oft werden durch das Ableiten einer Subklasse Zustände der Superklasse
+ zerlegt.
+ Das bedeutet, daß ein Zustand der Superklasse mehreren neu einzuführenden
+ Zuständen entspricht.
+ Ein solches Beispiel wird in den Zustandsautomaten der Klassen Queue und
+ BoundedQueue gegeben, welche in Abbildung 
+\begin_inset LatexCommand \ref{Zustandsautomat der Klasse Queue}
+
+\end_inset 
+
+ und Abbildung 
+\begin_inset LatexCommand \ref{Zustandsautomat der Klasse BoundedQueue}
+
+\end_inset 
+
+ zu sehen sind.
+ In diesem Beispiel wird der Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+not_empty
+\begin_inset Quotes grd
+\end_inset 
+
+ der Klasse Queue durch die Zustände 
+\begin_inset Quotes gld
+\end_inset 
+
+partial_full
+\begin_inset Quotes grd
+\end_inset 
+
+ und 
+\begin_inset Quotes gld
+\end_inset 
+
+full
+\begin_inset Quotes grd
+\end_inset 
+
+ in der Klasse BoudedQueue ersetzt.
+ Um diesen Sachverhalt auszudrücken soll das @substates Konstrukt verwendet
+ werden.
+ Im Konstrukt ist zunächst der Name des zu verfeinernden Zustandes in eckigen
+ Klammern anzugeben.
+ Anschließend wird eine Liste der Unterzustände erwartet.
+ Diese Liste enthält alle Zustände welche als Gesamtheit wieder den verfeinerten
+ Zustand ergeben würden.
+ Es dürfen nur gültige Zustände der Spezifikation zerlegt werden.
+ Zustände sind gültig wenn sie von einer Spezifikation 
+\begin_inset Quotes gld
+\end_inset 
+
+geerbt
+\begin_inset Quotes grd
+\end_inset 
+
+ wurden oder in der Spezifikation neu deklariert wurden und sie dürfen nicht
+ verfeinert wurden sein.
+ Folgender Spezifikationstext soll das verdeutlichen:
+\layout Quotation
+
+(1)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+:
+\layout Quotation
+
+(2)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+@subgraph[Graph1]={state1, state2}.
+\layout Quotation
+
+(3)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+:
+\layout Quotation
+
+- - - - - - - - - - - - - - - - es folgt die Spezifikation einer Subklasse
+\layout Quotation
+
+(4)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+:
+\layout Quotation
+
+(5)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+@subgraph[Graph2]={state3, state4}.
+\layout Quotation
+
+(6)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+@substate[state1]={state5, state6}.
+ 
+\layout Quotation
+
+(7)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+@substate[state1]={state8, state9}.
+ //Fehler
+\layout Quotation
+
+(8)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+@substate[state4]={state6, state7}.
+ //Fehler
+\layout Quotation
+
+(9)\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+\SpecialChar \-
+:
+\layout Standard
+
+Im Text wurde jede Zeile mit einer Nummer versehen, dies ist hier geschehen
+ um Refferenzen in den Text zu ermöglichen und ist innerhalb einer Spezifikation
+ nicht gestattet.
+ Die gestrichelte waagerechte Linie kennzeichnet hier das Ende einer Spezifikati
+on.
+ In beiden Fällen wurden nur Ausschnitte aus einer fiktiven Spezifikation
+ wiedergegeben, um das Beispiel auf die wesentlichen Bereiche zu beschränken.
+ Die Spezifikation mit den Zeilen 4 bis 9 
+\begin_inset Quotes gld
+\end_inset 
+
+erbt
+\begin_inset Quotes grd
+\end_inset 
+
+ den Teilgraphen 
+\begin_inset Quotes eld
+\end_inset 
+
+Graph1
+\begin_inset Quotes erd
+\end_inset 
+
+ und seine Zustände 
+\begin_inset Quotes gld
+\end_inset 
+
+state1
+\begin_inset Quotes grd
+\end_inset 
+
+ und 
+\begin_inset Quotes gld
+\end_inset 
+
+state2
+\begin_inset Quotes grd
+\end_inset 
+
+ aus der oberen Spezifikation.
+ Außerdem werden die Zustände 
+\begin_inset Quotes gld
+\end_inset 
+
+state3
+\begin_inset Quotes grd
+\end_inset 
+
+ und 
+\begin_inset Quotes gld
+\end_inset 
+
+state4
+\begin_inset Quotes grd
+\end_inset 
+
+ in Zeile 5 neu eingeführt.
+ Damit sind am Begin der Zeile 6 die Zustände 
+\begin_inset Quotes gld
+\end_inset 
+
+state1
+\begin_inset Quotes grd
+\end_inset 
+
+ bis 
+\begin_inset Quotes gld
+\end_inset 
+
+state4
+\begin_inset Quotes grd
+\end_inset 
+
+ gültig.
+ Am Ende der Zeile wird 
+\begin_inset Quotes gld
+\end_inset 
+
+state1
+\begin_inset Quotes grd
+\end_inset 
+
+ ungültig, da er in der Zeile 6 gerade zerlegt wurde.
+ Somit muß Zeile 7 zu einem Spezifikationsfehler führen, da ein ungültiger
+ Zustand verfeinert werden soll.
+ In Zeile 8 darf der Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+state4
+\begin_inset Quotes erd
+\end_inset 
+
+ nicht zerlegt werden, da dieser erst in der aktuellen Spezifikation eingeführt
+ wurde.
+ Die Zerlegung eines Zustandes aber ist nur in Spezifikationen von Klassen
+ erlaubt, welche von der Klasse, deren Spezifikation den Zustand deklariert,
+ abgeleitet wurden.
+ Bezogen auf das Beispiel der Klassen Queue und BoundedQueue muß für die
+ Zerlegung des Zustandes 
+\begin_inset Quotes gld
+\end_inset 
+
+not_empty
+\begin_inset Quotes grd
+\end_inset 
+
+ in die Zustände 
+\begin_inset Quotes gld
+\end_inset 
+
+partial_full
+\begin_inset Quotes grd
+\end_inset 
+
+ und 
+\begin_inset Quotes gld
+\end_inset 
+
+full
+\begin_inset Quotes grd
+\end_inset 
+
+ folgendes spezifiziert werden: 
+\begin_inset Quotes gld
+\end_inset 
+
+@substate[not_empty]={partial_full, full}.
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ Im Beispiel der Klasse DualZaehler.Stelle ist keine Zerlegung von Zuständen
+ erforderlich.
+\layout Standard
+
+Im dritten Teil der Spezifikation sollen nun die Zustandsübergänge beschrieben
+ werden.
+ Zustandsübergänge werden durch die Ausführung von Konstruktoren oder Methoden
+ hervorgerufen.
+ Da für den Fall das eine Klasse keinen Konstruktor explizit deklariert
+ stets der Standardkonstruktor als implizit definiert gilt, muß dieser,
+ sofern kein anderer Konstruktor definiert wurde, explizit spezifiziert
+ werden.
+ Um einen implizit deklarierten Standardkonstruktor zu spezifizieren muß
+ das Konstrukt @default verwendet werden.
+ Das Konstrukt erwartet einen Bezeichner welcher als Refferenz auf einen
+ Teilgraphen dient und die Angabe des Finalzustandes, welcher nach der Ausführun
+g des Konstruktors eingenommen werden soll.
+ Demnach bedeutet folgender Spezifikationstext: 
+\begin_inset Quotes gld
+\end_inset 
+
+@default[Graph1]={state1}.
+\begin_inset Quotes grd
+\end_inset 
+
+ das durch Ausführung des Standardkonstruktors im Graphen 
+\begin_inset Quotes eld
+\end_inset 
+
+Graph1
+\begin_inset Quotes erd
+\end_inset 
+
+ aus dem Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ ein Übergang in den Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+state1
+\begin_inset Quotes grd
+\end_inset 
+
+ erfolgt.
+ Um weitere Übergänge in anderen Teilgraphen ausdrücken zu können darf das
+ 
+\begin_inset Quotes eld
+\end_inset 
+
+@default
+\begin_inset Quotes erd
+\end_inset 
+
+ Konstrukt mehrmals nacheinander auftreten.
+ Ist der Standardkonstruktor implizit deklariert, so muß das 
+\begin_inset Quotes eld
+\end_inset 
+
+@default
+\begin_inset Quotes erd
+\end_inset 
+
+ Konstrukt aber mindestens einmal verwendet werden.
+ Bezogen auf das Beispiel der Klasse DualZaehler.Stelle muß also spezifiziert
+ werden: 
+\begin_inset Quotes gld
+\end_inset 
+
+@default[Belegung]={unbelegt}.
+\begin_inset Quotes grd
+\end_inset 
+
+ womit festgesetzt ist, daß die Ausführung des Standdardkonstruktors im
+ Teilgraphen 
+\begin_inset Quotes eld
+\end_inset 
+
+Belegung
+\begin_inset Quotes erd
+\end_inset 
+
+ einen Zustandsübergang aus dem Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ in den Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+unbelegt
+\begin_inset Quotes erd
+\end_inset 
+
+ hervorruft.
+ Werden in einer Klasse explizit Konstruktoren deklariert, so entfällt das
+ @default Konstrukt.
+ Explizit deklarierte Konstruktoren werden durch das Konstrukt @constructor
+ spezifiziert.
+ Dem Schlüsselwort muß die Signatur des Konstruktors folgen.
+ Sie besteht aus dem Namen und der formalen Typliste seiner Definition.
+ Da der Konstruktor eine spezielle Methode einer Klasse darstellt, wird
+ seine Signatur in dieser Arbeit auch als Methodensignatur bezeichnet.
+ Die in der Signatur auftretenden Bezeichner der formalen Typen sind so
+ zu wählen, daß es möglich ist die entsprechende Klasse eindeutig zu identifizie
+ren.
+ Im Beispiel der Klasse Queue.BoundedQueue wird explizit ein Konstruktor
+ deklariert.
+ Der dafür zu spezifizierende Text sieht wie folgt aus: 
+\begin_inset Quotes gld
+\end_inset 
+
+@constructor BoundedQueue(int).
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ Um die möglichen Zustandsübergänge, welche die Ausführung des Konstruktors
+ bewirken kann, festlegen zu können steht das Konstrukt @transitions zur
+ Verfügung.
+ Es muß direkt auf das Konstrukt @constructor folgen und darf nicht entfallen.
+ Dem Konstrukt muß ein Bezeichner, welcher die Refferenz auf einen Teilgraphen
+ darstellt, übergeben werden.
+ Die nachfolgenden Beschreibungen der Zustandsübergänge würden sich dann
+ nur auf diesen Teilgraphen beziehen.
+ Ein einfacher Zustandsübergang vom Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+state1
+\begin_inset Quotes grd
+\end_inset 
+
+ in den Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+state2
+\begin_inset Quotes grd
+\end_inset 
+
+ kann wie folgt spezifiziert werden: 
+\begin_inset Quotes gld
+\end_inset 
+
+state1-->state2.
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ Es ist auch möglich Zustandsübergänge abhängig von Bedingungen zu spezifizieren.
+ So können Vorbedingungen, Bedingungen die erfüllt sein müssen damit der
+ Zustandsübergang vollzogen werden kann, und Nachbedingungen, Bedingugen
+ die nach dem vollzogenen Übergang erfüllt sein müssen, festgelegt werden.
+ In den Bedingungen sind folgende Operatoren zugelassen:
+\layout Description
+
+== Datum der einen Seite befindet sich im Zustand welcher auf der anderen
+ Seite angegeben ist.
+ Oder das Datum der linken Seite befindet sich im selben Zustand wie das
+ Datum auf der rechten Seite.
+\layout Description
+
+!= Datum der einen Seite befindet sich nicht im Zustand welcher auf der
+ anderen Seite angegeben ist.
+ Oder Datum der linken Seite befindet sich nicht im Zustand des Datums auf
+ der rechten Seite.
+ 
+\layout Description
+
+&& Die Bedingung ist erfüllt wenn die Bedingungen der linken und rechten
+ Seite erfüllt sind.
+\layout Description
+
+|| Die Bedingung ist erfüllt wenn eine Bedingung der beiden Seiten erfüllt
+ ist.
+\layout Standard
+
+Weiterhin stehen die Platzhalter $1,...,$N zur Verfügung um auf formale Parameter
+ zu verweisen.
+ Dabei entspricht $1 dem am weitesten links deklarierten Parameter innerhalb
+ der formalen Parameterliste.
+ Für die Namen der Zustände stehen die Platzhalter * und + zur Verfügung.
+ Das Plus steht dabei für einen beliebigen Zustand außer 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ und der Stern erweitert die Zustandsmenge von + um den Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+.
+ Die Bedingung (($1==*&&$2!=+) && ($3==state2&&$1!=$2)) ist dann erfüllt
+ wenn der 1.
+ Parameter sich in einem beliebigen Zustand einschließlich null befindet
+ und der 2.
+ Parameter in einem beliebigen Zustand außer 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+, der 3.
+ Parameter darf nicht im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+state2
+\begin_inset Quotes grd
+\end_inset 
+
+ sein und der 1.
+ und 2.
+ Parameter dürfen sich nicht im gleichen Zustand befinden.
+ Da ein als Parameter übergebenes Objekt, auf Grund der spezifizierten Teilgraph
+en, sich auch gleichzeitig in mehreren Zuständen befinden kann, ist folgende
+ Bedingung ebenfalls erlaubt: (($1==state3)&&($1==state2)).
+ Demnach muß sich das übergebenen Objekt, um die Bedingung zu erfüllen,
+ in einem Teilgraph im Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+state3
+\begin_inset Quotes erd
+\end_inset 
+
+ und in einem anderen Teilgraph im Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+state2
+\begin_inset Quotes erd
+\end_inset 
+
+ befinden.
+ Die Angabe einer Vorbedingung erfolgt direkt hinter dem linken Zustand
+ und die der Nachbedingung hinter dem rechten Zustand, jeweils durch einen
+ Doppelpunkt getrennt und in runden Klammern eingeschlossen.
+ Um dies zu verdeutlichen wird angenommen das der Zustandsübergang aus dem
+ Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ in den Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+empty
+\begin_inset Quotes grd
+\end_inset 
+
+ durch Ausführung des Konstruktors BoundedQueue(int) im Beispiel der Klasse
+ Queue.BoundedQueue nur erfolgt, wenn sich der übergebene Parameter im Zustand
+ 
+\begin_inset Quotes gld
+\end_inset 
+
+7
+\begin_inset Quotes grd
+\end_inset 
+
+ befindet.
+ Der für den Konstruktor zu spezifizierende Text würde dann wie folgt lauten:
+ 
+\layout Quotation
+
+@constructor BoundedQueue(int).
+\layout Quotation
+
+@transitions[Graph1]
+\layout Quotation
+
+null:($1==7)-->empty.
+\layout Standard
+
+Diese Schreibweise läßt sich auch abkürzen indem statt 
+\begin_inset Quotes gld
+\end_inset 
+
+null:($1==7)-->empty.
+\begin_inset Quotes grd
+\end_inset 
+
+ nur 
+\begin_inset Quotes gld
+\end_inset 
+
+($1==7)-->empty.
+\begin_inset Quotes grd
+\end_inset 
+
+ geschrieben wird.
+ Diese Abkürzung darf nur erfolgen wenn als Initialzustand der Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ gewählt wurde.
+ An dieser Stelle soll auch erklärt werden wann sich der übergebene primitive
+ Datentyp im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+7
+\begin_inset Quotes grd
+\end_inset 
+
+ befindet.
+ Da die Spezifikation nur auf Zustandsautomaten arbeitet wird festgelegt,
+ daß jeder Wert eines primitiven Datums identisch ist mit dem Namen des
+ Zustandes in welchem sich das Datum befindet.
+ Durch diese Festlegung müssen primitive Daten nicht explizit durch einen
+ Zustandsautomaten beschrieben werden, sondern sind stets implizit beschrieben.
+ Die für das Beispiel verwendete Vorbedingung ergibt insofern keinen Sinn.
+ Für eine korrekte Spezifikation muß die Vorbedingung ($1==*) gewählt werden.
+ Sie gibt an, daß der Zustandsübergang unabhängig vom Zustand des übergebenen
+ Parameters erfolgt, da sich dieser in jedem beliebigen Zustand befinden
+ darf.
+ Die Zustandsübergänge welche durch das Ausführen von Methoden bewirkt werden,
+ sind analog wie die der Konstruktoren zu spezifizieren.
+ Für das Konstrukt @constructor ist bei der Beschreibung der Methoden das
+ Konstrukt @method zu verwenden, gefolgt von der Signatur der Methode.
+ Bei Methoden mit Rückgabewert darf ein zusätzlicher Platzhalter 
+\begin_inset Quotes gld
+\end_inset 
+
+$$
+\begin_inset Quotes grd
+\end_inset 
+
+ verwendet werden, welcher auf den Rückgabewert verweist.
+\layout Standard
+
+Wärend eines Zustandsüberganges können Ausnahmen erzeugt werden.
+ Diese können ebenfalls spezifiziert werden.
+ Hierzu ist das Schlüsselwort @exceptions zu verwenden.
+ Diesem folgen dann eine oder mehrere Ausnahmebeschreibungen.
+ Bei diesen ist zuerst der vollquantifizierte Name der Klasse der erwarteten
+ Ausnahmen zu notieren.
+ Es schließt sich ein Doppelpunkt an und die Liste der Initialzustände in
+ denen die Ausnahme erzeugt wird.
+ Jeder Zustand kann mit einer Bedingung versehen werden, in welcher die
+ oben eingeführten Operatoren und Platzhalter verwendet werden dürfen.
+ Eine Bedingung bedeutet, daß die Ausnahme nur erzeugt wird wenn die Bedingung
+ im jeweils zugehörigen Zustand erfüllt ist.
+ Als Zustände dürfen wieder die Platzhalter * und + mit obiger Semantik
+ verwendet werden.
+ Es folgen Beispiele zur Spezifikation von Exceptions:
+\layout Quotation
+
+@constructor Example(Object,int).
+\layout Quotation
+
+@exceptions
+\layout Quotation
+
+java.lang.NullPointerException: *:($1==null).
+\layout Quotation
+
+java.lang.RuntimeException: state1,state2,state3:($2==7).
+\layout Standard
+
+Diese Beschreibungen bedeuten das beim Ausführen des Konstruktors Example(Object
+,int) in den Zuständen 
+\begin_inset Quotes gld
+\end_inset 
+
+state1
+\begin_inset Quotes grd
+\end_inset 
+
+ und 
+\begin_inset Quotes gld
+\end_inset 
+
+state2
+\begin_inset Quotes grd
+\end_inset 
+
+ stets eine Ausnahme der Klasse java.lang.RuntimeException erzeugt wird.
+ Im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+state3
+\begin_inset Quotes grd
+\end_inset 
+
+ geschieht dies nur wenn sich der übergebene 2.
+ Parameter im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+7
+\begin_inset Quotes grd
+\end_inset 
+
+ befindet.
+ Wenn sich der 1.
+ übergebene Parameter im Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ befindet wird eine java.lang.NullPointerException generiert.
+ Dabei ist es unerheblich in welchem Zustand sich das Objekt der spezifizierten
+ Klasse befindet.
+ 
+\layout Standard
+
+Da bei der Spezifikation einer Klasse viel Schreibaufwand entsteh, soll
+ in diesem Absatz die Verwendung von abkürzenden Ausdrücken erklärt werden:
+\layout Itemize
+
+Abkürzungen in den Zustandsübergängen
+\begin_deeper 
+\layout Description
+
+?-->? Der Zustandsübergang kann aus jedem beliebigen Zustand außer 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ in sich selbst führen.
+\layout Description
+
+*-->* Der Zustandsübergang kann aus jedem Zustand außer 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ in jeden anderen außschließlich 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ führen.
+ 
+\layout Description
+
+*-->state1,...,stateN Der Zustandsübergang kann aus jeden Zustand außer 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ in die Zustände state1 bis stateN führen.
+ Dabei darf keiner der Zustände state1,...,stateN mit 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ bezeichnet sein.
+\end_deeper 
+\layout Itemize
+
+Abkürzungen in den Bedingungen
+\begin_deeper 
+\layout Description
+
+* Der Stern fungiert als Platzhalter für die Menge aller Zustände einschließlich
+ des Zustandes 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+.
+\layout Description
+
++ Das Plus fungiert als Platzhalter für die Menge aller Zustände ausschließlich
+ des Zustandes 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+.
+\end_deeper 
+\layout Standard
+
+An dieser Stelle sollte klar sein wie die Klasse DualZaehler.Stelle aus dem
+ obigen Beispiel spezifiziert werden kann.
+ Hier ist eine mögliche Spezifikation angegeben:
+\layout Standard
+
+@class DualZaehler.Stelle.
+\layout Standard
+
+@subgraph[Belegung]={#null, unbelegt, belegt}.
+\layout Standard
+
+@default[Belegung]={unbelegt}.
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+@method count().
+\layout Standard
+
+@transitions[Belegung]
+\layout Standard
+
+unbelegt-->belegt:($$==false).
+\layout Standard
+
+belegt-->unbelegt:($$==true).
+\layout Standard
+
+
+\protected_separator 
+
+\layout Standard
+
+@method toString().
+\layout Standard
+
+@transitions
+\layout Standard
+
+?-->?.
+\layout Standard
+
+Die in der Spezifikation deklarierten Zustände 
+\begin_float margin 
+\layout Standard
+
+Zustände nur auf Design-level
+\end_float 
+ stellen Zustände auf Entwurfsniveau dar.
+ Eine derartige Abstraktion hat den Vorteil das die Anzahl der Zustände
+ und damit auch die der Zustandsübergänge im Vergleich zum durch das Quellprogra
+mm beschriebenene Automaten sinkt.
+ Ein Beispiel soll dies verdeutlichen.
+ Wird der Quelltext der Klasse DualZaehler.Stelle aus dem vorigen Abschnitt
+ geringfügig modifiziert, so läßt sich damit auch eine Dezimalzählerstelle
+ implementieren.
+ Hierzu ist in der bedingten Verzweigung der Methode 
+\begin_inset Quotes gld
+\end_inset 
+
+count()
+\begin_inset Quotes grd
+\end_inset 
+
+die Bedingung (value<1) durch (value<10) zu ersetzen.
+ Die Spezifikation der Klasse kann wieder durch den in Abbildung 
+\begin_inset LatexCommand \ref{Z-Automat Binärzählerstelle}
+
+\end_inset 
+
+ gezeigten Zustandsautomaten erfolgen.
+ Der durch die Implementierung realisierte Automat ist in Abbildung 
+\begin_inset LatexCommand \ref{Z-Automat einer Dezimalzählerstelle}
+
+\end_inset 
+
+ dargestellt.
+ 
+\begin_float fig 
+\layout Caption
+
+real implementierter Zustandsautomat einer Dezimalzählerstelle
+\layout Standard
+
+
+\begin_inset LatexCommand \label{Z-Automat einer Dezimalzählerstelle}
+
+\end_inset 
+
+
+\layout Standard
+\align center 
+
+\begin_inset Figure size 423 97
+file images/DezimalStelle.eps
+flags 9
+
+\end_inset 
+
+
+\end_float 
+ Die konkreten Zustände 
+\begin_inset Quotes gld
+\end_inset 
+
+0
+\begin_inset Quotes grd
+\end_inset 
+
+ bis 
+\begin_inset Quotes gld
+\end_inset 
+
+8
+\begin_inset Quotes grd
+\end_inset 
+
+ aus Abbildung 
+\begin_inset LatexCommand \ref{Z-Automat einer Dezimalzählerstelle}
+
+\end_inset 
+
+ können zu einem abstrakten Zustand zusammengefaßt werden.
+ Dieser Zustand entspricht dem Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+unbelegt
+\begin_inset Quotes grd
+\end_inset 
+
+ in Abbildung 
+\begin_inset LatexCommand \ref{Z-Automat Binärzählerstelle}
+
+\end_inset 
+
+.
+ Die zusammengefaßten Zustände besitzen gemeinsam die Eigenschaft, daß bei
+ einem erneuten Zählimpuls kein Übertrag an die nächste Zählerstelle erzeugt
+ werden muß.
+ Aus diesem Grund konnten sie zusammengefaßt werden.
+ Im Gegensatz dazu besitzt Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+9
+\begin_inset Quotes grd
+\end_inset 
+
+ diese Eigenschaft nicht.
+ In 
+\latex latex 
+
+\backslash 
+cite{A State-Based Approach to the Testing of Class-Based Programs}
+\latex default 
+wird diese Methode angewendet um den Zustandsautomaten aus der Klassendeklaratio
+n eines Tetralzählers???(zählt bis 4) abzuleiten.
+ Durch das Beispiel wurde gezeigt wie durch die Einführung abstrakter Zustände
+ eine Verringerung der Zustände erreicht werden kann.
+\layout Paragraph
+
+Spezifikationsfehler
+\layout Standard
+
+Das beim Spezifizieren der Klassen auch Fehler auftreten können wurde bereits
+ am Beispiel der Beschreibung von Zustandsübergängen gezeigt.
+ Doch außer diesen können noch andere Fehler auftreten.
+ Der in Abbildung
+\begin_inset LatexCommand \ref{fehlerhafter Graph1}
+
+\end_inset 
+
+ gezeigte Zustandsübergangsgraph eines Zustandsautomaten, enthält einen
+ Fehler.
+ 
+\begin_float fig 
+\layout Caption
+
+fehlerhaftes Zustandsübergangsdiagramm
+\layout Standard
+
+
+\begin_inset LatexCommand \label{fehlerhafter Graph1}
+
+\end_inset 
+
+
+\layout Standard
+\align center 
+
+\begin_inset Figure size 136 96
+file images/FehlerGraph1.eps
+flags 9
+
+\end_inset 
+
+
+\end_float 
+ Laut den obigen Vereinbarungen ist es verboten, das der Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ jemals Finalzustand einer Transition ist.
+ In genannter Abbildung jedoch stellt Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+state2
+\begin_inset Quotes erd
+\end_inset 
+
+ den Initial- und der Zustand 
+\begin_inset Quotes eld
+\end_inset 
+
+null
+\begin_inset Quotes erd
+\end_inset 
+
+ den Finalzustand des durch Ausführung von 
+\begin_inset Quotes eld
+\end_inset 
+
+a()
+\begin_inset Quotes erd
+\end_inset 
+
+ verursachten Zustandsüberganges dar.
+ 
+\layout Paragraph
+
+Einschränkungen
+\layout Standard
+
+Beim Entwurf der Spezifikationssprache mußten Einschränkungen vorgenommen
+ werden, welche nachfolgend näher erläutert werden sollen.
+ 
+\layout Itemize
+
+Es ist keine Zuordnung von Zuständen der Spezifikation zu Attributwerten
+ der konkret durch die Klasse beschriebenen Objekte erwünscht.
+ 
+\layout Itemize
+
+Relationen zwischen Zuständen lassen sich nicht berücksichtigen.
+\layout Itemize
+
+in jedem Teilgraph darf nur ein aktiver Zustand sein, also auch nur ein
+ Initstate
+\layout Itemize
+
+wird ein Initstate zerlegt, muß einer der Substates als neuer Initstate
+ definiert werden.
+ Das gilt auch für den Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+, hier gilt aber die Einschränkung, daß der neue Initzustand wieder null
+ heißen muß.
+\layout Itemize
+
+Transitionen von Konstruktoren können nur aus dem Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ erfolgen, aus keinem anderen!
+\layout Itemize
+
+Der Zustand 
+\begin_inset Quotes gld
+\end_inset 
+
+null
+\begin_inset Quotes grd
+\end_inset 
+
+ ist ein Zustand mit vordefinierter Semantik.
+ Wird er in einem Teilgraphen deklariert, übernimmt er automatisch die Funktion
+ des Defaultzustandes.
+ Er darf niemals das Ziel einer Transition sein.
+ Transitionen die aus ihm herausführen dürfen nur durch Ausführung eines
+ Konstruktors erfolgen.
+\layout Standard
+
+
+\begin_inset Info michel Thu Jul 23 10:34:05 1998
+\end_inset 
+
+
+\the_end

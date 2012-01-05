@@ -1,0 +1,337 @@
+#This file was created by <root> Wed Feb 25 16:43:43 1998
+#LyX 0.10 (C) 1995 1996 Matthias Ettrich and the LyX Team
+\lyxformat 2.10
+\textclass article
+\language german
+\inputencoding latin1
+\fontscheme default
+\epsfig dvips
+\papersize a4paper 
+\paperfontsize 10 
+\baselinestretch 1.00 
+\secnumdepth 3 
+\tocdepth 3 
+\paragraph_separation indent 
+\quotes_language german 
+\quotes_times 2 
+\paperorientation portrait 
+\papercolumns 1 
+\papersides 1 
+\paperpagestyle plain 
+
+\layout Title
+\fill_top \fill_bottom 
+Testdatengenerierung für reguläre Ausdrücke
+\layout Author
+
+Thomas Michel
+\layout Standard
+\align center 
+
+\latex latex 
+
+\backslash 
+today
+\layout Abstract
+
+Diese Arbeit beschreibt die Gewinnung von Testdaten zum Überpüfen von Eingaben
+ welche durch reguläre Ausdrücke spezifiziert sind.
+ Hierbei werden zunächst nach einem geeignetem Schema Syntaxdiagramme erzeugt.
+ Anschließend werden die Testfälle durch Zweigabdeckung ermittelt.
+
+\layout Section
+
+Einführung
+\layout Standard
+
+Reguläre Ausdrücke werden entsprechend 
+\latex latex 
+
+\backslash 
+cite{fritzsche95}
+\latex default 
+ auf der Grundlage folgender Muster dargestellt werden.
+
+\layout Standard
+
+Es bedeuten:
+\layout Standard
+
+b regulärer Ausdruck
+\layout Standard
+
+c ein einzelnes Zeichen
+\layout Standard
+
+r ein regulärer Ausdruck
+\layout Standard
+
+s ein String
+\layout Standard
+\added_space_top 0.30 \added_space_bottom 0.30 \align center \LyXTable
+multicol2
+18 2
+1 1
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 0
+1 1
+8 1 0
+8 1 1
+0 8 1 1
+0 8 1 1
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 0
+0 8 1 1
+0 8 1 1
+
+Ausdruck
+\newline 
+Ausdruck paßt auf
+\newline 
+{b}
+\newline 
+den über b definierten regulären Ausdruck
+\newline 
+c
+\newline 
+beliebiges Zeichen c außer Metasymbolen
+\newline 
+
+\backslash 
+c
+\newline 
+beliebiges Zeichen c
+\newline 
+
+\begin_inset Quotes gld
+\end_inset 
+
+s
+\begin_inset Quotes grd
+\end_inset 
+
+
+\newline 
+String aus beliebigen Zeichen
+\newline 
+.
+
+\newline 
+irgendein Zeichen außer Zeilenwechsel
+\newline 
+$
+\newline 
+Zeilenende
+\newline 
+
+\backslash 
+\i \^ 
+
+\newline 
+Zeilenanfang
+\newline 
+[c1-c2]
+\newline 
+irgendein Zeichen zwischen c1 un c2 (einschließlich)
+\newline 
+[s]
+\newline 
+irgendein Zeichen in s
+\newline 
+[\i \^ 
+s]
+\newline 
+jedes Zeichen welches nicht in s vorkommt
+\newline 
+r+
+\newline 
+ein oder mehrere r
+\newline 
+r*
+\newline 
+kein oder beliebig viele r
+\newline 
+r?
+\newline 
+kein oder ein r
+\newline 
+r(m,n)
+\newline 
+m- bis n-faches Vorkommen von r
+\newline 
+r1r2
+\newline 
+r1 gefolgt von r2
+\newline 
+r1 | r2
+\newline 
+r1 oder r2
+\newline 
+(r)
+\newline 
+r
+\layout Standard
+
+\begin_float tab 
+\layout Caption
+
+
+\begin_inset Label tableREGEX
+
+\end_inset 
+
+Tabelle der regulären Ausdrücke
+\end_float 
+\layout Standard
+
+Die Form r1/r2 welche bedeutet r1 wenn dahinter r2 folgt kann nicht zugelassen
+ werden.
+ Wäre dies möglich so könnte der Ausdruck A(xa/b)*[a|b|c]Z nur schwer in
+ ein Syntaxdiagramm überführt werden.
+ Dieser Aufwand wurde als zu hoch angesehen, außerdem verschlechtert sich
+ mit obiger Form die Lesbarkeit regulärer Ausdrücke.
+
+\layout Section
+
+Zyklen erzeugende Ausdrücke
+\layout Standard
+
+Die 
+\begin_inset LatexDel \ref{tableREGEX}
+
+\end_inset 
+
+ enthält 4 Formen welche bei der Abbildung in ein Syntaxdiagramm Zyklen
+ erzeugen.
+ Dies sind r*, r+, r? und r{m,n}.
+ Sie könnten wie folgt transformiert werden.
+
+\layout Standard
+\added_space_top 0.30 \added_space_bottom 0.30 \align center 
+
+\begin_inset Figure size 306 281
+file syntaxdiagram.eps
+flags 9
+
+\end_inset 
+
+
+\layout Standard
+
+Werden die Testdaten durch Zweigüberdeckung gewonnen, wobei jeder Weg vom
+ Startpunkt zum Endpunkt ein Datum darstellt, entstehen für die Ausdrücke
+ A(a)*Z und A(a )?Z gleiche Daten.
+ Hier die erzeugten Testdaten im Überblick.
+
+\layout Quotation
+
+A(a)*Z erzeugt AZ, AaZ
+\layout Quotation
+
+A(a)?Z erzeugt AZ, AaZ
+\layout Quotation
+
+A(a)+Z erzeugt AaZ, AaaZ
+\layout Quotation
+
+A(a){0,2}Z erzeugt AZ, AaZ, AaaZ
+\layout Standard
+
+Angenommen der Ausdruck A(a)?Z stellt die Spezifikation der Eingabedaten
+ eines Programmes dar, durch die Implementation werden aber Eingaben gemäß
+ A(a)*Z zugelassen, so kann diese Fehlverhalten durch die erzeugten Testdaten
+ nicht erkannt werden.
+ Abhilfe würde die Erzeugung eines weiteren Testdatums AaaZ für den Ausdruck
+ A(a)*Z schaffen.
+ Nun jedoch tritt der selbe Fall zwischen A(a)*Z und A(a){0,2} auf.
+ Da sich dies selten verhindern läßt sollte registriert werden welches das
+ größte n aus (r){m,n} ist.
+ Für (r)* werden dann automatisch die Testdaten ohne r mit einem r und mit
+ MAX(n)+1 Auftreten von r erzeugt.
+ Damit werden die Ausdrücke wie folgt in Syntaxdiagramme gewandelt.
+
+\layout Standard
+\added_space_top 0.30 \added_space_bottom 0.30 \align center 
+
+\begin_inset Figure size 342 245
+file syntaxdiagram1.eps
+flags 9
+
+\end_inset 
+
+
+\layout Standard
+\cursor 375 
+Alternativen wie c1|c2 werden auf verschiedene Kanten zwischen Start und
+ Endknoten abgebildet.
+ Werden keine einzelnen Zeichen sonder reguläre Ausdrücke statt c1 oder
+ c2 erwartet, so wird an der entsprechenden Stelle der Graph des Ausdrucks
+ eingefügt.
+ Dieser wird mit 2 epsilon Kanten in den Gesamtgraphen eingebettet.
+ Im folgenden werden alle generierten Graphen beschrieben.
+
+\begin_inset Info root Wed Feb 25 16:42:27 1998
+
+Hier muß noch die Beschreibung vervollständigt werden. 
+Einfach eine Grafik erstellen. 
+Außerdem geht es nicht um Graphen sondern um Syntaxdiagram-
+me.
+
+
+\end_inset 
+
+
+\layout Bibliography
+
+
+\latex latex 
+{fritzsche95}
+\latex default 
+ H.
+ Fritzsche, Vorlesungsskript zur Lehrveranstaltung Compilertechnik, TU-Dresden,
+ Fakultät Informatik, Dresden, 1995.
+

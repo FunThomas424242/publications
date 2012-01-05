@@ -1,0 +1,1233 @@
+#This file was created by <michel> Tue Aug 18 14:21:59 1998
+#LyX 0.12 (C) 1995-1998 Matthias Ettrich and the LyX Team
+\lyxformat 2,15
+\textclass article
+\language german
+\inputencoding latin1
+\fontscheme default
+\graphics dvips
+\paperfontsize default
+\spacing single 
+\papersize a4paper
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Title
+
+Testbeispiele
+\layout Section
+
+deterministischer Counter bis 4
+\layout Subsection
+
+Erstellen der Spezifikation
+\layout Quotation
+
+@class Count.
+\layout Quotation
+
+@states={eins, zwei, drei, vier}.
+\layout Quotation
+
+@default={eins}.
+\layout Quotation
+
+
+\protected_separator 
+
+\layout Quotation
+
+@method next().
+\layout Quotation
+
+@transitions
+\layout Quotation
+
+eins-->zwei.
+\layout Quotation
+
+zwei-->drei.
+\layout Quotation
+
+drei-->vier.
+\layout Quotation
+
+vier-->eins.
+\layout Quotation
+
+
+\protected_separator 
+
+\layout Quotation
+
+@method reset().
+\layout Quotation
+
+@transitions
+\layout Quotation
+
++-->eins.
+\layout Subsection
+
+Generieren des Zustandsgraphen
+\layout Standard
+
+So sähe der entsprechend aus der Spezifikation generierte Zustandsgraph
+ aus.
+\layout Standard
+
+
+\begin_inset Figure size 263 131
+file images/Counter.eps
+flags 9
+
+\end_inset 
+
+
+\layout Subsection
+
+Testfälle aus Zustandsgraphen generieren
+\layout Standard
+
+Bei der Generierung der Testfälle wurde als Abdeckungskriterium festgelegt,
+ daß jede Kante einmal durchlaufen werden soll.
+ Ein mögliches Testscript, welches die Testfälle beschreibt, könnte wie
+ folgt aussehen.
+\layout Quotation
+
+#case1 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+reset() #state==eins
+\layout Quotation
+
+#case2 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+next() #state==zwei
+\layout Quotation
+
+reset() #state==eins
+\layout Quotation
+
+#case3 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+next() #state==zwei
+\layout Quotation
+
+next() #state==drei
+\layout Quotation
+
+reset() #state==eins
+\layout Quotation
+
+#case4 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+next() #state==zwei
+\layout Quotation
+
+next() #state==drei
+\layout Quotation
+
+next() #state==vier
+\layout Quotation
+
+reset() #state==eins
+\layout Quotation
+
+#case5 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+next() #state==zwei
+\layout Quotation
+
+next() #state==drei
+\layout Quotation
+
+next() #state==vier
+\layout Quotation
+
+next() #state==eins
+\layout Subsection
+
+Testausführung
+\layout Standard
+
+Vom Testsystem werden die vom Testscript beschriebenen Testfälle in eine
+ ausführbare Testsuite überführt.
+ Durch die Ausführung der Testsuite wird eine 
+\begin_inset Quotes eld
+\end_inset 
+
+Testhistorie
+\begin_inset Quotes erd
+\end_inset 
+
+ erzeugt.
+ In ihr werden in einer Liste Informationen zu den einzelnen Testfällen
+ abgelegt.
+ Je Testfall werden folgende Informationen gespeichert:
+\layout Enumerate
+
+Initialzustand
+\layout Enumerate
+
+Liste der ausgeführten Botschaften, wie folgt:
+\begin_deeper 
+\layout Enumerate
+
+Botschaft
+\layout Enumerate
+
+erwarteter Zustand laut Testscript
+\layout Enumerate
+
+erreichter Zustand wärend der Testausführung
+\end_deeper 
+\layout Standard
+
+Eine mögliche 
+\begin_inset Quotes eld
+\end_inset 
+
+Testhistorie
+\begin_inset Quotes erd
+\end_inset 
+
+ für das angenommene Beispiel kann wie folgt aussehen:
+\layout Standard
+\added_space_top 0,3cm \added_space_bottom 0,3cm \align center \LyXTable
+multicol4
+28 4 0 0 -1 -1 -1 -1
+1 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+8 1 0 
+8 1 0 
+8 1 0 
+8 1 1 
+1 8 1 1 0 0 0
+2 8 0 1 0 0 0
+1 8 1 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+
+Testfall: 1
+\newline 
+Initialzustand: null
+\newline 
+Botschaft
+\newline 
+erwarteter Z.
+\newline 
+erreichter Z.
+\newline 
+Fehlervermerk
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+reset()
+\newline 
+eins
+\newline 
+vier
+\newline 
+fehlerhafter Übergang
+\newline 
+Testfall: 2
+\newline 
+Initialzustand: null
+\newline 
+Botschaft
+\newline 
+erwarteter Z.
+\newline 
+erreichter Z.
+\newline 
+Fehlervermerk
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+next()
+\newline 
+zwei
+\newline 
+zwei
+\newline 
+-
+\newline 
+reset()
+\newline 
+eins
+\newline 
+-
+\newline 
+Exception
+\newline 
+ Testfall: 3
+\newline 
+Initialzustand: null
+\newline 
+Botschaft
+\newline 
+erwarteter Z.
+\newline 
+erreichter Z.
+\newline 
+Fehlervermerk
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+next()
+\newline 
+zwei
+\newline 
+zwei
+\newline 
+-
+\newline 
+next()
+\newline 
+drei
+\newline 
+drei
+\newline 
+-
+\newline 
+reset()
+\newline 
+eins
+\newline 
+-
+\newline 
+Abbruch
+\newline 
+Testfall: 4
+\newline 
+Initialzustand: null
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+next()
+\newline 
+zwei
+\newline 
+zwei
+\newline 
+-
+\newline 
+next()
+\newline 
+drei
+\newline 
+drei
+\newline 
+-
+\newline 
+next()
+\newline 
+vier
+\newline 
+vier
+\newline 
+-
+\newline 
+reset()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+ Testfall: 5
+\newline 
+Initialzustand: null
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+next()
+\newline 
+zwei
+\newline 
+zwei
+\newline 
+-
+\newline 
+next()
+\newline 
+drei
+\newline 
+drei
+\newline 
+-
+\newline 
+next()
+\newline 
+vier
+\newline 
+vier
+\newline 
+-
+\newline 
+next()
+\newline 
+eins
+\newline 
+undefiniert
+\newline 
+fehlerhafter Übergang
+\newline 
+reset()
+\newline 
+eins
+\newline 
+eins
+\newline 
+?
+\layout Standard
+
+In einer 
+\begin_inset Quotes eld
+\end_inset 
+
+Testhistorie
+\begin_inset Quotes erd
+\end_inset 
+
+ ist es möglich nach Botschaftsfolgen zu suchen, welche ein Objekt in einen
+ bestimmten Zustand führen.
+ Das kann für die Generierung von Parameterobjekten bei der Testfallerzeugung
+ genutzt werden.
+ Außerdem kann die 
+\begin_inset Quotes eld
+\end_inset 
+
+Testhistorie
+\begin_inset Quotes erd
+\end_inset 
+
+ zur Erzeugung der Testdurchführungsprotokolle und der Testauswertung genutzt
+ werden.
+\layout Section
+
+Nichtdeterministischer Counter
+\layout Subsection
+
+Erstellen der Spezifikation
+\layout Quotation
+
+@class DezimalZaehler4.Stelle;
+\layout Quotation
+
+@subgraph[Belegung]={#null, unbelegt, belegt};
+\layout Quotation
+
+@default[Belegung]={unbelegt};
+\layout Quotation
+
+
+\protected_separator 
+
+\layout Quotation
+
+@method next();
+\layout Quotation
+
+@transitions[Belegung];
+\layout Quotation
+
+unbelegt-->unbelegt;
+\layout Quotation
+
+unbelegt-->belegt;
+\layout Quotation
+
+
+\protected_separator 
+
+\layout Quotation
+
+@method reset();
+\layout Quotation
+
+@transitions[Belegung];
+\layout Quotation
+
+*-->unbelegt;
+\layout Subsection
+
+Generieren des Zustandsgraphen
+\layout Standard
+
+So sähe der entsprechend aus der Spezifikation generierte Zustandsgraph
+ aus.
+\layout Standard
+
+
+\begin_inset Figure size 423 97
+file images/DezimalStelle.eps
+flags 9
+
+\end_inset 
+
+
+\layout Subsection
+
+Testfälle aus Zustandsgraphen generieren
+\layout Standard
+
+Bei der Generierung der Testfälle wurde als Abdeckungskriterium festgelegt,
+ daß jede Kante einmal durchlaufen werden soll.
+ Ein mögliches Testscript, welches die Testfälle beschreibt, könnte wie
+ folgt aussehen.
+\layout Quotation
+
+@import[#1] /$root/Counter.test:Counter:case0
+\layout Quotation
+
+@class DezimalZaehler4.Stelle;
+\layout Quotation
+
+//instrumentierte Methoden für Attribut value
+\layout Quotation
+
+case1: include
+\layout Quotation
+
+@constructor Stelle();
+\layout Quotation
+
+@get[value];
+\layout Quotation
+
+@set[value](8); 
+\layout Quotation
+
+@get[value];
+\layout Quotation
+
+@constraint(%%[]== 
+\begin_inset Quotes gld
+\end_inset 
+
+8
+\begin_inset Quotes grd
+\end_inset 
+
+);
+\layout Quotation
+
+@set[value](0); 
+\layout Quotation
+
+@get[value];
+\layout Quotation
+
+@constraint(%%[]== 
+\begin_inset Quotes gld
+\end_inset 
+
+0
+\begin_inset Quotes grd
+\end_inset 
+
+);
+\layout Quotation
+
+//instr.
+ Methode getState
+\layout Quotation
+
+@
+\layout Quotation
+
+@constructor Stelle();
+\layout Quotation
+
+@states={Belegung:unbelegt};
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+reset() #state==eins
+\layout Quotation
+
+#case2 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+next() #state==zwei
+\layout Quotation
+
+reset() #state==eins
+\layout Quotation
+
+#case3 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+next() #state==zwei
+\layout Quotation
+
+next() #state==drei
+\layout Quotation
+
+reset() #state==eins
+\layout Quotation
+
+#case4 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+next() #state==zwei
+\layout Quotation
+
+next() #state==drei
+\layout Quotation
+
+next() #state==vier
+\layout Quotation
+
+reset() #state==eins
+\layout Quotation
+
+#case5 #state==null
+\layout Quotation
+
+Count() #state==eins
+\layout Quotation
+
+next() #state==zwei
+\layout Quotation
+
+next() #state==drei
+\layout Quotation
+
+next() #state==vier
+\layout Quotation
+
+next() #state==eins
+\layout Subsection
+
+Testausführung
+\layout Standard
+
+Vom Testsystem werden die vom Testscript beschriebenen Testfälle in eine
+ ausführbare Testsuite überführt.
+ Durch die Ausführung der Testsuite wird eine 
+\begin_inset Quotes eld
+\end_inset 
+
+Testhistorie
+\begin_inset Quotes erd
+\end_inset 
+
+ erzeugt.
+ In ihr werden in einer Liste Informationen zu den einzelnen Testfällen
+ abgelegt.
+ Je Testfall werden folgende Informationen gespeichert:
+\layout Enumerate
+
+Initialzustand
+\layout Enumerate
+
+Liste der ausgeführten Botschaften, wie folgt:
+\begin_deeper 
+\layout Enumerate
+
+Botschaft
+\layout Enumerate
+
+erwarteter Zustand laut Testscript
+\layout Enumerate
+
+erreichter Zustand wärend der Testausführung
+\end_deeper 
+\layout Standard
+
+Eine mögliche 
+\begin_inset Quotes eld
+\end_inset 
+
+Testhistorie
+\begin_inset Quotes erd
+\end_inset 
+
+ für das angenommene Beispiel kann wie folgt aussehen:
+\layout Standard
+\added_space_top 0,3cm \added_space_bottom 0,3cm \align center \LyXTable
+multicol4
+28 4 0 0 -1 -1 -1 -1
+1 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+0 1 0 0
+8 1 0 
+8 1 0 
+8 1 0 
+8 1 1 
+1 8 1 1 0 0 0
+2 8 0 1 0 0 0
+1 8 1 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+1 8 0 1 0 0 0
+2 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+0 8 0 1 0 0 0
+
+Testfall: 1
+\newline 
+Initialzustand: null
+\newline 
+Botschaft
+\newline 
+erwarteter Z.
+\newline 
+erreichter Z.
+\newline 
+Fehlervermerk
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+reset()
+\newline 
+eins
+\newline 
+vier
+\newline 
+fehlerhafter Übergang
+\newline 
+Testfall: 2
+\newline 
+Initialzustand: null
+\newline 
+Botschaft
+\newline 
+erwarteter Z.
+\newline 
+erreichter Z.
+\newline 
+Fehlervermerk
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+next()
+\newline 
+zwei
+\newline 
+zwei
+\newline 
+-
+\newline 
+reset()
+\newline 
+eins
+\newline 
+-
+\newline 
+Exception
+\newline 
+ Testfall: 3
+\newline 
+Initialzustand: null
+\newline 
+Botschaft
+\newline 
+erwarteter Z.
+\newline 
+erreichter Z.
+\newline 
+Fehlervermerk
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+next()
+\newline 
+zwei
+\newline 
+zwei
+\newline 
+-
+\newline 
+next()
+\newline 
+drei
+\newline 
+drei
+\newline 
+-
+\newline 
+reset()
+\newline 
+eins
+\newline 
+-
+\newline 
+Abbruch
+\newline 
+Testfall: 4
+\newline 
+Initialzustand: null
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+next()
+\newline 
+zwei
+\newline 
+zwei
+\newline 
+-
+\newline 
+next()
+\newline 
+drei
+\newline 
+drei
+\newline 
+-
+\newline 
+next()
+\newline 
+vier
+\newline 
+vier
+\newline 
+-
+\newline 
+reset()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+ Testfall: 5
+\newline 
+Initialzustand: null
+\newline 
+Count()
+\newline 
+eins
+\newline 
+eins
+\newline 
+-
+\newline 
+next()
+\newline 
+zwei
+\newline 
+zwei
+\newline 
+-
+\newline 
+next()
+\newline 
+drei
+\newline 
+drei
+\newline 
+-
+\newline 
+next()
+\newline 
+vier
+\newline 
+vier
+\newline 
+-
+\newline 
+next()
+\newline 
+eins
+\newline 
+undefiniert
+\newline 
+fehlerhafter Übergang
+\newline 
+reset()
+\newline 
+eins
+\newline 
+eins
+\newline 
+?
+\layout Standard
+
+In einer 
+\begin_inset Quotes eld
+\end_inset 
+
+Testhistorie
+\begin_inset Quotes erd
+\end_inset 
+
+ ist es möglich nach Botschaftsfolgen zu suchen, welche ein Objekt in einen
+ bestimmten Zustand führen.
+ Das kann für die Generierung von Parameterobjekten bei der Testfallerzeugung
+ genutzt werden.
+ Außerdem kann die 
+\begin_inset Quotes eld
+\end_inset 
+
+Testhistorie
+\begin_inset Quotes erd
+\end_inset 
+
+ zur Erzeugung der Testdurchführungsprotokolle und der Testauswertung genutzt
+ werden.
+\layout Standard
+
+\the_end
