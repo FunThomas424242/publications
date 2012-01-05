@@ -1,0 +1,105 @@
+%% LyX 2.0.0 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[ngerman,jou]{apa}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[authoryear]{natbib}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\helvetica
+\author{Author} % hack around some bugs in apa.cls
+\affiliation{Affiliation} % hack around some bugs in apa.cls
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%% Eigener Vorspann
+\usepackage{lastpage}
+
+%%Standard Vorspann
+
+%% uncomment the following line to get this information
+% below the tile
+%\note{Draft of \today}
+
+%% Some information on the journal. This will be
+%% printed on the headline of the first page
+%% Just uncomment wir a '%' if you don't want this
+% Journal name
+\journal{Nürnberg }
+% volume, number, pages
+\volume{\pageref{LastPage} Seiten}
+% copyright notice
+\ccoppy{\textcopyright\ Thomas Schubert}
+% Serial number or other reference
+\copnum{ISBN XXX-XXXX-XXXX}
+
+%% The usual ...
+\acknowledgements{Author notes, acknowledgements, contact information go here \ldots}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+
+
+\title{Ein Leben mit Fruchtzuckerunverträglichkeit}
+
+
+\rightheader{Running Head for Journal and \LaTeX{} Mode}
+
+
+\author{Thomas Schubert}
+
+
+\affiliation{Nürnberg\\
+Deutschland}
+
+
+\abstract{Das ist eine Zusammenfassung über alles Geschriebene.}
+
+\maketitle
+Hier geht es los. 
+
+Die Schrift orientiert sich an den Aussagen dieses Buches und diversen
+Arztgesprächen: \citeyearpar{DLdo2004}.
+
+
+\section{Allgemeines}
+
+Das versteht man unter Fruchtzuckerunverträglichkeit.
+
+
+\subsection{Widmung}
+
+Das Buch widme ich meinem Sohn Tomy.
+
+
+\subsection{Procedures}
+
+\ldots{} and procedures
+
+
+\section{Results}
+
+And what came out \ldots{}
+
+
+\subsection{Descriptives}
+
+This \ldots{}
+
+
+\subsection{Analysis}
+
+\ldots{} and that.
+
+
+\section{Discussion}
+
+
+
+\bibliographystyle{hc-de}
+\bibliography{fruchtzucker}
+
+\end{document}
