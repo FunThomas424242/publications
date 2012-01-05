@@ -1,1 +1,1 @@
-Ok, this is a common file.
+Das File dient nur dem Test.
