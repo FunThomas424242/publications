@@ -344,11 +344,14 @@ River Valley Technologies, 9, Browns Court, Kennford, Exeter, United Kingdom
 \end_layout
 
 \begin_layout Abstract
-Abstract, should normally be not longer than 200 words.
+Ein kleiner Erfahrungsbericht über den Umgang mit Fruchtzuckerunverträglichkeit.
+ Es wird kurz auf die Erkennung eingegangen, anschließend folgen Tipps für
+ den Alltag sowie Koch- und Backrezepte.
+ 
 \end_layout
 
 \begin_layout Keywords
-quadruple exiton 
+Fruchtzuckerunverträglichkeit 
 \begin_inset ERT
 status collapsed
 
@@ -361,72 +364,7 @@ sep
 
 \end_inset
 
- polariton 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-sep
-\end_layout
-
-\end_inset
-
- WGM 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-PACS
-\end_layout
-
-\end_inset
-
- 71.35.-y 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-sep
-\end_layout
-
-\end_inset
-
- 71.35.Lk 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-sep
-\end_layout
-
-\end_inset
-
- 71.36.+c 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-MSC[2008]
-\end_layout
-
-\end_inset
-
-23-557
+ Fructosemalabsorbtion 
 \begin_inset Note Note
 status open
 
@@ -458,13 +396,104 @@ MSC
 
 \end_layout
 
-\begin_layout Section
-Introduction
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Der Artikel beruht auf persönlichen Erfahrungen.
+Gewidmet meinem Sohn Tomy als Hilfestellung im späteren Leben.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Persönliche Erfahrungen
+\end_layout
+
+\begin_layout Standard
+Der vorliegende Artikel beruht auf unseren persönlichen Erfahrungen und
+ soll Anderen Anregungen und Hilfestellungen geben.
+ Auf 
+\emph on
+keinen
+\emph default
+ Fall aber können wir garantieren, dass die hier gegebenen Tipps richtig
+ bzw.
+ auch auf andere Menschen anwendbar sind.
+ Wir empfehlen daher bei ähnlichen Symptomen unbedingt ihren Hausarzt zu
+ befragen und ggf.
+ eine professionelle Ernährungsberatung in Anspruch zu nehmen.
  
+\end_layout
+
+\begin_layout Standard
+Unser Sohn war seit Geburt ein schlechter Esser, zu dünn und untergewichtig.
+ Sehr häufig traten bei ihm Übelkeit, Bauchschmerzen, Erbrechen und Durchfall
+ auf.
+ Die Diagnose des Kinderarztes lautete stets auf Magen- und Darmgrippe mit
+ dem Hinweis: 
+\begin_inset Quotes eld
+\end_inset
+
+Wie andere Kinder eine Erkältung bekommen so bekommt ihr Sohn eben eine
+ Magendarmgrippe
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Auch das Untergewicht wurde stets heruntergespielt: 
+\begin_inset Quotes eld
+\end_inset
+
+Manche sind halt dick und andere dünn - das gleicht sich nach der Pupertät
+ aus
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Generell sind mir solche Diagnosen lieber, als Ärzte die ihre Patienten
+ mit Untersuchungen zu Tode pflegen.
+ Auf Grund der häufigen Erkrankungen, baten wir dann aber doch um einen
+ Test auf Allergien und um eine Untersuchung der Schilddrüsenfunktion.
+ Diese Tests wurden leider kategorisch abgelehnt, allein ein Laktosetest
+ wurde dann halbherzig durchgeführt.
+\end_layout
+
+\begin_layout Standard
+Sowie unser Sohn das 12.
+ Lebensjahr erreicht hatte, wechselten wir vom Kinderarzt zum Allgemeinmediziner.
+ Diesem schilderten wir die Symptome und den bisherigen Verlauf.
+ Daraufhin bekamen wir sofort eine Überweisung zur Abklärung.
+ Für unseren Sohn war es ein anstrengender Tag voller Tests.
+ Auch der Laktose-Test wurde noch einmal vernüftig wiederholt.
+ Nach dem Vorliegen der Testergebnisse war klar, dass noch ein weiterer
+ Test in einer Woche durchgeführt werden muss.
+ Am Ende hatte sich die Mühe aber gelohnt, es lag ein klares Ergebnis vor:
+ 
+\end_layout
+
+\begin_layout Itemize
+Keine Laktoseunverträglichkeit
+\end_layout
+
+\begin_layout Itemize
+leider aber Fruchtzuckerunverträglichkeit
+\end_layout
+
+\begin_layout Standard
+Der Arzt versuchte uns nun in ca.
+ 20 Minuten zu erklären was eine Fruchtzuckerunverträglichkeit ist und wie
+ man damit leben kann.
+ Von dem Gespräch haben wir aber nur ein verschwommenes Bild mitgenommen
+ und folgenden Buchtipp 
 \begin_inset CommandInset citation
 LatexCommand citeyearpar
 key "DLdo2004"
@@ -472,6 +501,169 @@ key "DLdo2004"
 \end_inset
 
 .
+ Wir baten um einen neuen Termin für eine umfangreiche Ernährungsberatung.
+ Das wollte oder konnte der Arzt jedoch nicht anbieten - vermutlich liegt
+ eine Ernährungsberatung im allgemeinen tatsächlich nicht in der Zuständigkeit
+ von Ärzten und könnte somit auch nicht in guter Qualität von diesen durchgeführ
+t werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Später fanden wir durch Zufall heraus, dass die AOK Bayern einige Ernährungsbera
+ter direkt in ihrer Hauptfiliale beschäftigt und dort auch Beratungstermine
+ wahrgenommen werden können.
+ Möglicherweise ist dies auch bei anderen Krankenkassen oder generell bei
+ Krankenkassen so.
+ Diesen Service haben wir jedenfalls dankend angenommen und seit dem verstehen
+ wir auch ein bischen was wir da tun :-) bzw.
+ tun sollen.
+ Auf jeden Fall soll die Einnahme von Fruchtzucker (Fructose) wie auch von
+ Sorbit (wird beim Stoffwechsel in Fruchtzucker umgewandelt) vermieden bzw.
+ verringert werden.
+\end_layout
+
+\begin_layout Section
+Ein bischen Fachchinesisch
+\end_layout
+
+\begin_layout Standard
+Da die korrekten Erklärungen jederzeit in der Literatur nachgelesen werden
+ können, versuche ich es hier einmal mit eigenen Worten.
+ Bitte gehen Sie nicht davon aus, dass dies alles richtig ist.
+ Ich gebe es einfach so wieder wie ich es verstanden habe und wie ich es
+ beherzige.
+ Wenn Sie dabei eindeutige Fehler erkennen, würde ich mich sehr freuen wenn
+ Sie mir kurz einen Hinweis per Mail zukommen lassen.
+ Bitte senden Sie die Mail an huluvu424242@googlemail.com - vielen Dank.
+\end_layout
+
+\begin_layout Standard
+Aus der Schule habe ich noch behalten, dass es verschiedene Arten von Zucker
+ gibt.
+ Da war der Einfachzucker (beispielsweise Traubenzucker), die Zweifachzucker
+ (beispielsweise Rohr- und Rübenzucker) sowie die Mehrfachzucker (beispielsweise
+ Stärke).
+ Unser Speichel spaltet beim Kauen die Mehrfachzucker nach und nach auf,
+ so dass daraus Zweifachzucker bis hin zum Einfachzucker entstehen.
+ Aller Zuckerarten dienen dem Körper als Energiequelle da sie Grundbestandteil
+ der Kohlenhydrate sind.
+ Soweit also das noch erhaltene Schulwissen.
+\end_layout
+
+\begin_layout Standard
+Die chemischen Namen sind über die Zeit gleich geblieben werden jedoch im
+ Haushalt nur selten verwendet.
+ Die aus der Chemie bekannten Trivialnamen werden im Haushalt zwar verwendet,
+ sind aber mit der Zeit scheinbar teilweise verändert wurden.
+ Dazu kommt noch ein Kauderwelch aus Produkt- und Markennamen durch welche
+ Laien wie wir im Kaufhausregal überhaupt nicht mehr erkennen können um
+ welche Zuckerart es sich nun handelt.
+ Auf einer Packung steht Dextrose auf einer anderen Dextropur oder Dextroenergen.
+ Letztlich läuft unter dem Begriff Dextrose alles was reinen Traubenzucker
+ enthält, trotzdem bitte immer auf die Zutaten und Inhaltsstoffe schauen.
+ 
+\end_layout
+
+\begin_layout Subsection
+Übersicht zur Begrifflichkeit
+\end_layout
+
+\begin_layout Description
+AVitaminose Vitaminmangel, Mangel an einem bestimmten Vitamin oder generell
+ an Vitaminen.
+\end_layout
+
+\begin_layout Description
+A
+\begin_inset space ~
+\end_inset
+
+Vitaminose Ein Zuviel an Vitamin A (Das Leerzeichen zwischen A und Vitaminose
+ ist das Entscheidende!).
+\end_layout
+
+\begin_layout Description
+Hypervitaminose Ein Zuviel an einem bestimmten Vitamin oder generell an
+ Vitaminen.
+\end_layout
+
+\begin_layout Subsection
+Wichtige Zusatzstoffe
+\end_layout
+
+\begin_layout Description
+E420 Dahinter verbirgt sich Sorbit.
+ Zur Fruchtzuckerarmen Ernährung ungeeignet.
+ Meist in Diät-Lebensmitteln als Zuckeraustauschstoff enthalten.
+\end_layout
+
+\begin_layout Section
+Tipps für den Alltag
+\end_layout
+
+\begin_layout Enumerate
+Immer eine Packung Traubenzuckerplättchen in die Tasche stecken.
+ Wenn man sich beim Essen vertan hat und es noch rechtzeitig merkt, wie
+ es einem schlecht wird, ist es zwar schon zu spät aber meist hilft dennoch
+ ein Traubenzuckerplättchen damit sich schnell Linderung einstellt.
+ Dextroenergen ist glaube ein etwas teurer Kandidat, dieser kann gern durch
+ ein Schnäppchen ersetzt werden.
+ An Traubenzucker kann selbst die Industrie nicht mehr viel falsch machen
+ :-) Nur sollte es wirklich reiner Traubenzucker sein und keine zusätzlichen
+ Stoffe wie Vitamine enthalten sein.
+ Obacht! Beim Traubenzucker werden gern auch eine ganze Reihe von B Vitaminen
+ untergemischt.
+ Hier bitte beachten, dass B
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+
+genau wie A oder D im Körper angereichert wird.
+ Bei den Mengen an Traubenzucker die für eine fruchtzuckerarme Ernährung
+ benötigt werden, also nicht besonders günstig.
+ Zu viele Vitamine im Körper können langfristig zu einer Hypervitaminose
+ mit entsprechenden Krankheitsbildern führen.
+\end_layout
+
+\begin_layout Enumerate
+Keine Diätprodukte essen.
+ Diese enthalten fast immer Sorbit (E420) als Zuckeraustauschstoff.
+\end_layout
+
+\begin_layout Section
+Allgemeines zur Nahrungszubereitung
+\end_layout
+
+\begin_layout Section
+Vorspeisen
+\end_layout
+
+\begin_layout Section
+Kochrezepte
+\end_layout
+
+\begin_layout Section
+Nachspeisen
+\end_layout
+
+\begin_layout Section
+Backrezepte
+\end_layout
+
+\begin_layout Section
+Süßigkeiten
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
