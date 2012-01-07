@@ -4,6 +4,8 @@ Das Repository enthält zu jedem Zeitpunkt nur einen SNAPSHOT, die Dokumente sel
 Inhalt
 ======
 + diplom, alles was ich von meiner Diplomarbeit retten konnte
-+ rezepte, Kochrezepte für Menschen mit Fruchtzuckerunverträglichkeit
-+ papers, eigene Artikel zu verschiedenen Themen (frei von Rechten Dritter - also in keiner Zeitschrift oder so veröffentlicht).
++ drafts, Rohmaterial an Dokumenten zu verschiedenen Themen
+    +- src/main/latex +- fruchtzucker, Infosammlung und Kochrezepte für Menschen mit Fruchtzuckerunverträglichkeit
+	                  +- IndustrielleSoftwareentwiclung, Ideensammlung zur automischen Fertigung von Programmen
+
 
