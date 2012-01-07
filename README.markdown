@@ -5,7 +5,10 @@ Inhalt
 ======
 + diplom, alles was ich von meiner Diplomarbeit retten konnte
 + drafts, Rohmaterial an Dokumenten zu verschiedenen Themen
-    +- src/main/latex +- fruchtzucker, Infosammlung und Kochrezepte für Menschen mit Fruchtzuckerunverträglichkeit
-	                  +- IndustrielleSoftwareentwiclung, Ideensammlung zur automischen Fertigung von Programmen
+
+    +- src/main/latex 
+	
+				+- fruchtzucker, Infosammlung und Kochrezepte für Menschen mit Fruchtzuckerunverträglichkeit
+				+- IndustrielleSoftwareentwiclung, Ideensammlung zur automischen Fertigung von Programmen
 
 
