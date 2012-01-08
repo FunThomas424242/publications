@@ -15,9 +15,20 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>net.sf.devtool.rezeptsammler.rezeptDSL.resource.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>net.sf.devtool.rezeptsammler.rezeptDSL.resource.taskItemBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+		<nature>net.sf.devtool.rezeptsammler.rezeptDSL.resource.nature</nature>
 	</natures>
 </projectDescription>

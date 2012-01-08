@@ -1,0 +1,99 @@
+RezeptSammlung "Kochrezepte"
+ProgramVersion : "1.0" {
+
+Produkt "Salz"{
+verkaufsform: Packung
+zuletzt geändert: Erster Januar 2012
+}
+
+Produkt "Milch"{
+verkaufsform: Packung
+zuletzt geändert: Erster Januar 2012
+}
+
+Produkt "Kakao"{
+verkaufsform: Packung
+zuletzt geändert: Erster Januar 2012
+}
+
+Produkt "Stärke"{
+verkaufsform: Packung
+zuletzt geändert: Erster Januar 2012
+}
+
+Produkt "Traubenzucker"{
+verkaufsform: Packung
+zuletzt geändert: Erster Januar 2012
+}
+
+Produkt  "Eier" {
+verkaufsform : Packung
+zuletzt geändert : Erster Januar 2012
+}
+
+Produkt "Schweinefleisch" {
+verkaufsform : Packung	
+zuletzt geändert : Erster Januar 2012
+}
+ 
+
+
+Rezept "1" {
+ Titel:"Königsberger Klopse"
+ Rezeptart:Kochrezept
+ zuletzt geändert:  Achter Januar 2012
+ Bearbeitungsvermerk : verändert
+ Quelle {"Strassenkreuzer"}
+  
+ Produkte 
+ 0 mal  "Eier" .
+ 1 mal "Schweinefleisch" .
+ Zutaten 0 someEinheit "someName" .
+ Arbeitsschritte Schritt "someBeschreibung" 
+ }
+ 
+ Rezept "2"{
+ Titel: "Schokoladenpudding"
+ Untertitel { "Fruchtzuckerarme Zubereitung"}
+ Rezeptart: Kochrezept
+ zuletzt geändert: Achter Januar 2012
+ Bearbeitungsvermerk: original 
+ Quelle { "Thomas Schubert" }
+ 
+ Produkte
+ 1 mal "Milch".
+ 1 mal "Stärke".
+ 1 mal "Traubenzucker".
+ 1 mal "Salz".
+ 1 mal "Kakao".
+ 
+ Zutaten 
+ 800 ml "Milch".
+ 7 EL "Traubenzucker".
+ 1 Prise "Salz".
+ 4 EL "Stärke".
+ 4 EL "Kakao".
+ 
+ Arbeitsschritte
+ Schritt "Zunächst geben wir 600 ml Milch in einen hochrandigen Topf. Wichtig ist, dass genug Platz zwischen
+ der Milchoberfläche und dem Topfrand besteht da sonst die Milch zu leicht überkocht."
+ Schritt "Dann rühren wir mittels Schneebesen in die Milch den Traubenzucker und den Kakao ein."
+ Schritt "Abschliessend geben wir noch ein Prise Salz zum Topfinhalt hinzu."
+ Schritt "Jetzt können wir beginnen den Topfinhalt unter häufigen Rühren zum kochen zu bringen."
+ Schritt "Zeitgleich messen wir die verbleibenden 200 ml Milch in einem Becher ab und lösen die Stärke darin."
+ Schritt "Topf- und Becherinhalt werden nun durch Rühren möglichst konstant in Bewegung gehalten, bis der
+ Topfinhalt aufkocht."
+ Schritt "Jetzt den Topfinhalt etwas (ca. 1 Minute) aufkochen lassen."
+ Schritt "Nun rühren wir mittels Schneebesen den Becherinhalt unter. Hierbei verdickt sich die Masse zu einer 
+ Puddingartigen Substanz."
+ Schritt "Ist alles untergerührt und gut durchmischt wird der Topf vom Herd genommen. Jetzt kann der Pudding
+ serviert werden oder in separate Gefäße zum erkalten umgelfüllt werden."
+ 
+ Tipp : "Sollte der Pudding zu flüssig werden einfach am kochen halten und etwas Stärke in einem separaten
+ Becher mit kalter Milch anrühren. Dieser kann dann noch untergerührt werden.Bitte niemals Stärke in die
+ kochende Masse geben - diese bildet sofort unlösbare Klumpen!"
+ Rank : sehrschlecht
+ }
+ 
+ }
+ 
