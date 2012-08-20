@@ -15,6 +15,10 @@
 		<!-- old deprecated latex plugin -->
 		<profile>
 			<id>maven-latex-plugin</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+
 			<repositories>
 				<repository>
 					<id>codehaus</id>
@@ -36,7 +40,7 @@
 						<executions>
 							<execution>
 								<id>build</id>
-								<phase>site</phase>
+								<phase>package</phase>
 								<goals>
 									<goal>latex</goal>
 								</goals>
