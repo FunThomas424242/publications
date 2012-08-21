@@ -15,6 +15,9 @@
 		<!-- old deprecated latex plugin -->
 		<profile>
 			<id>maven-latex-plugin</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 
 			<repositories>
 				<repository>
@@ -50,9 +53,6 @@
 		<!-- new akquinet-latex-plugin -->
 		<profile>
 			<id>akquinet-latex-plugin</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
 
 			<properties>
 				<maven-latex-plugin.version>1.1</maven-latex-plugin.version>
