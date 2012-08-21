@@ -5,7 +5,7 @@
 #  - sudo apt-get install texlive texlive-doc-de texlive-latex-extra texlive-lang-german
 #  - sudo apt-get install texlive texlive-lang-german tex4ht
 
- 
+
 before_install:
   - sudo apt-get install miktex-pdftex texlive-lang-german tex4ht
 
