@@ -3,10 +3,10 @@
 #  - sudo apt-get install texlive-fonts-extra ttf-inconsolata ttf-droid
 #  - sudo apt-get install texlive-xetex texlive-latex-recommended texlive-latex-extra
 #  - sudo apt-get install texlive texlive-doc-de texlive-latex-extra texlive-lang-german
+#  - sudo apt-get install texlive texlive-lang-german tex4ht
 
-
-
+ 
 before_install:
-  - sudo apt-get install texlive-full tex4ht
+  - sudo apt-get install tetex* texlive-lang-german tex4ht
 
 language: java
