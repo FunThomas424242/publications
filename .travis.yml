@@ -7,6 +7,6 @@
 
 
 before_install:
-  - sudo apt-get install miktex-tools-2.9 texlive-lang-german tex4ht 
+  - sudo apt-get install miktex-tools texlive-lang-german tex4ht
 
 language: java

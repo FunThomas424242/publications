@@ -11,6 +11,6 @@ Inhalt
 				+ fruchtzucker, Infosammlung und Kochrezepte für Menschen mit Fruchtzuckerunverträglichkeit
 				+ IndustrielleSoftwareentwiclung, Ideensammlung zur automischen Fertigung von Programmen
 
-[![Build Status](https://secure.travis-ci.org/funthomas424242/publications.png)](http://travis-ci.org/funthomas424242/publications)
+[![Build Status](https://secure.travis-ci.org/FunThomas424242/publications.png)](http://travis-ci.org/FunThomas424242/publications)
 
 
