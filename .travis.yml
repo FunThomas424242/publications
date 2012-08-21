@@ -9,6 +9,4 @@
 before_install:
   - sudo apt-get install latex209-base hyphen-de texlive-latex-extra texlive-lang-german tex4ht elyxer
 
-# language: java
-
-script: "mvn clean install"
+language: java

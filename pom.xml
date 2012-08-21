@@ -9,6 +9,10 @@
 	<packaging>pom</packaging>
 
 
+	<build>
+		<defaultGoal>install</defaultGoal>
+	</build>
+
 	<modules>
 		<module>drafts</module>
 	</modules>
