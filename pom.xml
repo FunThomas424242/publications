@@ -8,7 +8,7 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<properties>
+	<properties> 
 		<!-- general -->
 		<testonly>false</testonly>
 		<user.jdk-version>1.6</user.jdk-version>
