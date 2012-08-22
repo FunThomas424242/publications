@@ -9,12 +9,13 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>drafts</artifactId>
+	<packaging>pom</packaging>
 
 
 	<profiles>
 		<!-- old deprecated latex plugin -->
 		<profile>
-			<id>maven-latex-plugin</id>
+			<id>alt</id>
 
 			<repositories>
 				<repository>
@@ -49,7 +50,7 @@
 		</profile>
 		<!-- new akquinet-latex-plugin -->
 		<profile>
-			<id>akquinet-latex-plugin</id>
+			<id>neu</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
@@ -146,7 +147,60 @@
 		</profile>
 	</profiles>
 
-
+	<build>
+		<plugins>
+			<!-- website build -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>attach-artifacts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>${basedir}/target/site/pdf/fruchtzucker/fruchtzucker.pdf</file>
+									<type>pdf</type>
+									<classifier>fruchtzucker</classifier>
+								</artifact>
+								<artifact>
+									<file>${basedir}/target/site/pdf/IndustrielleSoftwareentwicklung/IndustrielleSoftwareentwicklung.pdf</file>
+									<type>pdf</type>
+									<classifier>IndustrielleSoftwareentwicklung</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>downloads-maven-plugin</artifactId>
+				<version>0.6</version>
+				<configuration>
+					<description>
+						PDF Dokumente zum Downlaod.
+					</description>
+					<override>true</override>
+					<includeAttached>true</includeAttached>
+					<dryRun>${testonly}</dryRun>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>upload</goal>
+						</goals>
+						<phase>install</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 
 </project>
