@@ -178,28 +178,25 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>downloads-maven-plugin</artifactId>
-				<version>0.6</version>
-				<configuration>
-					<description>
-						PDF Dokumente zum Downlaod.
-					</description>
-					<override>true</override>
-					<includeAttached>true</includeAttached>
-					<dryRun>${testonly}</dryRun>
-					<host>api.github.com</host>
-				</configuration>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
 				<executions>
 					<execution>
-						<goals>
-							<goal>upload</goal>
-						</goals>
 						<phase>install</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
 					</execution>
 				</executions>
-			</plugin-->
+			</plugin>
+			<!--plugin> <groupId>com.github.github</groupId> <artifactId>downloads-maven-plugin</artifactId> 
+				<version>0.6</version> <configuration> <description> PDF Dokumente zum Downlaod. 
+				</description> <override>true</override> <includeAttached>true</includeAttached> 
+				<dryRun>${testonly}</dryRun> <host>api.github.com</host> </configuration> 
+				<executions> <execution> <goals> <goal>upload</goal> </goals> <phase>install</phase> 
+				</execution> </executions> </plugin -->
 		</plugins>
 	</build>
 
