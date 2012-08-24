@@ -24,16 +24,16 @@
 	<distributionManagement>
 		<downloadUrl>https://github.com/FunThomas424242/publications/downloads</downloadUrl>
 		<snapshotRepository>
-			<id>cloudbees-snapshots</id>
+			<id>travis-snapshots</id>
 			<name>Snapshot Repository at CloudBees</name>
 			<uniqueVersion>false</uniqueVersion>
-			<url>https://repository-funthomas424242.forge.cloudbees.com/snapshot/</url>
+			<url>http://maven.mirrors.travis-ci.org/nexus/content/groups/public/</url>
 		</snapshotRepository>
 		<repository>
-			<id>cloudbees-releases</id>
+			<id>travis-releases</id>
 			<name>Release Repository at CloudBees</name>
 			<uniqueVersion>false</uniqueVersion>
-			<url>https://repository-funthomas424242.forge.cloudbees.com/release/</url>
+			<url>http://maven.mirrors.travis-ci.org/nexus/content/groups/public/</url>
 		</repository>
 	</distributionManagement>
 
