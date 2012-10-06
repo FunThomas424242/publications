@@ -23,7 +23,7 @@ Autor: Thomas Schubert
 * Mit dem lokalen Stand müssen auch Folgebuilds ausgelöst werden um Auswirkungen auf abhängige Module zu bemerken
 * Jedes Speichern müsste einen vollständigen lokalen Build mit Folgebuilds und der Erzeugung diverser Statistiken auslösen
 
-==Umsetzung ständiger, schneller Build ==
+==Umsetzung ständiger, schneller Build==
 * Umsetzung schwierig, da ein vollständiger Build nach jedem Speichern unrealistisch
 * Zu bestimmten Zeitpunkten könnte der lokale Stand vollständig in eine Cloud Umgebung transferiert werden um dort entsprechend schnell den geforderten vollständigen Build ausführen zu können
 * Synergieeffekte sind zu erwarten, wenn der lokale Stand auch nicht wirklich lokal abgelegt ist sondern ebenfalls in der Cloud liegt
@@ -45,6 +45,7 @@ Autor: Thomas Schubert
 * Eine virtuelle Unterscheidung der Kontexte (z.B. durch Mylyn) gnügt nicht, da letztlich nur Teile des geänderten Kodes eingecheckt werden sollen und dies einen unbrauchbaren Stand ergibt
 * Die einzige Möglichkeit wäre der Zugriff auf eine zweite Entwicklungsumgbung
 * Realisierbar durch Virtualisierung bzw. Einsatz einer Cloud
+
 
 
  
