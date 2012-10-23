@@ -162,7 +162,7 @@ The short title is the label you refer to in the title.
 \end_layout
 
 \begin_layout Author
-Th.
+Thomas
 \begin_inset space ~
 \end_inset
 
@@ -479,9 +479,8 @@ TM
 \begin_layout Standard
 Vorerst gilt es aber noch eine Menge neuer Begriffe und Konzepte kennen
  zu lernen.
- Um es vorweg zu nehmen ein bischen Theorie lässt sich bei der Vermittlung
- von Grundlagen nie umgehen.
- So auch hier nicht.
+ Ein bischen Theorie ist bei der Vermittlung von Grundlagen immer notwendig.
+ So auch hier.
  Das hat aber auch den ungeheuren Vorteil, dass man hinterher nicht nur
  weiß wie das eine Beispiel funktioniert, sondern warum es funktioniert
  und wie man ähnliche Beispiele erstellt.
@@ -551,8 +550,8 @@ status open
 \begin_layout Plain Layout
 Quelle: 
 \begin_inset CommandInset citation
-LatexCommand citet
-key "wiki-java"
+LatexCommand citep
+key "JavaWikipedia2012"
 
 \end_inset
 
@@ -573,12 +572,17 @@ TM
 
  umbenannt nicht nur in Anlehnung einer starken Kaffee Sorte sondern der
  Legende nach auch weil sie später in Haushaltsgeräten wie beispielsweise
- Kaffeemaschinen zum Einsatz kommen sollte (Das Stichwort hies damals 
+ Kaffeemaschinen zum Einsatz kommen sollte (Das Stichwort dazu hies etwas
+ später auch 
 \emph on
 Jini
 \emph default
 ).
- Letzlich ist Java
+ 
+\end_layout
+
+\begin_layout Standard
+Letzlich ist Java
 \begin_inset script superscript
 
 \begin_layout Plain Layout
@@ -612,7 +616,11 @@ TM
 
  wirklich im Umlauf waren und sehen wie schnell sich diese Sprache über
  die Welt verbreitete.
- Schlecht war dies allerdings für Linux (einem freien Betriebssystem - sozusagen
+ 
+\end_layout
+
+\begin_layout Standard
+Schlecht war dies allerdings für Linux (einem freien Betriebssystem - sozusagen
  ein kostenloses Windows aber doch irgendwie anders).
  Linux wurde per Internet oder CD frei kopiert und verteilt (das ist für
  fast alle Linuxversionen völlig legal).
@@ -771,7 +779,7 @@ roman{enumi})}
 \end_layout
 
 \begin_layout Enumerate
-test
+test 
 \end_layout
 
 \begin_layout Enumerate
@@ -826,7 +834,7 @@ Appendix, only when needed.
 \end_layout
 
 \begin_layout Section*
-Bibliography
+Literaturverzeichnis
 \end_layout
 
 \begin_layout Standard
@@ -859,44 +867,12 @@ elsarticle-num
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "../examples/biblioExample"
+bibfiles "../Bibliography"
 options "bibtotoc,elsarticle-harv"
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Bibliography
-\labelwidthstring References
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "wiki-java"
-
-\end_inset
-
-Wikipedia, Geschichte von Java
-\begin_inset script superscript
-
-\begin_layout Plain Layout
-TM
-\end_layout
-
-\end_inset
-
-, http://de.wikipedia.org/wiki/Java_(Technik)#Geschichte
-\end_layout
-
-\begin_layout Bibliography
-\labelwidthstring References
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "key-2"
-
-\end_inset
-
-Scott Pakin.
- The comprehensive LaTeX symbol list, 2005.
 \end_layout
 
 \end_body
