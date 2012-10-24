@@ -1,0 +1,27 @@
+{Copyright: Geschützt durch die GNU Free Documentation License v2.0 und folgende}
+=Java by Example=
+Autor: Thomas Schubert
+
+''Kopieren und verteilen ausdrücklich erwünscht.''
+
+==Programmiersprachen==
+* Dienen der Beschreibung von Lösungen zu realen Problemen in computerverständlicher Form
+* Besitzen ein Paradigma, die bekanntesten sind:
+** Funktional (Lisp, Haskel, ...)
+** Objektorientiert (Smalltalk, Java, ...)
+** Logisch (Prolog, PR1, ...)
+** Imperativ (Basic, Pascal, Modula II, ...)
+== Die Sprache Java ==
+* Grundkonzepte
+** einfach gehalten, objektorientiert, verteilt (verteilte Objekte/Systeme)
+** robust und sicher
+** architekturneutral und portable
+** leistungsfähig
+** interpretierbar, parallelisierbar, dynamisch
+
+Details siehe Quelle.
+
+
+(Quelle: [http://de.wikipedia.org/wiki/Java_(Programmiersprache)])
+== Objektorientierte Weltanschauung ==
+*
