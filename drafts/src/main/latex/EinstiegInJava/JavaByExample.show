@@ -64,15 +64,25 @@ Die unterschiedlichen Eigenschaften der einzelnen Objekte spielen keine Rolle me
 Ein Modell ist eine Abstraktion der Lösung, denn wir haben bereits alle Dinge weggelassen die nicht zur Lösung benötigt werden.
 Ein Metamodell wiederum ist eine Abstraktion des Lösungsmodells usw.
 
-== Beispiele für Modell und Metamodell ==
+== Beispiel für ein Metamodell ==
+Vereinfachtes Metamodell von objektorientierten Modellen. Die Modellelemente des Metamodelles beschreiben die Elemente aus welchen die beschriebenen Modelle bestehen dürfen.
+
+[[Image:figures/OOMetaModellEinfach.png ]]  
+
 (Empfohlene Quelle: http://www.voelter.de/data/presentations/metamodelling-paper.pdf)
 
-Die Modellelemente des Metamodelles beschreiben die Elemente aus welchen die Modelle bestehen dürfen. 
+== Beispiele für Objektorientierte Modelle ==
 
-[[Image:figures/OOMetaModellEinfach.png]]
-
+[[Image:figures/OOModellBeispiele.png ]]
+Mögliche Modelle zum Metamodell der vorherigen Folie.
 
 == Die Instanz ==
+
+Das einzelne Element einer Klasse wird im objektorientierten Paradigma auch Instanz genannt. Das heisst:
+* Ein Objekt ist die Instanz einer Klasse, da es ein einzelnes Element der Klasse darstellt
+* Eine Klasse ist eine Instanz einer Metaklasse, da es ein einzelnes Element einer Metaklasse darstellt
+* Ein Modell ist eine Instanz eines Metamodells, da es ein einzelnes Element von einer ganzen Menge möglicher Modelle die durch das Metamodell beschrieben werden darstellt.
+
 
 
 
