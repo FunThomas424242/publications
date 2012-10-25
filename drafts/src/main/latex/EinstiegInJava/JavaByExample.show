@@ -67,13 +67,13 @@ Ein Metamodell wiederum ist eine Abstraktion des Lösungsmodells usw.
 == Beispiel für ein Metamodell ==
 Vereinfachtes Metamodell von objektorientierten Modellen. Die Modellelemente des Metamodelles beschreiben die Elemente aus welchen die beschriebenen Modelle bestehen dürfen.
 
-[[Image:figures/OOMetaModellEinfach.png ]]  
+[[Image:figures/OOMetaModellEinfach.jpg]]  
 
 (Empfohlene Quelle: http://www.voelter.de/data/presentations/metamodelling-paper.pdf)
 
 == Beispiele für Objektorientierte Modelle ==
 
-[[Image:figures/OOModellBeispiele.png ]]
+[[Image:figures/OOModellBeispiele.jpg]]
 Mögliche Modelle zum Metamodell der vorherigen Folie.
 
 == Die Instanz ==
