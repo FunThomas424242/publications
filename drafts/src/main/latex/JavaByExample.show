@@ -58,14 +58,18 @@ In objektorientierten Programmiersprachen werden zur Beschreibung in der Regel n
 Das Bilden von Metamodellen und damit die Bestimmung von Metaklassen obliegt dem Gebiet der Modellierung. 
 
 == Das Konzept Abstraktion ==
-Jede Gruppierung von Dingen entspricht letzlich einer Abstraktion. 
-Beim Bilden von Klassen werden einzelne Objekte auf Grund festgelegter Kriterien zu Klassen abstrahiert. 
-Die unterschiedlichen Eigenschaften der einzelnen Objekte spielen keine Rolle mehr. Es zählen nur noch die Eigenschaften welche den festgelegten Kriterien der Klasse entsprechen.
+Jede Gruppierung von Dingen entspricht letzlich einer Abstraktion.Beim Bilden von Klassen werden einzelne Objekte auf Grund festgelegter Kriterien zu Klassen abstrahiert. 
+Die unterschiedlichen Eigenschaften der einzelnen Objekte spielen keine Rolle mehr - sie entfallen. Es zählen nur noch die Eigenschaften welche den festgelegten Kriterien der Klasse entsprechen.
 
-Ein Modell ist eine Abstraktion der Lösung, denn wir haben bereits alle Dinge weggelassen die nicht benötigt werden.
-Ein Metamodell wiederum ist eine Abstraktion des Lösungsmodells.
+Ein Modell ist eine Abstraktion der Lösung, denn wir haben bereits alle Dinge weggelassen die nicht zur Lösung benötigt werden.
+Ein Metamodell wiederum ist eine Abstraktion des Lösungsmodells usw.
 
 == Beispiele für Modell und Metamodell ==
+(Empfohlene Quelle: http://www.voelter.de/data/presentations/metamodelling-paper.pdf)
+
+Die Modellelemente des Metamodelles beschreiben die Elemente aus welchen die Modelle bestehen dürfen. 
+
+[[Image:figures/OOMetaModellEinfach.png]]
 
 
 == Die Instanz ==
