@@ -83,6 +83,9 @@ Das einzelne Element einer Klasse wird im objektorientierten Paradigma auch Inst
 * Eine Klasse ist eine Instanz einer Metaklasse, da es ein einzelnes Element einer Metaklasse darstellt
 * Ein Modell ist eine Instanz eines Metamodells, da es ein einzelnes Element von einer ganzen Menge möglicher Modelle die durch das Metamodell beschrieben werden darstellt.
 
+== Endlich Kode - Hallo Welt ==
+{Code:java://javaexamples/test.HalloWelt}
+
 
 
 
