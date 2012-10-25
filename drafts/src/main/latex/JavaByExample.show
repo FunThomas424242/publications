@@ -24,4 +24,53 @@ Details siehe Quelle.
 
 (Quelle: [http://de.wikipedia.org/wiki/Java_(Programmiersprache)])
 == Objektorientierte Weltanschauung ==
-*
+* Im objektorientierten Paradigma betrachten wir alle Dinge im Lösungsraum als Objekte
+* Wir legen fest, dass Objekte Eigenschaften besitzen und Operationen mit denen diese Eigenschaften verändert werden können
+* Weiterhin gruppieren wir Objekte nach bestimmten Kriterien und nennen eine solche Gruppe eine Klasse von Objekten
+* Der Begriff Klasse kommt von Klassenbildung oder Klassifizierung und bezeichnet eine Menge bestimmter Objekte die von uns festgelegten Kriterien genügen.
+== Beispiele von Objekten ==
+Angenommen einige Dinge der uns umgebenden realen Welt müssten bei unserer Problemlösung beschrieben werden. Dann würden wir alle Dinge als Objekte ansehen und sie in Klassen einteilen.
+
+So könnten wir beispielweise folgende Objekte identifizieren: 
+* ein gelber Stein, ein roter Stein, ein schwarzer Stein (Klasse der Steine)
+* eine Rose, eine Nelke, eine Tulpe (Klasse der Blumen)
+* ein Reh, ein Hirsch, ein Schwein (Klasse der Tiere)
+* ein Schrank, ein Tisch, ein Stuhl (Klasse der Gegenstände)
+
+Die Namen der Klassen und die Zuordnung der einzelnen Objekte zu den Klassen ist rein willkürlich. Hier sinnvolle Namen und Zuordnungen zu finden um letztlich damit eine Lösung beschreiben zu können ist die eigentliche Kunst beim Entwickeln.
+
+Namen, Begriffe und deren assozierte Bedeutung spielen eine sehr große Rolle in der objektorientierten Programmierung.
+
+== Modelle und Metamodelle ==
+Wie im letzten Slide bereits beispielhaft angedeutet lassen sich zur Beschreibung einer Problemlösung Objekte und Klassen bestimmen.
+
+Alle identifizierten Klassen und Objekte zusammen ergeben dann ein Modell unserer Lösung. 
+
+Wenn wir nun nur die Klassen betrachten, so könnten wir diese evtl. wieder gruppieren. Jede Gruppe wäre dann eine Klasse von Klassen. Um hier nicht in ein Begriffskauderwelsch abzudriften bezeichnet man Klassen von Klassen als Metaklassen.
+
+Auch Metaklassen lassen sich wieder gruppieren. So entstehen letztlich MetaMetaklassen und MetaMetaMetaklassen usw.
+
+Modelle die aus Metaklassen bestehen werden Metamodelle genannt. Analog dazu gibt es dann auch MetaMetamodelle usw.
+ 
+== Programmierung, Modellierung ==
+In objektorientierten Programmiersprachen werden zur Beschreibung in der Regel nur Objekte und Klassen verwendet.
+
+Das Bilden von Metamodellen und damit die Bestimmung von Metaklassen obliegt dem Gebiet der Modellierung. 
+
+== Das Konzept Abstraktion ==
+Jede Gruppierung von Dingen entspricht letzlich einer Abstraktion. 
+Beim Bilden von Klassen werden einzelne Objekte auf Grund festgelegter Kriterien zu Klassen abstrahiert. 
+Die unterschiedlichen Eigenschaften der einzelnen Objekte spielen keine Rolle mehr. Es zählen nur noch die Eigenschaften welche den festgelegten Kriterien der Klasse entsprechen.
+
+Ein Modell ist eine Abstraktion der Lösung, denn wir haben bereits alle Dinge weggelassen die nicht benötigt werden.
+Ein Metamodell wiederum ist eine Abstraktion des Lösungsmodells.
+
+== Beispiele für Modell und Metamodell ==
+
+
+== Die Instanz ==
+
+
+
+
+
