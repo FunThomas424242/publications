@@ -1,13 +1,21 @@
 package test;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class HalloWelt {
 
 	/**
-	 * @param args
+	 * Diese Methode kann durch den Aufruf 
+	 * java test.HalloWelt 
+	 * auf der Kommandozeile zur Ausführung gebracht werden.
+	 *  
+	 * @param argumente Kommandozeilen Argumente
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] argumente) {
 		
-		System.out.println("Hallo Welt !!!");
+		final Logger logger = Logger.getLogger("HalloWelt");
+		logger.log(Level.INFO,"Hallo Welt !!!");
 	}
 
 }

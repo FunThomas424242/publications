@@ -4,6 +4,7 @@ Autor: Thomas Schubert
 
 ''Kopieren und verteilen ausdrücklich erwünscht.''
 
+
 ==Programmiersprachen==
 * Dienen der Beschreibung von Lösungen zu realen Problemen in computerverständlicher Form
 * Besitzen ein Paradigma, die bekanntesten sind:
@@ -11,6 +12,7 @@ Autor: Thomas Schubert
 ** Objektorientiert (Smalltalk, Java, ...)
 ** Logisch (Prolog, PR1, ...)
 ** Imperativ (Basic, Pascal, Modula II, ...)
+
 == Die Sprache Java ==
 * Grundkonzepte
 ** einfach gehalten, objektorientiert, verteilt (verteilte Objekte/Systeme)
@@ -19,15 +21,15 @@ Autor: Thomas Schubert
 ** leistungsfähig
 ** interpretierbar, parallelisierbar, dynamisch
 
-Details siehe Quelle.
+Details siehe Quelle:
+[http://de.wikipedia.org/wiki/Java_(Programmiersprache)]
 
-
-(Quelle: [http://de.wikipedia.org/wiki/Java_(Programmiersprache)])
 == Objektorientierte Weltanschauung ==
 * Im objektorientierten Paradigma betrachten wir alle Dinge im Lösungsraum als Objekte
 * Wir legen fest, dass Objekte Eigenschaften besitzen und Operationen mit denen diese Eigenschaften verändert werden können
 * Weiterhin gruppieren wir Objekte nach bestimmten Kriterien und nennen eine solche Gruppe eine Klasse von Objekten
 * Der Begriff Klasse kommt von Klassenbildung oder Klassifizierung und bezeichnet eine Menge bestimmter Objekte die von uns festgelegten Kriterien genügen.
+
 == Beispiele von Objekten ==
 Angenommen einige Dinge der uns umgebenden realen Welt müssten bei unserer Problemlösung beschrieben werden. Dann würden wir alle Dinge als Objekte ansehen und sie in Klassen einteilen.
 
@@ -42,48 +44,62 @@ Die Namen der Klassen und die Zuordnung der einzelnen Objekte zu den Klassen ist
 Namen, Begriffe und deren assozierte Bedeutung spielen eine sehr große Rolle in der objektorientierten Programmierung.
 
 == Modelle und Metamodelle ==
-Wie im letzten Slide bereits beispielhaft angedeutet lassen sich zur Beschreibung einer Problemlösung Objekte und Klassen bestimmen.
+Wie bereits erläutert, lassen sich zur Beschreibung einer Problemlösung Objekte und Klassen bestimmen.
 
-Alle identifizierten Klassen und Objekte zusammen ergeben dann ein Modell unserer Lösung. 
+* Alle identifizierten Klassen und Objekte zusammen ergeben dann ein Modell unserer Lösung. 
 
-Wenn wir nun nur die Klassen betrachten, so könnten wir diese evtl. wieder gruppieren. Jede Gruppe wäre dann eine Klasse von Klassen. Um hier nicht in ein Begriffskauderwelsch abzudriften bezeichnet man Klassen von Klassen als Metaklassen.
+* Wenn wir nun nur die Klassen betrachten, so könnten wir diese evtl. wieder gruppieren. Jede Gruppe wäre dann eine Klasse von Klassen. Um hier nicht in ein Begriffskauderwelsch abzudriften bezeichnet man Klassen von Klassen als Metaklassen.
 
-Auch Metaklassen lassen sich wieder gruppieren. So entstehen letztlich MetaMetaklassen und MetaMetaMetaklassen usw.
+* Auch Metaklassen lassen sich wieder gruppieren. So entstehen letztlich MetaMetaklassen und MetaMetaMetaklassen usw.
 
-Modelle die aus Metaklassen bestehen werden Metamodelle genannt. Analog dazu gibt es dann auch MetaMetamodelle usw.
+* Modelle die aus Metaklassen bestehen werden Metamodelle genannt. Analog dazu gibt es dann auch MetaMetamodelle usw.
  
-== Programmierung, Modellierung ==
-In objektorientierten Programmiersprachen werden zur Beschreibung in der Regel nur Objekte und Klassen verwendet.
-
-Das Bilden von Metamodellen und damit die Bestimmung von Metaklassen obliegt dem Gebiet der Modellierung. 
 
 == Das Konzept Abstraktion ==
-Jede Gruppierung von Dingen entspricht letzlich einer Abstraktion.Beim Bilden von Klassen werden einzelne Objekte auf Grund festgelegter Kriterien zu Klassen abstrahiert. 
-Die unterschiedlichen Eigenschaften der einzelnen Objekte spielen keine Rolle mehr - sie entfallen. Es zählen nur noch die Eigenschaften welche den festgelegten Kriterien der Klasse entsprechen.
+* Jede Gruppierung von Dingen entspricht letztlich einer Abstraktion.Beim Bilden von Klassen werden einzelne Objekte auf Grund festgelegter Kriterien zu Klassen abstrahiert. Die unterschiedlichen Eigenschaften der einzelnen Objekte spielen keine Rolle mehr - sie entfallen. Es zählen nur noch die Eigenschaften welche den festgelegten Kriterien der Klasse entsprechen.
 
-Ein Modell ist eine Abstraktion der Lösung, denn wir haben bereits alle Dinge weggelassen die nicht zur Lösung benötigt werden.
-Ein Metamodell wiederum ist eine Abstraktion des Lösungsmodells usw.
+* Ein Modell ist eine Abstraktion der Lösung, denn wir haben bereits alle Dinge weggelassen die nicht zur Lösung benötigt werden.
+* Ein Metamodell wiederum ist eine Abstraktion des Modelles usw.
 
-== Beispiel für ein Metamodell ==
-Vereinfachtes Metamodell von objektorientierten Modellen. Die Modellelemente des Metamodelles beschreiben die Elemente aus welchen die beschriebenen Modelle bestehen dürfen.
+== 2 Beispiele für Objektorientierte Modelle ==
+Legende[[Image:figures/OOModellBeispiele.jpg]]
+* Kreise stellen einzelne Objekte dar
+* Rechtecke stellen Klassen dar
+* Gestrichelte Linien ordnen die Objekte einer Klasse zu
+* Linien mit Dreiecken zeigen eine Spezialisierung vom Dreieck aus an.
+
+== Beispiel für ein mögliches Metamodell ==
+Zu den eben gezeigten Modellen könnte so ein mögliches Metamodell aussehen. Die Modellelemente des Metamodelles beschreiben die Elemente aus welchen die beschriebenen Modelle bestehen dürfen.
 
 [[Image:figures/OOMetaModellEinfach.jpg]]  
 
 (Empfohlene Quelle: http://www.voelter.de/data/presentations/metamodelling-paper.pdf)
 
-== Beispiele für Objektorientierte Modelle ==
-
-[[Image:figures/OOModellBeispiele.jpg]]
-Mögliche Modelle zum Metamodell der vorherigen Folie.
-
 == Die Instanz ==
 
-Das einzelne Element einer Klasse wird im objektorientierten Paradigma auch Instanz genannt. Das heisst:
-* Ein Objekt ist die Instanz einer Klasse, da es ein einzelnes Element der Klasse darstellt
+Das einzelne Element einer Klasse wird im objektorientierten Paradigma auch Instanz genannt. Das heißt:
+* Ein Objekt ist eine Instanz einer Klasse, da es eine konkrete Ausprägung bzw. ein konkretes Element der Klasse darstellt
 * Eine Klasse ist eine Instanz einer Metaklasse, da es ein einzelnes Element einer Metaklasse darstellt
 * Ein Modell ist eine Instanz eines Metamodells, da es ein einzelnes Element von einer ganzen Menge möglicher Modelle die durch das Metamodell beschrieben werden darstellt.
 
-== Endlich Kode - Hallo Welt ==
+== Programmierung, Modellierung ==
+* In objektorientierten Programmiersprachen werden zur Beschreibung in der Regel nur Objekte und Klassen verwendet.
+* Das Bilden von Metamodellen und damit die Bestimmung von Metaklassen obliegt dem Gebiet der Modellierung.
+
+== Was wissen wir jetzt? ==
+Wir haben bis jetzt folgende Dinge geklärt und sollten zukünftig sicher verstehen was damit gemeint ist:
+* Objekt, Instanz und Klasse
+* Modell, Metamodell, Metaklasse
+* Abstraktion
+* Abgrenzung zwischen Modellierung und Programmierung
+
+= Und wann geht's los mit Java ? =
+Zum Verstehen eines HalloWelt Programmes fehlen jetzt noch folgende Grundlagen:
+* Vererbung und Spezialisierung
+* Klassenmethoden und Instanzmethoden
+* Schlüsselwörter und Syntax der Programmiersprache
+
+== Zum Einstieg ein "Hallo Welt" ==
 {Code:java://javaexamples/test.HalloWelt}
 
 
