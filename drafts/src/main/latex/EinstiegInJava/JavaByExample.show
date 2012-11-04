@@ -99,6 +99,35 @@ Zum Verstehen eines HalloWelt Programmes fehlen jetzt noch folgende Grundlagen:
 * Klassenmethoden und Instanzmethoden
 * Schlüsselwörter und Syntax der Programmiersprache
 
+== Vererbung als Spezialisierung ==
+Es gibt mindestens 3 Arten von Vererbung - wir betrachten zunächst nur die Vererbung im Sinne einer Spezialisierung
+[[Image:figures/VererbungEinfach.jpg]]
+
+Das obige Klassendiagram geht davon aus, dass jedes Lebewesen eine Eigenschaft Hauptfarbe besitzt, also jene welche man bereits aus der Entfernung wahrnimmt.
+Da Pflanzen und Tiere jeweils spezielle Lebewesen sind, müssen auch diese eine Hauptfarbe aufweisen.
+Welche Farbe die Hauptfarbe ist, hängt von der konkreten Instanz einer Klasse ab. Verschiedene Instanzen einer Klasse können unterschiedliche Hauptfarben besitzen (Elephant und Känguru).
+Grünpflanzen hingegen sind eine spezielle Klasse von Pflanzen, denn alle ihre Instanzen oder Subklassen besitzen Grün als Hauptfarbe.
+
+Wir sehen also, dass die Eigenschaft Hauptfarbe der Klasse Lebewesen an alle Subklassen vererbt wird. Der konkrete Wert für die Hauptfarbe, kann jedoch erst bei der Erzeugung einer konkreten Instanz festgelegt werden. Möglicherweise ändert er sich im Laufe des Lebens auch noch.
+Bei den Grünpflanzen hingegen ist bereits vor der Erzeugung einer konkreten Instanz klar, dass die Hauptfarbe grün sein wird. Sie muss also nicht erst bei der Erzeugung der Instanz mit einem konkreten Wert belegt werden, sondern ist für alle Objekte der Klasse bzw. der Subklassen fest.
+  
+
+== Vererbung in Java ==
+* Eigenschaften der Objekte einer Klasse lassen sich in Java definieren, indem die Klasse deklariert wird mit der gewünschten Eigenschaft.
+* Um den Wertebereich einer Eigenschaft festlegen zu können, muss auch für diesen eine Klasse existieren beispielweise die Klasse Farbe. Eine konkrete Instanz dieser Klasse könnte ein Objekt namens Grau sein. Wenn man bei der Erzeugung einer Instanz der Klasse Elephant die Hauptfarbe mit der Instanz Grau der Klasse Farbe belegt, hat man einen konkreten Elephanten mit grauer Farbe erzeugt.
+(Für Vergleiche muss sichergestellt sein, dass keine verschiedenen Grau Objekte existieren)
+* Soll der Wert einer Eigenschaft für alle Instanzen einer Klasse der selbe sein, so spricht man von einer Klasseneigenschaft. Wird der konkrete Wert dieser Eigenschaft geändert, so wird er nicht nur für eine konkrete Instanz der Klasse sondern für alle zeitgleich geändert. Klasseneigenschaften lassen sich in Java durch den Bezeichner static ausdrücken.
+* Die Eigenschaften der Objekte repräsentieren deren inneren Zustand, hierzu zählen auch Werte von Klasseneigenschaften.
+
+== Vererbung von Operationen in Java ==
+* Die Vererbung der Operationen (in Java Methoden genannt) funktioniert vom Konzept her genau wie wir es bisher von den Eigenschaften kennen.
+* Genau wie es bei den Eigenschaften Klasseneigenschaften gibt, so gibt es bei den Operationen auch Klassenmethoden.
+* Die Operationen der Objekte repräsentieren deren Verhalten. Ändert sich die Implementierung einer Methode, so ändert sich das damit realisierte Verhalten des Objektes wenn diese Methode ausgeführt wird.
+* Bestimmte Verhaltensweisen sind für alle Objekte einer Klasse gleich. Diese können dann in Klassenmethoden realisiert werden. 
+(In Wirklichkeit benötigt Java keine Unterscheidung zwischen Klassen- und Objektmethoden, da die Realisierung der Methoden zur Laufzeit nicht verändert werden kann. Dennoch macht eine Unterscheidung aus anderen Gründen Sinn. Diese Details können aber später diskutiert werden. Für andere Objektorientierte Sprachen ist eine solche Unterscheidung evtl. viel wichtiger.)
+ 
+
+
 == Zum Einstieg ein "Hallo Welt" ==
 {Code:java://javaexamples/test.HalloWelt}
 
