@@ -126,10 +126,90 @@ Bei den Grünpflanzen hingegen ist bereits vor der Erzeugung einer konkreten Inst
 * Bestimmte Verhaltensweisen sind für alle Objekte einer Klasse gleich. Diese können dann in Klassenmethoden realisiert werden. 
 (In Wirklichkeit benötigt Java keine Unterscheidung zwischen Klassen- und Objektmethoden, da die Realisierung der Methoden zur Laufzeit nicht verändert werden kann. Dennoch macht eine Unterscheidung aus anderen Gründen Sinn. Diese Details können aber später diskutiert werden. Für andere Objektorientierte Sprachen ist eine solche Unterscheidung evtl. viel wichtiger.)
  
+== Syntax der Programmiersprache Java ==
+* Die aktuelle Spezifikation der Sprache findet sich hier: [[http://docs.oracle.com/javase/specs/]]
+(Bitte die Language Specificatin auswählen - die andere Spezifikation beschreibt wie eine JVM arbeiten muss.)
+* 
 
+== Reservierte Schlüsselwörter ==
+
+(Diese dürfen nicht als Bezeichner/Namen benutzt werden)
+
+abstract   continue   for          new         switch
+assert     default    if           package     synchronized
+boolean    do         '''goto'''         private     this
+break      double     implements   protected   throw
+byte       else       import       public      throws
+case       enum       instanceof   return      transient
+catch      extends    int          short       try
+char       final      interface    static      void
+class      finally    long         strictfp    volatile
+'''const'''    float      native       super       while
+true         false
+
+('''Fette''' Schlüsselwörter  sollen in Java gar nicht genutzt werden)
+
+== Kommentare ==
+# Einzeilige Kommentare: Jede Zeile beginnt mit zwei Slashes // 
+# Kommentare in einer Zeile: Beginnen mit /* und enden mit */ in der gleichen Zeile
+# Mehrzeilige Kommentare: Beginnen mit /** gefolgt von Zeilen beginnend mit * und endend mit einer Zeile mit */
+Beispiel:
+/**
+&ensp;* diverse Zeilen beginnend mit einem Stern
+&ensp;*/
+
+== Klassen importieren ==
+
+* Java bringt out of the box eine sehr mächtige Klassenbibliothek mit. Diese ist unter dem Begriff API Specification im Internet beschrieben auf: 
+[[http://docs.oracle.com/javase/6/docs/api/index.html]]
+
+
+*Um Klassen aus dieser Bibliothek in einer eigenen Klasse nutzen zu können müssen diese importiert werden. Eine ''Logger'' Klasse und eine zugehörige Klasse ''Level'' lassen sich beispielsweise wie folgt importieren:
+
+''import java.util.logging.Logger;''
+''import java.util.logging.Level;''
+
+== Klassen deklarieren ==
+
+* Um eine Klasse die von anderen Klassen gesehen oder importiert werden kann zu deklarieren benötigt man eine Datei welche genauso benannt ist wie die Klasse und mit .java endet.
+* Um eine Klasse zu deklarieren wird das Schlüsselwort ''class'' gefolgt vom Namen der Klasse benutzt.
+* Pro Datei dürfen mehrere Klassen deklariert werden aber nur eine davon als öffentlich.
+* Die öffentliche Klasse muss den Namen der sie enthaltenden Datei tragen (ausgenommen der Endung .java).
+* Zur Kennzeichnung einer öffentlichen Klasse wird der Modifier ''public'' dem Wort ''class'' vorangestellt.
+* Die Beschreibung der Klasse (Attribute und Methoden) erfolgt dann innerhalb eines geschweifter Klammern Paares welches der Klassensignatur folgen muss. 
+
+Beispiel für Datei HalloWelt.java:
+public class HalloWelt { }
 
 == Zum Einstieg ein "Hallo Welt" ==
 {Code:java://javaexamples/test.HalloWelt}
+
+== Übung ==
+Implementiere das Hallo Welt Programm und bringe es mittels Eclipse zum Laufen.
+
+
+== Beispiel Welt der Zeichen ==
+{Code:java://javaexamples/test.WeltDerZeichen}
+
+== Übung ==
+
+Erkläre die Ausgabe für unser Beispiel Welt der Zeichen:
+
+08.11.2012 23:29:58 test.WeltDerZeichen main
+INFO: Definiere und Erzeuge Objekt1
+08.11.2012 23:29:58 test.WeltDerZeichen main
+INFO: Wandle den Longwert 5L
+08.11.2012 23:29:58 test.WeltDerZeichen main
+INFO: Erzeuge die Stringpräsentation
+08.11.2012 23:29:58 test.WeltDerZeichen main
+INFO: Definition Objekt2
+08.11.2012 23:29:58 test.WeltDerZeichen main
+INFO: Wandle den Longwert 5L
+08.11.2012 23:29:58 test.WeltDerZeichen main
+INFO: Erzeuge die Stringpräsentation
+Exception in thread "main" java.lang.NullPointerException
+	at test.WeltDerZeichen.main(WeltDerZeichen.java:31)
+
 
 
 
