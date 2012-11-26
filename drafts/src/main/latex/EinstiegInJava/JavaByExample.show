@@ -209,6 +209,51 @@ INFO: Wandle den Longwert 5L
 INFO: Erzeuge die Stringpräsentation
 Exception in thread "main" java.lang.NullPointerException
 	at test.WeltDerZeichen.main(WeltDerZeichen.java:31)
+	
+== Vererbung am Beispiel 1==
+Ziel der Übung ist das Verstehen von Vererbung in Java.
+Folgendes Szenario wird als Beispiel benutzt: 
+* Es gibt einen gefärbten Karton dem Farben für die Innenseite, Aussenseite und für das Beleuchtungslicht zugewiesen werden können.
+* Die Aussenseiten dürfen mit RGBFarben (Rot, Grün, Blau) eingefärbt werden.
+* Die Innenseiten dürfen mit SWFarben (Schwarz, Weiss) eingefärbt werden
+* Das Licht darf RGBFarben (Rot, Grün, Blau) annehmen: Es gibt auch unbeleuchtete Kartons - ohne Licht-Eigenschaft (Das Beleuchtungslicht ist nur für dieses Beispiel eine Eigenschaft des Kartons).
+== Vererbung am Beispiel 2==
+{Code:java://javaexamples/farblehre.SWFarbe}
+
+Wir legen ein Package farblehre an und implementieren dort obige und folgende Klassen (siehe weitere Folien): 
+== Vererbung am Beispiel 3==
+{Code:java://javaexamples/farblehre.Schwarz}
+== Vererbung am Beispiel 4==
+{Code:java://javaexamples/farblehre.Weiss}
+== Vererbung am Beispiel 5==
+{Code:java://javaexamples/farblehre.RGBFarbe}
+== Vererbung am Beispiel 6==
+{Code:java://javaexamples/farblehre.Karton}
+== Vererbung am Beispiel 7==
+{Code:java://javaexamples/farblehre.BeleuchteterKarton}
+== Vererbung am Beispiel 8==
+{Code:java://javaexamples/farblehre.Tester}
+== Vererbung am Beispiel 9==
+Wir sehen folgendes:
+1. {Overloading §8.4.9}Im Test '''testKartonRotWeiss''' wird bei gleichem Methoden Namen (setFarbe) immer die richtige für den übergebenden Typ (RGBFarbe oder SWFarbe) ausgewält.
+2. {Overriding §8.4.8.1} Im Test '''testKartonBeleuchtet''' wird bei gleichem Methoden Signatur (setFarbe(RGBFarbe)) immer die speziellere Methode also die der Subklasse '''BeleuchteterKarton''' ausgewählt.
+
+Hintergrundinfo:
+Der Compiler verfügt über diese Informationen bereits beim Compilieren und verknüpft die Aufrufe entsprechend.
+== Vererbung am Beispiel 10==
+* Alle in den vorherigen Folien zur Vererbung verwendeten Begriffe beziehen sich auf das Verhalten von Instanzmethoden.
+* Ein Überschreiben oder Überladen ist jedoch auch bei Klassenmethoden möglich. Hier wird dann jedoch vom Hiding (Verdecken) gesprochen.
+* Ein Überschreiben von Klassenmethoden durch Instanzmethoden und umgekehrt ist nicht möglich und führt zu einem Compilerfehler.
+
+Zum Weiteren Verständnis bitte die Beispiele aus der Java Sprach Spezifikation §8.4.9 und §8.4.8 selbst durch arbeiten.
+
+
+
+ 
+
+
+
+
 
 
 
