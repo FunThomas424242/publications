@@ -25,28 +25,6 @@ public class Tester {
 		printKartonStatus(karton);
 	}
 
-	// @Test
-	// public void rgbTest() {
-	// SWFarbe farbe = new SWFarbe();
-	// printFarbe(farbe);
-	// farbe = new Weiss();
-	// printFarbe(farbe);
-	// farbe = SWFarbe.GRAU;
-	// printFarbe(farbe);
-	//
-	// if (SWFarbe.GRAU == SWFarbe.WEISS) {
-	// logger.info("Es gilt: Farbe.GRAU == Farbe.WEISS");
-	// } else {
-	// logger.info("Es gilt NICHT: Farbe.GRAU == Farbe.WEISS");
-	// }
-	//
-	// if (SWFarbe.GRAU.equals(SWFarbe.WEISS)) {
-	// logger.info("Es gilt: Farbe.GRAU.equals(Farbe.WEISS)");
-	// } else {
-	// logger.info("Es gilt NICHT: Farbe.GRAU.equals(Farbe.WEISS)");
-	// }
-	// }
-
 	protected void printKartonStatus(Karton karton) {
 		logger.info(karton.toString());
 	}
