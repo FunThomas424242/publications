@@ -1,12 +1,12 @@
-{Copyright: Geschützt durch die GNU Free Documentation License v2.0 und folgende}
+ï»¿{Copyright: GeschÃ¼tzt durch die GNU Free Documentation License v2.0 und folgende}
 =Java by Example=
 Autor: Thomas Schubert
 
-''Kopieren und verteilen ausdrücklich erwünscht.''
+''Kopieren und verteilen ausdrÃ¼cklich erwÃ¼nscht.''
 
 
 ==Programmiersprachen==
-* Dienen der Beschreibung von Lösungen zu realen Problemen in computerverständlicher Form
+* Dienen der Beschreibung von LÃ¶sungen zu realen Problemen in computerverstÃ¤ndlicher Form
 * Besitzen ein Paradigma, die bekanntesten sind:
 ** Funktional (Lisp, Haskel, ...)
 ** Objektorientiert (Smalltalk, Java, ...)
@@ -18,37 +18,37 @@ Autor: Thomas Schubert
 ** einfach gehalten, objektorientiert, verteilt (verteilte Objekte/Systeme)
 ** robust und sicher
 ** architekturneutral und portable
-** leistungsfähig
+** leistungsfÃ¤hig
 ** interpretierbar, parallelisierbar, dynamisch
 
 Details siehe Quelle:
 [http://de.wikipedia.org/wiki/Java_(Programmiersprache)]
 
 == Objektorientierte Weltanschauung ==
-* Im objektorientierten Paradigma betrachten wir alle Dinge im Lösungsraum als Objekte
-* Wir legen fest, dass Objekte Eigenschaften besitzen und Operationen mit denen diese Eigenschaften verändert werden können
+* Im objektorientierten Paradigma betrachten wir alle Dinge im LÃ¶sungsraum als Objekte
+* Wir legen fest, dass Objekte Eigenschaften besitzen und Operationen mit denen diese Eigenschaften verÃ¤ndert werden kÃ¶nnen
 * Weiterhin gruppieren wir Objekte nach bestimmten Kriterien und nennen eine solche Gruppe eine Klasse von Objekten
-* Der Begriff Klasse kommt von Klassenbildung oder Klassifizierung und bezeichnet eine Menge bestimmter Objekte die von uns festgelegten Kriterien genügen.
+* Der Begriff Klasse kommt von Klassenbildung oder Klassifizierung und bezeichnet eine Menge bestimmter Objekte die von uns festgelegten Kriterien genÃ¼gen.
 
 == Beispiele von Objekten ==
-Angenommen einige Dinge der uns umgebenden realen Welt müssten bei unserer Problemlösung beschrieben werden. Dann würden wir alle Dinge als Objekte ansehen und sie in Klassen einteilen.
+Angenommen einige Dinge der uns umgebenden realen Welt mÃ¼ssten bei unserer ProblemlÃ¶sung beschrieben werden. Dann wÃ¼rden wir alle Dinge als Objekte ansehen und sie in Klassen einteilen.
 
-So könnten wir beispielweise folgende Objekte identifizieren: 
+So kÃ¶nnten wir beispielweise folgende Objekte identifizieren: 
 * ein gelber Stein, ein roter Stein, ein schwarzer Stein (Klasse der Steine)
 * eine Rose, eine Nelke, eine Tulpe (Klasse der Blumen)
 * ein Reh, ein Hirsch, ein Schwein (Klasse der Tiere)
-* ein Schrank, ein Tisch, ein Stuhl (Klasse der Gegenstände)
+* ein Schrank, ein Tisch, ein Stuhl (Klasse der GegenstÃ¤nde)
 
-Die Namen der Klassen und die Zuordnung der einzelnen Objekte zu den Klassen ist rein willkürlich. Hier sinnvolle Namen und Zuordnungen zu finden um letztlich damit eine Lösung beschreiben zu können ist die eigentliche Kunst beim Entwickeln.
+Die Namen der Klassen und die Zuordnung der einzelnen Objekte zu den Klassen ist rein willkÃ¼rlich. Hier sinnvolle Namen und Zuordnungen zu finden um letztlich damit eine LÃ¶sung beschreiben zu kÃ¶nnen ist die eigentliche Kunst beim Entwickeln.
 
-Namen, Begriffe und deren assozierte Bedeutung spielen eine sehr große Rolle in der objektorientierten Programmierung.
+Namen, Begriffe und deren assozierte Bedeutung spielen eine sehr groÃŸe Rolle in der objektorientierten Programmierung.
 
 == Modelle und Metamodelle ==
-Wie bereits erläutert, lassen sich zur Beschreibung einer Problemlösung Objekte und Klassen bestimmen.
+Wie bereits erlÃ¤utert, lassen sich zur Beschreibung einer ProblemlÃ¶sung Objekte und Klassen bestimmen.
 
-* Alle identifizierten Klassen und Objekte zusammen ergeben dann ein Modell unserer Lösung. 
+* Alle identifizierten Klassen und Objekte zusammen ergeben dann ein Modell unserer LÃ¶sung. 
 
-* Wenn wir nun nur die Klassen betrachten, so könnten wir diese evtl. wieder gruppieren. Jede Gruppe wäre dann eine Klasse von Klassen. Um hier nicht in ein Begriffskauderwelsch abzudriften bezeichnet man Klassen von Klassen als Metaklassen.
+* Wenn wir nun nur die Klassen betrachten, so kÃ¶nnten wir diese evtl. wieder gruppieren. Jede Gruppe wÃ¤re dann eine Klasse von Klassen. Um hier nicht in ein Begriffskauderwelsch abzudriften bezeichnet man Klassen von Klassen als Metaklassen.
 
 * Auch Metaklassen lassen sich wieder gruppieren. So entstehen letztlich MetaMetaklassen und MetaMetaMetaklassen usw.
 
@@ -56,20 +56,20 @@ Wie bereits erläutert, lassen sich zur Beschreibung einer Problemlösung Objekte 
  
 
 == Das Konzept Abstraktion ==
-* Jede Gruppierung von Dingen entspricht letztlich einer Abstraktion.Beim Bilden von Klassen werden einzelne Objekte auf Grund festgelegter Kriterien zu Klassen abstrahiert. Die unterschiedlichen Eigenschaften der einzelnen Objekte spielen keine Rolle mehr - sie entfallen. Es zählen nur noch die Eigenschaften welche den festgelegten Kriterien der Klasse entsprechen.
+* Jede Gruppierung von Dingen entspricht letztlich einer Abstraktion.Beim Bilden von Klassen werden einzelne Objekte auf Grund festgelegter Kriterien zu Klassen abstrahiert. Die unterschiedlichen Eigenschaften der einzelnen Objekte spielen keine Rolle mehr - sie entfallen. Es zÃ¤hlen nur noch die Eigenschaften welche den festgelegten Kriterien der Klasse entsprechen.
 
-* Ein Modell ist eine Abstraktion der Lösung, denn wir haben bereits alle Dinge weggelassen die nicht zur Lösung benötigt werden.
+* Ein Modell ist eine Abstraktion der LÃ¶sung, denn wir haben bereits alle Dinge weggelassen die nicht zur LÃ¶sung benÃ¶tigt werden.
 * Ein Metamodell wiederum ist eine Abstraktion des Modelles usw.
 
-== 2 Beispiele für Objektorientierte Modelle ==
+== 2 Beispiele fÃ¼r Objektorientierte Modelle ==
 Legende[[Image:figures/OOModellBeispiele.jpg]]
 * Kreise stellen einzelne Objekte dar
 * Rechtecke stellen Klassen dar
 * Gestrichelte Linien ordnen die Objekte einer Klasse zu
 * Linien mit Dreiecken zeigen eine Spezialisierung vom Dreieck aus an.
 
-== Beispiel für ein mögliches Metamodell ==
-Zu den eben gezeigten Modellen könnte so ein mögliches Metamodell aussehen. Die Modellelemente des Metamodelles beschreiben die Elemente aus welchen die beschriebenen Modelle bestehen dürfen.
+== Beispiel fÃ¼r ein mÃ¶gliches Metamodell ==
+Zu den eben gezeigten Modellen kÃ¶nnte so ein mÃ¶gliches Metamodell aussehen. Die Modellelemente des Metamodelles beschreiben die Elemente aus welchen die beschriebenen Modelle bestehen dÃ¼rfen.
 
 [[Image:figures/OOMetaModellEinfach.jpg]]  
 
@@ -77,17 +77,17 @@ Zu den eben gezeigten Modellen könnte so ein mögliches Metamodell aussehen. Die 
 
 == Die Instanz ==
 
-Das einzelne Element einer Klasse wird im objektorientierten Paradigma auch Instanz genannt. Das heißt:
-* Ein Objekt ist eine Instanz einer Klasse, da es eine konkrete Ausprägung bzw. ein konkretes Element der Klasse darstellt
+Das einzelne Element einer Klasse wird im objektorientierten Paradigma auch Instanz genannt. Das heiÃŸt:
+* Ein Objekt ist eine Instanz einer Klasse, da es eine konkrete AusprÃ¤gung bzw. ein konkretes Element der Klasse darstellt
 * Eine Klasse ist eine Instanz einer Metaklasse, da es ein einzelnes Element einer Metaklasse darstellt
-* Ein Modell ist eine Instanz eines Metamodells, da es ein einzelnes Element von einer ganzen Menge möglicher Modelle die durch das Metamodell beschrieben werden darstellt.
+* Ein Modell ist eine Instanz eines Metamodells, da es ein einzelnes Element von einer ganzen Menge mÃ¶glicher Modelle die durch das Metamodell beschrieben werden darstellt.
 
 == Programmierung, Modellierung ==
 * In objektorientierten Programmiersprachen werden zur Beschreibung in der Regel nur Objekte und Klassen verwendet.
 * Das Bilden von Metamodellen und damit die Bestimmung von Metaklassen obliegt dem Gebiet der Modellierung.
 
 == Was wissen wir jetzt? ==
-Wir haben bis jetzt folgende Dinge geklärt und sollten zukünftig sicher verstehen was damit gemeint ist:
+Wir haben bis jetzt folgende Dinge geklÃ¤rt und sollten zukÃ¼nftig sicher verstehen was damit gemeint ist:
 * Objekt, Instanz und Klasse
 * Modell, Metamodell, Metaklasse
 * Abstraktion
@@ -97,43 +97,43 @@ Wir haben bis jetzt folgende Dinge geklärt und sollten zukünftig sicher verstehe
 Zum Verstehen eines HalloWelt Programmes fehlen jetzt noch folgende Grundlagen:
 * Vererbung und Spezialisierung
 * Klassenmethoden und Instanzmethoden
-* Schlüsselwörter und Syntax der Programmiersprache
+* SchlÃ¼sselwÃ¶rter und Syntax der Programmiersprache
 
 == Vererbung als Spezialisierung ==
-Es gibt mindestens 3 Arten von Vererbung - wir betrachten zunächst nur die Vererbung im Sinne einer Spezialisierung
+Es gibt mindestens 3 Arten von Vererbung - wir betrachten zunÃ¤chst nur die Vererbung im Sinne einer Spezialisierung
 [[Image:figures/VererbungEinfach.jpg]]
 
 Das obige Klassendiagram geht davon aus, dass jedes Lebewesen eine Eigenschaft Hauptfarbe besitzt, also jene welche man bereits aus der Entfernung wahrnimmt.
-Da Pflanzen und Tiere jeweils spezielle Lebewesen sind, müssen auch diese eine Hauptfarbe aufweisen.
-Welche Farbe die Hauptfarbe ist, hängt von der konkreten Instanz einer Klasse ab. Verschiedene Instanzen einer Klasse können unterschiedliche Hauptfarben besitzen (Elephant und Känguru).
-Grünpflanzen hingegen sind eine spezielle Klasse von Pflanzen, denn alle ihre Instanzen oder Subklassen besitzen Grün als Hauptfarbe.
+Da Pflanzen und Tiere jeweils spezielle Lebewesen sind, mÃ¼ssen auch diese eine Hauptfarbe aufweisen.
+Welche Farbe die Hauptfarbe ist, hÃ¤ngt von der konkreten Instanz einer Klasse ab. Verschiedene Instanzen einer Klasse kÃ¶nnen unterschiedliche Hauptfarben besitzen (Elephant und KÃ¤nguru).
+GrÃ¼npflanzen hingegen sind eine spezielle Klasse von Pflanzen, denn alle ihre Instanzen oder Subklassen besitzen GrÃ¼n als Hauptfarbe.
 
-Wir sehen also, dass die Eigenschaft Hauptfarbe der Klasse Lebewesen an alle Subklassen vererbt wird. Der konkrete Wert für die Hauptfarbe, kann jedoch erst bei der Erzeugung einer konkreten Instanz festgelegt werden. Möglicherweise ändert er sich im Laufe des Lebens auch noch.
-Bei den Grünpflanzen hingegen ist bereits vor der Erzeugung einer konkreten Instanz klar, dass die Hauptfarbe grün sein wird. Sie muss also nicht erst bei der Erzeugung der Instanz mit einem konkreten Wert belegt werden, sondern ist für alle Objekte der Klasse bzw. der Subklassen fest.
+Wir sehen also, dass die Eigenschaft Hauptfarbe der Klasse Lebewesen an alle Subklassen vererbt wird. Der konkrete Wert fÃ¼r die Hauptfarbe, kann jedoch erst bei der Erzeugung einer konkreten Instanz festgelegt werden. MÃ¶glicherweise Ã¤ndert er sich im Laufe des Lebens auch noch.
+Bei den GrÃ¼npflanzen hingegen ist bereits vor der Erzeugung einer konkreten Instanz klar, dass die Hauptfarbe grÃ¼n sein wird. Sie muss also nicht erst bei der Erzeugung der Instanz mit einem konkreten Wert belegt werden, sondern ist fÃ¼r alle Objekte der Klasse bzw. der Subklassen fest.
   
 
 == Vererbung in Java ==
-* Eigenschaften der Objekte einer Klasse lassen sich in Java definieren, indem die Klasse deklariert wird mit der gewünschten Eigenschaft.
-* Um den Wertebereich einer Eigenschaft festlegen zu können, muss auch für diesen eine Klasse existieren beispielweise die Klasse Farbe. Eine konkrete Instanz dieser Klasse könnte ein Objekt namens Grau sein. Wenn man bei der Erzeugung einer Instanz der Klasse Elephant die Hauptfarbe mit der Instanz Grau der Klasse Farbe belegt, hat man einen konkreten Elephanten mit grauer Farbe erzeugt.
-(Für Vergleiche muss sichergestellt sein, dass keine verschiedenen Grau Objekte existieren)
-* Soll der Wert einer Eigenschaft für alle Instanzen einer Klasse der selbe sein, so spricht man von einer Klasseneigenschaft. Wird der konkrete Wert dieser Eigenschaft geändert, so wird er nicht nur für eine konkrete Instanz der Klasse sondern für alle zeitgleich geändert. Klasseneigenschaften lassen sich in Java durch den Bezeichner static ausdrücken.
-* Die Eigenschaften der Objekte repräsentieren deren inneren Zustand, hierzu zählen auch Werte von Klasseneigenschaften.
+* Eigenschaften der Objekte einer Klasse lassen sich in Java definieren, indem die Klasse deklariert wird mit der gewÃ¼nschten Eigenschaft.
+* Um den Wertebereich einer Eigenschaft festlegen zu kÃ¶nnen, muss auch fÃ¼r diesen eine Klasse existieren beispielweise die Klasse Farbe. Eine konkrete Instanz dieser Klasse kÃ¶nnte ein Objekt namens Grau sein. Wenn man bei der Erzeugung einer Instanz der Klasse Elephant die Hauptfarbe mit der Instanz Grau der Klasse Farbe belegt, hat man einen konkreten Elephanten mit grauer Farbe erzeugt.
+(FÃ¼r Vergleiche muss sichergestellt sein, dass keine verschiedenen Grau Objekte existieren)
+* Soll der Wert einer Eigenschaft fÃ¼r alle Instanzen einer Klasse der selbe sein, so spricht man von einer Klasseneigenschaft. Wird der konkrete Wert dieser Eigenschaft geÃ¤ndert, so wird er nicht nur fÃ¼r eine konkrete Instanz der Klasse sondern fÃ¼r alle zeitgleich geÃ¤ndert. Klasseneigenschaften lassen sich in Java durch den Bezeichner static ausdrÃ¼cken.
+* Die Eigenschaften der Objekte reprÃ¤sentieren deren inneren Zustand, hierzu zÃ¤hlen auch Werte von Klasseneigenschaften.
 
 == Vererbung von Operationen in Java ==
 * Die Vererbung der Operationen (in Java Methoden genannt) funktioniert vom Konzept her genau wie wir es bisher von den Eigenschaften kennen.
 * Genau wie es bei den Eigenschaften Klasseneigenschaften gibt, so gibt es bei den Operationen auch Klassenmethoden.
-* Die Operationen der Objekte repräsentieren deren Verhalten. Ändert sich die Implementierung einer Methode, so ändert sich das damit realisierte Verhalten des Objektes wenn diese Methode ausgeführt wird.
-* Bestimmte Verhaltensweisen sind für alle Objekte einer Klasse gleich. Diese können dann in Klassenmethoden realisiert werden. 
-(In Wirklichkeit benötigt Java keine Unterscheidung zwischen Klassen- und Objektmethoden, da die Realisierung der Methoden zur Laufzeit nicht verändert werden kann. Dennoch macht eine Unterscheidung aus anderen Gründen Sinn. Diese Details können aber später diskutiert werden. Für andere Objektorientierte Sprachen ist eine solche Unterscheidung evtl. viel wichtiger.)
+* Die Operationen der Objekte reprÃ¤sentieren deren Verhalten. Ã„ndert sich die Implementierung einer Methode, so Ã¤ndert sich das damit realisierte Verhalten des Objektes wenn diese Methode ausgefÃ¼hrt wird.
+* Bestimmte Verhaltensweisen sind fÃ¼r alle Objekte einer Klasse gleich. Diese kÃ¶nnen dann in Klassenmethoden realisiert werden. 
+(In Wirklichkeit benÃ¶tigt Java keine Unterscheidung zwischen Klassen- und Objektmethoden, da die Realisierung der Methoden zur Laufzeit nicht verÃ¤ndert werden kann. Dennoch macht eine Unterscheidung aus anderen GrÃ¼nden Sinn. Diese Details kÃ¶nnen aber spÃ¤ter diskutiert werden. FÃ¼r andere Objektorientierte Sprachen ist eine solche Unterscheidung evtl. viel wichtiger.)
  
 == Syntax der Programmiersprache Java ==
 * Die aktuelle Spezifikation der Sprache findet sich hier: [[http://docs.oracle.com/javase/specs/]]
-(Bitte die Language Specificatin auswählen - die andere Spezifikation beschreibt wie eine JVM arbeiten muss.)
+(Bitte die Language Specificatin auswÃ¤hlen - die andere Spezifikation beschreibt wie eine JVM arbeiten muss.)
 * 
 
-== Reservierte Schlüsselwörter ==
+== Reservierte SchlÃ¼sselwÃ¶rter ==
 
-(Diese dürfen nicht als Bezeichner/Namen benutzt werden)
+(Diese dÃ¼rfen nicht als Bezeichner/Namen benutzt werden)
 
 abstract   continue   for          new         switch
 assert     default    if           package     synchronized
@@ -147,7 +147,7 @@ class      finally    long         strictfp    volatile
 '''const'''    float      native       super       while
 true         false
 
-('''Fette''' Schlüsselwörter  sollen in Java gar nicht genutzt werden)
+('''Fette''' SchlÃ¼sselwÃ¶rter  sollen in Java gar nicht genutzt werden)
 
 == Kommentare ==
 # Einzeilige Kommentare: Jede Zeile beginnt mit zwei Slashes // 
@@ -160,53 +160,53 @@ Beispiel:
 
 == Klassen importieren ==
 
-* Java bringt out of the box eine sehr mächtige Klassenbibliothek mit. Diese ist unter dem Begriff API Specification im Internet beschrieben auf: 
+* Java bringt out of the box eine sehr mÃ¤chtige Klassenbibliothek mit. Diese ist unter dem Begriff API Specification im Internet beschrieben auf: 
 [[http://docs.oracle.com/javase/6/docs/api/index.html]]
 
 
-*Um Klassen aus dieser Bibliothek in einer eigenen Klasse nutzen zu können müssen diese importiert werden. Eine ''Logger'' Klasse und eine zugehörige Klasse ''Level'' lassen sich beispielsweise wie folgt importieren:
+*Um Klassen aus dieser Bibliothek in einer eigenen Klasse nutzen zu kÃ¶nnen mÃ¼ssen diese importiert werden. Eine ''Logger'' Klasse und eine zugehÃ¶rige Klasse ''Level'' lassen sich beispielsweise wie folgt importieren:
 
 ''import java.util.logging.Logger;''
 ''import java.util.logging.Level;''
 
 == Klassen deklarieren ==
 
-* Um eine Klasse die von anderen Klassen gesehen oder importiert werden kann zu deklarieren benötigt man eine Datei welche genauso benannt ist wie die Klasse und mit .java endet.
-* Um eine Klasse zu deklarieren wird das Schlüsselwort ''class'' gefolgt vom Namen der Klasse benutzt.
-* Pro Datei dürfen mehrere Klassen deklariert werden aber nur eine davon als öffentlich.
-* Die öffentliche Klasse muss den Namen der sie enthaltenden Datei tragen (ausgenommen der Endung .java).
-* Zur Kennzeichnung einer öffentlichen Klasse wird der Modifier ''public'' dem Wort ''class'' vorangestellt.
+* Um eine Klasse die von anderen Klassen gesehen oder importiert werden kann zu deklarieren benÃ¶tigt man eine Datei welche genauso benannt ist wie die Klasse und mit .java endet.
+* Um eine Klasse zu deklarieren wird das SchlÃ¼sselwort ''class'' gefolgt vom Namen der Klasse benutzt.
+* Pro Datei dÃ¼rfen mehrere Klassen deklariert werden aber nur eine davon als Ã¶ffentlich.
+* Die Ã¶ffentliche Klasse muss den Namen der sie enthaltenden Datei tragen (ausgenommen der Endung .java).
+* Zur Kennzeichnung einer Ã¶ffentlichen Klasse wird der Modifier ''public'' dem Wort ''class'' vorangestellt.
 * Die Beschreibung der Klasse (Attribute und Methoden) erfolgt dann innerhalb eines geschweifter Klammern Paares welches der Klassensignatur folgen muss. 
 
-Beispiel für Datei HalloWelt.java:
+Beispiel fÃ¼r Datei HalloWelt.java:
 public class HalloWelt { }
 
 == Zum Einstieg ein "Hallo Welt" ==
 {Code:java://javaexamples/test.HalloWelt}
 
-== Übung ==
+== Ãœbung ==
 Implementiere das Hallo Welt Programm und bringe es mittels Eclipse zum Laufen.
 
 
 == Beispiel Welt der Zeichen ==
 {Code:java://javaexamples/test.WeltDerZeichen}
 
-== Übung ==
+== Ãœbung ==
 
-Erkläre die Ausgabe für unser Beispiel Welt der Zeichen:
+ErklÃ¤re die Ausgabe fÃ¼r unser Beispiel Welt der Zeichen:
 
 08.11.2012 23:29:58 test.WeltDerZeichen main
 INFO: Definiere und Erzeuge Objekt1
 08.11.2012 23:29:58 test.WeltDerZeichen main
 INFO: Wandle den Longwert 5L
 08.11.2012 23:29:58 test.WeltDerZeichen main
-INFO: Erzeuge die Stringpräsentation
+INFO: Erzeuge die StringprÃ¤sentation
 08.11.2012 23:29:58 test.WeltDerZeichen main
 INFO: Definition Objekt2
 08.11.2012 23:29:58 test.WeltDerZeichen main
 INFO: Wandle den Longwert 5L
 08.11.2012 23:29:58 test.WeltDerZeichen main
-INFO: Erzeuge die Stringpräsentation
+INFO: Erzeuge die StringprÃ¤sentation
 Exception in thread "main" java.lang.NullPointerException
 	at test.WeltDerZeichen.main(WeltDerZeichen.java:31)
 
