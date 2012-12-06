@@ -246,6 +246,24 @@ Der Compiler verfügt über diese Informationen bereits beim Compilieren und ver
 * Ein Überschreiben von Klassenmethoden durch Instanzmethoden und umgekehrt ist nicht möglich und führt zu einem Compilerfehler.
 
 Zum Weiteren Verständnis bitte die Beispiele aus der Java Sprach Spezifikation §8.4.9 und §8.4.8 selbst durch arbeiten.
+== Sortierverfahren ==
+In diesem Abschnitt werden wir uns mit den Grundlagen der Sortierung befassen. Dazu werden wir ein Array der Größe 10 mit beliebigen Testwerten füllen und von unserem Sortieralgorithmus sortieren lassen.
+
+Interessant sind für uns dabei:
+* Wie der Algorithmus funktioniert (vom Konzept bzw. der Idee her)
+* Wie oft Elemente verschoben oder kopiert werden müssen
+* Welche Eingabemengen sortiert werden können (dürfen Elemente mehrfach auftreten,...)
+Einen Überblick über gängige Verfahren findet sich hier:
+[[http://de.wikipedia.org/wiki/Sortierverfahren]]
+
+==Übungen==
+
+Implementiere folgende Sortieralgorithmen:
+
+1. Swap Sort
+2. Bubble Sort
+3. Quick Sort
+
 
 
 
