@@ -1,0 +1,13 @@
+{Copyright: Geschützt durch die GNU Free Documentation License v2.0 und folgende}
+=Wazu einen EJB Container?=
+Autor: Thomas Schubert
+
+Nürnberg, 12.01.2013
+
+==EJBs am Anfang==
+* Die ersten EJBs waren kompliziert
+* Sie waren zu langsam
+* Die Implementierung war zu aufwändig
+* Configuration war aufwändig
+* Viel Boiler-Blade Code auch in der Konfiguration dadurch häufige Deploymentfehler
+ 
