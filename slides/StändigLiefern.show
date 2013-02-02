@@ -1,0 +1,85 @@
+{Copyright: Geschützt durch die GNU Free Documentation License v1.3 und folgende}
+=Ständig Liefern=
+Autor: Thomas Schubert
+
+''Kopieren und verteilen ausdrücklich erwünscht.''
+
+==Ziele in der Produktentwicklung==
+* Zu jedem Entwicklungszeitpunkt soll sich das Produkt weiterenwickeln.
+* Jede fachliche Funktionalität soll direkt nach Fertigstellung benutzt werden können.
+* Der Zeitraum zwischen Auftragserteilung und Fertigstellung soll möglichst kurz sein.
+* Der Kunde möchte jederzeit das vorläufige Produkt begutachten können.
+* Der Kunde möchte auch kurz vor Auslieferung noch Anpassungen vornehmen.
+* Das fertige Produkt soll voll und ganz den Ansprüchen des Kunden genügen.
+
+==Technische und Organisatorische Ziele==
+* Um die Wartung zu vereinfachen soll CleanCode produziert werden.
+* Fehler durch Entwickler sollen über Automatisierung verringert werden.
+* Die Entwickler sollen von Routinearbeiten entlastet werden.
+* Die grundlegenden Lösungswege sollen bereits über die Architektur vorgegeben werden.
+
+Diese Ziele sollten sich theoretisch sehr gut über MDSD erreichen lassen.
+
+==Vorgehensweise I==
+* Um vorgenannte Ziele in größeren Projekten erreichen zu können, braucht es die Zusammenarbeit vieler Entwickler.
+* Es werden Teams gebildet wobei jedes Team mit der Umsetzung eines oder mehrerer Features betraut wird.
+* Die Features werden zeitgleich auf der gleichen Kodebasis entwickelt.
+* Einige Features hängen von der Fertigstellung anderer Features ab.
+* Manche Feature können über die GUI nicht geprüft werden.
+* Die Entwicklung wird durch eine laufende Konkretisierung der Anforderungen begleitet.
+* Der Build wird zentral über ein CI System durchgeführt (dabei ist der Build auf mehrere Phasen aufgeteilt um schnelles Feedback zu sichern)
+
+==Folgen der Vorgehensweise I==
+* Der Build im CI System bricht oft, da längere Integrationsphasen benötigt werden.
+* Einige Teams warten auf andere Teams da diese ein Problem beheben müssen, welches vorher nicht erkannt werden konnte.
+* Neue Architekturanpassungen im Hauptbranch führen zu Problemen in mehreren Teams.
+* Neue, generierte Klassen werfen NotImplementedExceptions und behindern andere Teams weil:
+** Der Server nicht mehr startet.
+** Das Feature nur über ein gerade kaputtes Feature erreicht werden kann.
+** Die Datenbankänderungen noch nicht in den OO-Mappings (z.B. Hibernate) nachgezogen wurden.
+* Codefreezes werden benötigt um zentrale Integrationen durchführen zu können.
+
+==Verbesserung der Vorgehensweise I==
+Die Entwicklung der Features soll über eigene Branches entkoppelt werden um:
+* Die Zeit der Codefreezes zu reduzieren.
+* Den Build im Hauptbranch nie brechen zu lassen.
+* Architekturanpassungen parallel integrieren zu können.
+* Zu Verhindern, dass ein Team auf ein Anderes warten muss, weil ein Feature kaputt ist.
+
+==Vorgehensweise II==
+* Für jedes Feature wird ein eigener Branch gezogen und die Entwicklung darin durchgeführt. 
+* Die neue Architektur wird über einen eigenen Feature Branch integriert und anschließend in den Hauptbranch gemerged.
+* Der Merge eines Featurebranches in den Hauptbranch darf nur erfolgen wenn der Build nicht bricht und das Feature lauffähig ist (dazu muß es nicht zwingend vollständig umgesetzt sein). 
+* Nach einem Merge wird der Featurebranch neu aufgesetzt um frühzeitig die Anpassungen der anderen Features zu erhalten.
+* Es wird versucht so häufig wie möglich die Featurebranches in den Hauptbranch zu mergen. 
+
+==Folgen der Vorgehensweise II==
+* Die erhofften Verbesserungen traten ein:
+** Codefreezes sind in der Regel nicht mehr notwendig.
+** Der Build im Hauptbranch bricht nie. 
+** Die Integration der Architektur stellt keine Herausforderung mehr dar.
+* Dennoch müssen manche Team's ab und zu auf Andere warten, da sie ihr Feature nicht erreichen können weil ein anderes gerade kaputt ist.
+* Die Aufwände für den Merge in den Hauptbranch sind größer als erwartet weil:
+** Täglich versucht wird jeden Featurebranch in den Hauptbranch zu mergen und es dabei zu zeitlichen Überscheidungen kommt.
+** Die Konflikte an Shared Komponenten beim Merge steigen.
+** Häufig Treekonflikte auftreten obgleich dem Tool alle Informationen vorliegen (Erfahrung mit SVN).
+
+==Verbesserung der Vorgehensweise II==
+* Der Aufwand der Merges soll reduziert werden indem entgegen {Kal2012} nicht wieder alle in einem Branch entwickelt werden, sondern die Featurebranches weiter abstrahiert werden. Jedes Feature wird nun in einem eigenen Repository entwickelt.
+* Jedes Feature wird als OSGI Bundle bereitgestellt und kann dadurch zeitgleich in mehreren Versionen in die Zielumgebung geliefert werden.
+* Jede Version eines Features lässt sich über OSGI Mechanismen in der Zielumgebung individuell aktivieren oder deaktivieren.
+* Der Buildprozess wird konfigurierbar gestaltet um kurzfristig die Lieferung eines Features unterbinden zu können.
+* Neue Feature können über das in {Kal2012} vorgeschlagenen Feature Toggle Konzept ausgewählten Nutzern zur Erprobung bereitgestellt werden.
+
+==Folgen der Vorgehensweise II==
+Aktuell liegen noch keine Erfahrungen vor.
+
+Mit der zukünftig intensiveren Nutzung der OSGI Technologie wird eine deutliche Verbesserung im Entwicklungsprozess erwartet:
+* Eine continuierliche Lieferung sollte so möglich werden.
+* Entwicklungszeiten sollten sich verringern, da der Server nicht mehr neu gestartet werden muss sondern nur noch das zu entwickelnde Bundle vom Entwickler neu deployed und aktiviert wird.
+
+
+
+==Literaturquellen==
+
+[http://www.bibsonomy.org/bibtex/205a599d81db9ee70e1fd1641f5f6ac2f/funthomas424242 {Kal2012}] Kaltepoth, Christian: On and off. In: Java Magazin (2012), Nr. 11, S. 59-65
