@@ -1,70 +1,70 @@
-{Copyright: Geschützt durch die GNU Free Documentation License v2.0 und folgende}
+{Copyright: GeschÃ¼tzt durch die GNU Free Documentation License v2.0 und folgende}
 =Programme Richtig Liefern=
 Autor: Thomas Schubert
 
-''Kopieren und verteilen ausdrücklich erwünscht.''
+''Kopieren und verteilen ausdrÃ¼cklich erwÃ¼nscht.''
 
 ==Phasen einer Lieferung==
 * Artifakte aus Quellen erstellen (Build)
 * Artifakte in Zielumgebung verteilen (Deployment)
 * Artifakte in Zielumgebung aktivieren (Installation)
 ----------------
-* Bei der Abfolge gibt es Unterschiede. So werden für die Auslieferung eines Windowsprogrammes obige drei Phasen in der angegebenen Reihenfolge durchlaufen.
-* Im Gegensatz dazu wird eine JavaEE Anwendung zunächst auf dem Adminserver installiert und nachfolgend auf die Managed Server verteilt (auch wenn hier generell vom Deployment gesprochen wird und keine Unterscheidung zur Installation erfolgt).
+* Bei der Abfolge gibt es Unterschiede. So werden fÃ¼r die Auslieferung eines Windowsprogrammes obige drei Phasen in der angegebenen Reihenfolge durchlaufen.
+* Im Gegensatz dazu wird eine JavaEE Anwendung zunÃ¤chst auf dem Adminserver installiert und nachfolgend auf die Managed Server verteilt (auch wenn hier generell vom Deployment gesprochen wird und keine Unterscheidung zur Installation erfolgt).
 
 ==Eigenschaften der Build Phase==
 * Aus den Quellen werden Artifakte erstellt
-* Die Artifakte sollen Umgebungsunabhängig sein 
-(damit sie ohne neuen Build in alle Zielumgebungen verteilt werden können)
-* Die Artifakte müssen noch nicht lauffähig sein. Sie müssen aber installierbar sein. 
-* Die Artifakte können Platzhalter zur Umgebungsspezifischen Installation enthalten z.B. für IP Adressen
+* Die Artifakte sollen UmgebungsunabhÃ¤ngig sein 
+(damit sie ohne neuen Build in alle Zielumgebungen verteilt werden kÃ¶nnen)
+* Die Artifakte mÃ¼ssen noch nicht lauffÃ¤hig sein. Sie mÃ¼ssen aber installierbar sein. 
+* Die Artifakte kÃ¶nnen Platzhalter zur Umgebungsspezifischen Installation enthalten z.B. fÃ¼r IP Adressen
 
 ==Eigenschaften der Deployment Phase==
 * Die Artifakte werden in die Zielumgebung transportiert
 * Die in den Artifakten enthaltenen Platzhalter werden durch Umgebungsspezifische Werte ersetzt.
-* In der Zielumgebung müssen evtl. weitere Aktionen ausgeführt werden (z.B. entpacken, kopieren, Dateirechte ändern)
-* Für den Transport müssen Login und Passwörter bereitgestellt werden
-* Der Installationsprozess in der Zielumgebung ist zu starten (falls gewünscht)
+* In der Zielumgebung mÃ¼ssen evtl. weitere Aktionen ausgefÃ¼hrt werden (z.B. entpacken, kopieren, Dateirechte Ã¤ndern)
+* FÃ¼r den Transport mÃ¼ssen Login und PasswÃ¶rter bereitgestellt werden
+* Der Installationsprozess in der Zielumgebung ist zu starten (falls gewÃ¼nscht)
 
 ==Eigenschaften der Installations Phase==
-* Diese Phase wird in der Zielumgebung durchgeführt
-* Es werden evtl. Sonderberechtigungen (z.B. root Rechte) benötigt 
-* Möglicherweise muss ein Login untertützt werden um Root Rechte zu erlangen
-* Alle Artifakte die zur Installation benötigt werden müssen vorliegen
+* Diese Phase wird in der Zielumgebung durchgefÃ¼hrt
+* Es werden evtl. Sonderberechtigungen (z.B. root Rechte) benÃ¶tigt 
+* MÃ¶glicherweise muss ein Login untertÃ¼tzt werden um Root Rechte zu erlangen
+* Alle Artifakte die zur Installation benÃ¶tigt werden mÃ¼ssen vorliegen
 * Manchmal werden fehlende Artifakte automatisch nachgeladen (eher selten)
 * Die Artifakte werden in der Zielumgebung an ihre konkreten Orte platziert, mit Rechten versehen und gestartet
-* Nach erfolgreicher Installation werden nicht benötigte Artifakte wieder entfernt
+* Nach erfolgreicher Installation werden nicht benÃ¶tigte Artifakte wieder entfernt
 * Es wird ein Prozess zur Deinstallation der Artifakte eingerichtet
-* Es wird ein Prozess zur Aktualisierung der Artifakte eingerichtet (für Hotfixes oder Updates)
-* Es wird ein Prozess zur Betriebsüberwachung eingerichtet
-* Es müssen verschiedenste Systeme konfiguriert werden (Server, Datenbanken, Clients, ...)
-* In der Regel müssen auch Datenbankskripte ausgeführt werden
-* Manchmal müssen auch Nutzerkonten im OS oder in der Anwendung erstellt werden
+* Es wird ein Prozess zur Aktualisierung der Artifakte eingerichtet (fÃ¼r Hotfixes oder Updates)
+* Es wird ein Prozess zur BetriebsÃ¼berwachung eingerichtet
+* Es mÃ¼ssen verschiedenste Systeme konfiguriert werden (Server, Datenbanken, Clients, ...)
+* In der Regel mÃ¼ssen auch Datenbankskripte ausgefÃ¼hrt werden
+* Manchmal mÃ¼ssen auch Nutzerkonten im OS oder in der Anwendung erstellt werden
 
 ==Anforderungen an den Build Prozess==
 * Der Build erfolgt ausschlieslich auf selbstverwaltbaren Quellen
-* Die Quellen müssen versioniert vorliegen
+* Die Quellen mÃ¼ssen versioniert vorliegen
 * Der Build muss selbst versioniert erfolgen
-* Alle für den Build benötigten Artifakte (auch implizite Abhängigkeiten) müssen als eigene Quellen (z.B. eingecheckte jar Files) verfügbar sein
+* Alle fÃ¼r den Build benÃ¶tigten Artifakte (auch implizite AbhÃ¤ngigkeiten) mÃ¼ssen als eigene Quellen (z.B. eingecheckte jar Files) verfÃ¼gbar sein
 * Der Build muss reproduzierbar sein (auch nach Jahren)
-* Alle Artifakte müssen versioniert vorliegen und versioniert verwaltet werden
-* Die Versionen des Buildsystems, der Buildskipte, der Anwendung und Legacy Systeme (Datenbanken, externe Systeme) müssen zu einander passen.
+* Alle Artifakte mÃ¼ssen versioniert vorliegen und versioniert verwaltet werden
+* Die Versionen des Buildsystems, der Buildskipte, der Anwendung und Legacy Systeme (Datenbanken, externe Systeme) mÃ¼ssen zu einander passen.
 * Die Build Skripte ggf. das ganze Buildsystem sind als Teil der Quellen einer Anwendung zu betrachten
 
 ==Anforderungen an das Liefersystem==
-* Die Beschreibung des Lieferprozesses muss einfach und mit wenig Text möglich sein
-* Der Lieferprozess muss sich willkürlich in Phasen (Deliverycycle) unterteilen lassen
+* Die Beschreibung des Lieferprozesses muss einfach und mit wenig Text mÃ¶glich sein
+* Der Lieferprozess muss sich willkÃ¼rlich in Phasen (Deliverycycle) unterteilen lassen
 * Alle Logik wird durch ausgelagerte, generische Artifakte (Worker) bereitgestellt (Plugins, Ant-Tasks, ...)
-* Worker müssen konfigurierbar sein
-* Worker müssen versioniert und als eigene Quellen vorliegen
-* Worker müssen sich willkürlich den Phasen des Deliverycycle zurordnen (n:m Beziehungen möglich) lassen
+* Worker mÃ¼ssen konfigurierbar sein
+* Worker mÃ¼ssen versioniert und als eigene Quellen vorliegen
+* Worker mÃ¼ssen sich willkÃ¼rlich den Phasen des Deliverycycle zurordnen (n:m Beziehungen mÃ¶glich) lassen
 
 ==Artifaktarten==
 Es ist wichtig die folgenden Artifakte zu unterscheiden:
-* Artifakte die nur für das Funktionieren des Liefersystems benötigt werden (Worker und Liefersystem)
-* Artifakte die nur für das Endprodukt (Programm) benötigt werden
+* Artifakte die nur fÃ¼r das Funktionieren des Liefersystems benÃ¶tigt werden (Worker und Liefersystem)
+* Artifakte die nur fÃ¼r das Endprodukt (Programm) benÃ¶tigt werden
 * Artifakte die nur den Ablauf der Lieferprozesse beschreiben (Lieferskripte)
-* Artifakte die nur Informationen über die Zielumgebung enthalten (Wertetabellen für Platzhalterersetzung)
+* Artifakte die nur Informationen Ã¼ber die Zielumgebung enthalten (Wertetabellen fÃ¼r Platzhalterersetzung)
 * Artifakte die dem Reporting und der Archivierung der Lieferungen dienen
 
 

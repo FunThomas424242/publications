@@ -1,49 +1,49 @@
-{Copyright: Geschützt durch die GNU Free Documentation License v2.0 und folgende}
+{Copyright: GeschÃ¼tzt durch die GNU Free Documentation License v2.0 und folgende}
 =Continous Delivery=
 Autor: Thomas Schubert
 
-''Kopieren und verteilen ausdrücklich erwünscht.''
+''Kopieren und verteilen ausdrÃ¼cklich erwÃ¼nscht.''
 
 ==Problemstellung==
-* Entwickler benötigen schnelles Feedback über die Qualität und die Auswirkung ihrer Anpassungen
-* Entwickler benötigen schnelles Feedback über die Auswirkung ihrer Anpassungen auf die Kodequalität
-* Entwickler benötigen schnelles Feedback hinsichtlich der Auswirkung auf abhängige Module
-* Entwickler möchten kontinuierlich arbeiten und nicht durch Codefreezes gehindert werden
-* Entwickler möchten schnell zwischen verschiedenen Anpassungen wechseln können ohne diese einschecken zu müssen
-* Entwickler möchten unterschiedliche Anpassungen parallel bearbeiten können und diese aber getrennt commiten
-* Der Entwickler möchte jedes Kodeartifakt über einen Blackboxtest (JUnit) absichern
-* Der Systemtest möchte gezielt auszuliefernde Features abschließend und vollständig testen
-* Der Systemtest möchte jedes fertiggestellte Feature abschließend und vollständig testen
-* Der PO möchte vor Liveschaltung entscheiden welche Features ausgeliefert werden sollen und welche nicht
+* Entwickler benÃ¶tigen schnelles Feedback Ã¼ber die QualitÃ¤t und die Auswirkung ihrer Anpassungen
+* Entwickler benÃ¶tigen schnelles Feedback Ã¼ber die Auswirkung ihrer Anpassungen auf die KodequalitÃ¤t
+* Entwickler benÃ¶tigen schnelles Feedback hinsichtlich der Auswirkung auf abhÃ¤ngige Module
+* Entwickler mÃ¶chten kontinuierlich arbeiten und nicht durch Codefreezes gehindert werden
+* Entwickler mÃ¶chten schnell zwischen verschiedenen Anpassungen wechseln kÃ¶nnen ohne diese einschecken zu mÃ¼ssen
+* Entwickler mÃ¶chten unterschiedliche Anpassungen parallel bearbeiten kÃ¶nnen und diese aber getrennt commiten
+* Der Entwickler mÃ¶chte jedes Kodeartifakt Ã¼ber einen Blackboxtest (JUnit) absichern
+* Der Systemtest mÃ¶chte gezielt auszuliefernde Features abschlieÃŸend und vollstÃ¤ndig testen
+* Der Systemtest mÃ¶chte jedes fertiggestellte Feature abschlieÃŸend und vollstÃ¤ndig testen
+* Der PO mÃ¶chte vor Liveschaltung entscheiden welche Features ausgeliefert werden sollen und welche nicht
 
 ==Konsequenzen==
-* Es werden kurze Buildzeiten benötigt (max. 10 Minuten)
+* Es werden kurze Buildzeiten benÃ¶tigt (max. 10 Minuten)
 * Continious Integration muss bereits auf dem lokalen Rechner erfolgen
-* Kodequalität und Testfälle müssen ebenfalls auf dem lokalen Rechner laufend geprüft werden
-* Mit dem lokalen Stand müssen auch Folgebuilds ausgelöst werden um Auswirkungen auf abhängige Module zu bemerken
-* Jedes Speichern müsste einen vollständigen lokalen Build mit Folgebuilds und der Erzeugung diverser Statistiken auslösen
+* KodequalitÃ¤t und TestfÃ¤lle mÃ¼ssen ebenfalls auf dem lokalen Rechner laufend geprÃ¼ft werden
+* Mit dem lokalen Stand mÃ¼ssen auch Folgebuilds ausgelÃ¶st werden um Auswirkungen auf abhÃ¤ngige Module zu bemerken
+* Jedes Speichern mÃ¼sste einen vollstÃ¤ndigen lokalen Build mit Folgebuilds und der Erzeugung diverser Statistiken auslÃ¶sen
 
-==Umsetzung ständiger, schneller Build==
-* Umsetzung schwierig, da ein vollständiger Build nach jedem Speichern unrealistisch
-* Zu bestimmten Zeitpunkten könnte der lokale Stand vollständig in eine Cloud Umgebung transferiert werden um dort entsprechend schnell den geforderten vollständigen Build ausführen zu können
+==Umsetzung stÃ¤ndiger, schneller Build==
+* Umsetzung schwierig, da ein vollstÃ¤ndiger Build nach jedem Speichern unrealistisch
+* Zu bestimmten Zeitpunkten kÃ¶nnte der lokale Stand vollstÃ¤ndig in eine Cloud Umgebung transferiert werden um dort entsprechend schnell den geforderten vollstÃ¤ndigen Build ausfÃ¼hren zu kÃ¶nnen
 * Synergieeffekte sind zu erwarten, wenn der lokale Stand auch nicht wirklich lokal abgelegt ist sondern ebenfalls in der Cloud liegt
-* Bei Letzterem würden lokal Terminals zur Entwicklung genügen (vgl. Arbeit mit Mainframe oder DECstation)
-* Die "bestimmten" Zeitpunkte festzulegen ist hier die Schwierigkeit. Denkbare Lösungen:
-** Der Entwickler löst manuell einen solchen Build aus
-** Ein vollständiger Build wird zeitgesteuert abhängig davon ob Änderungen vorliegen ausgelöst
+* Bei Letzterem wÃ¼rden lokal Terminals zur Entwicklung genÃ¼gen (vgl. Arbeit mit Mainframe oder DECstation)
+* Die "bestimmten" Zeitpunkte festzulegen ist hier die Schwierigkeit. Denkbare LÃ¶sungen:
+** Der Entwickler lÃ¶st manuell einen solchen Build aus
+** Ein vollstÃ¤ndiger Build wird zeitgesteuert abhÃ¤ngig davon ob Ã„nderungen vorliegen ausgelÃ¶st
 ** Beides
 
 ==Umsetzung flexibler Features==
-* Wenn der PO kurzfristig entscheiden möchte welche Features integriert werden und welche nicht so muss jedes Feature ein lieferbares Artifakt darstellen (z.B. Bundle)
-* Features sollten demnach von einander unabhängig und individuell deploybar sein
-* Sollten zwischen Features dennoch Abhängigkeiten bestehen so müssen Features in mehreren Versionen parallel deployed werden können (z.B. OSGI Bundle)
+* Wenn der PO kurzfristig entscheiden mÃ¶chte welche Features integriert werden und welche nicht so muss jedes Feature ein lieferbares Artifakt darstellen (z.B. Bundle)
+* Features sollten demnach von einander unabhÃ¤ngig und individuell deploybar sein
+* Sollten zwischen Features dennoch AbhÃ¤ngigkeiten bestehen so mÃ¼ssen Features in mehreren Versionen parallel deployed werden kÃ¶nnen (z.B. OSGI Bundle)
 * Die Erstellung eines Features muss in einem eigenen Repository oder einem eigenen Branch erfolgen
-* Der Merge des Feature Branches in einen Hauptbranch ergibt keinen Sinn, da damit die Buildzeit vergrössert wird und der Entwickler länger auf Feedback warten muss.
+* Der Merge des Feature Branches in einen Hauptbranch ergibt keinen Sinn, da damit die Buildzeit vergrÃ¶ssert wird und der Entwickler lÃ¤nger auf Feedback warten muss.
 
 ==Umsetzung flexibler Entwicklungskontext==
-* Damit der Entwickler Fehler 1 und Fehler 2 im gleichen Kode beheben aber getrennt nach Freigabe einchecken kann muss er in verschiedenen Kontexten arbeiten können
-* Eine virtuelle Unterscheidung der Kontexte (z.B. durch Mylyn) gnügt nicht, da letztlich nur Teile des geänderten Kodes eingecheckt werden sollen und dies einen unbrauchbaren Stand ergibt
-* Die einzige Möglichkeit wäre der Zugriff auf eine zweite Entwicklungsumgbung
+* Damit der Entwickler Fehler 1 und Fehler 2 im gleichen Kode beheben aber getrennt nach Freigabe einchecken kann muss er in verschiedenen Kontexten arbeiten kÃ¶nnen
+* Eine virtuelle Unterscheidung der Kontexte (z.B. durch Mylyn) gnÃ¼gt nicht, da letztlich nur Teile des geÃ¤nderten Kodes eingecheckt werden sollen und dies einen unbrauchbaren Stand ergibt
+* Die einzige MÃ¶glichkeit wÃ¤re der Zugriff auf eine zweite Entwicklungsumgbung
 * Realisierbar durch Virtualisierung bzw. Einsatz einer Cloud
 
 
