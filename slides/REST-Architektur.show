@@ -1,0 +1,45 @@
+{Copyright: Geschützt durch die GNU Free Documentation License v2.0 und folgende}
+=REST Architektur=
+Autor: Thomas Schubert
+
+''Draft''
+
+==Grundbegriffe==
+
+* Representational State Transfer (Akronym REST)
+* HTTP Hypertext Transfer Protocol
+* WWW World Wide Web
+
+==Grundprinzipien==
+
+1. Ressourcen mit eindeutiger Identifikation
+Alle extern relevanten Domänenobjekte verfügen über einen eigenen URI zur Identifikation
+2. Erzeugung von Repräsentationen
+Resourcen verfügen über eine oder mehrere Repräsentationen. Dies äußert sich darin, dass der Server möglichst die vom Client unterstützten Formate zurück liefert.
+3. Standardmethoden
+Alles Resourcen können einheitlich über acht Standardmethoden angesprochen werden.
+4. Statuslose Kommunikation
+Der Server merkt sich keinen Zustand er reagiert nur auf Anfragen und gibt entsprechende Antworten zurück völlig unabhängig von der letzten Anfrage des Clients.
+5. Nutzung von Hypermedia
+Eine Navigation oder das Durchführen von Statusänderungen sollte über Verknüpfungen erfolgen. Das bedeutet, dass der Server Repräsentationen mit solchen Verknüpfungen an den Client liefern muss.
+
+
+==Stardard Zugriffsmethoden==
+* GET Vom Client wird der aktuelle Zustand einer Resource angefordert. Der Server liefert eine aktuelle Repräsentation an den Client.
+* PUT Hiermit kann der Client eine Resource auf dem Server erstellen oder aktualisieren. Dazu wird zusätzlich vom Client eine Repräsentation der Resouce übergeben. Existiert unter dem URI keine Resource auf dem Server wird sie erstellt sonst aktualisiert.
+* POST funktioniert wie PUT nur bezieht es sich auf Listen. Mit jedem POST wird also ein Element an eine Liste angehängt. Der Server muß auch dieses neue Element mit einer eindeutigen URI versehen. Zusätzlich können nicht standarmäßig unterstützte Methoden über POST getunnelt werden (z.B. eigene Kommunikationsprotokolle).
+* DELETE Hiermit löscht der Client eine Resource vom Server
+ 
+== Probleme ==
+1. Zustandslose Kommunikation
+2. Sicherheit bei Weitergabe von Bookmarks
+3. Repräsentationen mit Links zur Zuständsänderung
+
+== Lösungen ==
+1. Die Zustandslose Kommunikation kann erreicht werden, indem der ein benötigter Zustand auf dem Client verwaltet wird.
+2. Im Prinzip muss sich der Client mit jedem Request neu beim Server identifizieren damit der Server sicherstellen kann, das der Client berechtigt ist auf geschützte Resourcen zugreifen zu dürfen. Damit müssen aber die Credentials im Request enthalten sein. Ob verschlüsselt oder nicht als Bookmark kann so jeder die Berechtigung eines anderen Nutzers erlangen - das heißt hier bedarf es anderer Lösungen.
+3. Um das 5. Prizip zu realisieren ist bislang nur eine Markup Language als Server Response denkbar. Ein Client müsste diese dann parsen und daraus seine Oberfläche erstellen. Es gibt Frameworks wie GUI4J die sich hier anbieten würden.
+
+ 
+== Quellen ==
+* "Wikipedia":http://de.wikipedia.org/wiki/Representational_State_Transfer 
