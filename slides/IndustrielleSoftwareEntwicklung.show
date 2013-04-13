@@ -1,0 +1,99 @@
+{Copyright: Geschützt durch die GNU Free Documentation License v1.3 und folgende}
+=Industrielle Softwareentwicklung=
+Autor: Thomas Schubert
+
+''Nürnberg, 13.04.2013''
+
+==Motivation==
+
+Haben wir uns nicht schon alle einmal gewünscht das wir ein Programm wie eine Schraube am Fließband erstellen könnten?
+
+Falls wir uns dafür eine Spezifikations- und Entwicklungsumgebung wünschen könnten - wie würde diese aussehen?
+
+
+==Fachliche Spezifikation==
+
+Also als erstes bräuchten wir eine Sprache in der wir die Anforderungen verbal in Sätzen beschreiben können.
+Aber was würden wir in der Sprache beschreiben? Es gäbe:
+
+* Eine Liste von Systemen (das zu Spezifizierende und Fremdsysteme mit denen interagiert wird).
+* Eine Liste an Zielen des Programmsystems.
+* Eine Liste an Stakeholdern.
+* Eine Liste an Anforderungen mit einem schematischen Satzbau wie beispielsweise beim Sophist Konzept.
+* Ein Glossar für Begriffe.
+* Ein Glossar für Prozesse und Prozesswörter, nebst Synonymen.
+
+Damit ließe sich das klassische Lastenheft darstellen.
+Eine Lösung versucht das Projekt
+"rassi":https://github.com/funthomas424242/rassi bereitzustellen.
+
+==UserStory Beschreibungen==
+Zu den fachlichen Anforderungen müssten wir User Stories formulieren. Eine User Story besteht aus:
+* Verbale Story Formulierung.
+* Liste von Commitments.
+* Notizen zur Conversation mit dem fachlichen Entscheider (meist Product Owner).
+
+Durch eine Zuordnung mehrerer User Stories zu einer Anforderung kann geprüft werden ob die Anforderung von den zugeordneten User Stories vollständig abgedeckt wird.
+
+Ein Beispiel für eine Sprache welche User Stories beschreibt habe ich bislang nicht gefunden, allerdings gibt es Sprachen mit denen sich die Commitments einer User Story beschreiben lassen.
+
+== Beschreibung der Story Commitments ==
+
+Wenn man davon ausgeht, dass jede Anforderung durch User Stories vollständig abgedeckt wird und jede User Story als fachliches Abnahmekriterium die Commitments enthält, so genügt eine Abdeckung aller Commitments durch Akzeptanztests um die fachliche Korrektheit sicher zu stellen.
+
+==Formulierung fachlicher Akzeptanztests==
+Wenn wir jedes Commitment einer User Story durch mehrere Akzeptanztests abdecken, können wir die korrekte fachliche Funktion sicherstellen.
+
+Zur Beschreibung von Akzeptanztests bieten sich verschiedene Sprachen an:
+* Fit - Beschreibung von Akzeptanztests in HTML Tabellen.
+* Verhaltensbasierte Testsprachen wie Cucumber, jbehave oder NatSpec. 
+
+Persönlich würde ich mich für NatSpec entscheiden, da die Syntax am natürlichsten erscheint und ein direktes Mapping auf JUnit Tests (technische Modultests) möglich ist.
+
+==Modultests==
+
+An dieser Stelle verlassen wir den fachlichen Spezifikationsbereich und wechseln in den technischen Implementierungsbereich - dem Pflichtenheft.
+
+Jeder Akzeptanztest muss durch eine Reihe von Modultests abgesichert werden. Modultests werden üblicherweise durch Junit auf Klassenebene implementiert.
+
+Bei einem angenommenen Top Down Ansatz, kommen wir aus der fachlichen Spezifikation direkt zu den JUnit Tests und sind somit Testdriven unterwegs. Letzteres wird von vielen Entwicklern begrüßt, da es enorm motivierend wirkt.
+
+==Lösungsraum==
+
+Nachdem alles spezifiziert ist und die Modultests bereitstehen, müssen Letztere noch vom Status rot in den Status grün wechseln :)
+Das gelingt nur durch eine korrekte Implementierung. Gehen wir im Rahmen der Automatisierung von einem modellgetriebenen Ansatz aus so müssen wir jetzt das technische Modell erstellen.
+Was würden wir in unserem technischen Modell beschreiben? 
+* Wir würden die Oberfläche beschreiben z.B. durch JavaFXScript, Thinlet, GUI4J, ...
+* Wir würden die Datenbank beschreiben z.B. durch HEDL in Verbindung mit Liquibase oder Flyway
+* Wir würden die Programmsteuerung und -logik beschreiben z.B. mit einer formalen Sprache für Flow Design
+
+==Was hätten wir dann erreicht?==
+Gelöste Probleme
+* Wir hätten eine fachliche Spezifikation die sogar die Ansprechpartner im Fachbereich verstehen ;)
+* Wir hätten User Stories mit denen wir einen agilen und damit iterativen Entwicklungsansatz unterstützen mit samt zugehöriger Vorteile.
+* Wir hätten die Commitments der User Stories als formale Akzeptanztests realisiert.
+* Wir hätten eine Testgetriebene Entwicklung.
+* Wir hätten eine modellgetriebene Entwicklung (technisches Modell).
+* Wir hätten einen sehr hohen Automatisierungsgrad durch die technische Modellierung mit anschließender Generierung erreicht.
+* Wir hätten alle User Stories mit zugehöriger Conversation dokumentiert.
+
+Weiter bestehende Probleme
+* Wir müssten weithin bestimmte Teile im Quellkode manuell implementieren.
+* Wir werden nur bestimmte Anwendungstypen mit diesem Ansatz erstellen können, die anderen Typen benötigen andere Lösungen.
+* Wir können die formale Korrektheit der erstellten Programme weiterhin nicht beweisen - schon allein wegen dem nicht zu erbringenden Beweis der Terminiertheit.
+ 
+==Weiterführende Quellen==
+* http://www.nat-spec.com/
+* http://cukes.info/
+* http://jbehave.org/
+* http://marketplace.eclipse.org/content/hedl-hibernate-entity-definition-language#.UWnbrKKSKSo
+* http://geekswithblogs.net/theArchitectsNapkin/archive/2011/03/19/flow-design-cheat-sheet-ndash-part-i-notation.aspx
+* http://geekswithblogs.net/theArchitectsNapkin/archive/2011/03/20/flow-design-cheat-sheet-ndash-part-ii-translation.aspx
+* https://sourceforge.net/projects/gui4j/
+* http://thinlet.sourceforge.net/home.html
+* http://openjdk.java.net/projects/openjfx/
+* http://liquibase.org/
+* http://flywaydb.org/
+
+
+
