@@ -1,8 +1,8 @@
 {Copyright: Geschützt durch die GNU Free Documentation License v1.3 und folgende}
-=Continous Delivery=
+=Continuous Delivery=
 Autor: Thomas Schubert
 
-''Kopieren und verteilen ausdrücklich erwünscht.''
+''Stand vom 14.04.2013''
 
 ==Problemstellung==
 * Entwickler benötigen schnelles Feedback über die Qualität und die Auswirkung ihrer Anpassungen
@@ -11,7 +11,7 @@ Autor: Thomas Schubert
 * Entwickler möchten kontinuierlich arbeiten und nicht durch Codefreezes gehindert werden
 * Entwickler möchten schnell zwischen verschiedenen Anpassungen wechseln können ohne diese einschecken zu müssen
 * Entwickler möchten unterschiedliche Anpassungen parallel bearbeiten können und diese aber getrennt commiten
-* Der Entwickler möchte jedes Kodeartifakt über einen Blackboxtest (JUnit) absichern
+* Der Entwickler möchte jedes Kodeartefakt über einen Blackboxtest (JUnit) absichern
 * Der Systemtest möchte gezielt auszuliefernde Features abschließend und vollständig testen
 * Der Systemtest möchte jedes fertiggestellte Feature abschließend und vollständig testen
 * Der PO möchte vor Liveschaltung entscheiden welche Features ausgeliefert werden sollen und welche nicht
@@ -34,7 +34,7 @@ Autor: Thomas Schubert
 ** Beides
 
 ==Umsetzung flexibler Features==
-* Wenn der PO kurzfristig entscheiden möchte welche Features integriert werden und welche nicht so muss jedes Feature ein lieferbares Artifakt darstellen (z.B. Bundle)
+* Wenn der PO kurzfristig entscheiden möchte welche Features integriert werden und welche nicht, so muss jedes Feature ein lieferbares Artefakt darstellen (z.B. Bundle)
 * Features sollten demnach von einander unabhängig und individuell deploybar sein
 * Sollten zwischen Features dennoch Abhängigkeiten bestehen so müssen Features in mehreren Versionen parallel deployed werden können (z.B. OSGI Bundle)
 * Die Erstellung eines Features muss in einem eigenen Repository oder einem eigenen Branch erfolgen
