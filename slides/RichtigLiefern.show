@@ -2,26 +2,26 @@
 =Programme Richtig Liefern=
 Autor: Thomas Schubert
 
-''Kopieren und verteilen ausdrücklich erwünscht.''
+''Stand vom 14.04.2013''
 
 ==Phasen einer Lieferung==
-* Artifakte aus Quellen erstellen (Build)
-* Artifakte in Zielumgebung verteilen (Deployment)
-* Artifakte in Zielumgebung aktivieren (Installation)
+* Artefakte aus Quellen erstellen (Build)
+* Artefakte in Zielumgebung verteilen (Deployment)
+* Artefakte in Zielumgebung aktivieren (Installation)
 ----------------
 * Bei der Abfolge gibt es Unterschiede. So werden für die Auslieferung eines Windowsprogrammes obige drei Phasen in der angegebenen Reihenfolge durchlaufen.
 * Im Gegensatz dazu wird eine JavaEE Anwendung zunächst auf dem Adminserver installiert und nachfolgend auf die Managed Server verteilt (auch wenn hier generell vom Deployment gesprochen wird und keine Unterscheidung zur Installation erfolgt).
 
 ==Eigenschaften der Build Phase==
-* Aus den Quellen werden Artifakte erstellt
-* Die Artifakte sollen Umgebungsunabhängig sein 
+* Aus den Quellen werden Artefakte erstellt
+* Die Artefakte sollen Umgebungsunabhängig sein 
 (damit sie ohne neuen Build in alle Zielumgebungen verteilt werden können)
-* Die Artifakte müssen noch nicht lauffähig sein. Sie müssen aber installierbar sein. 
-* Die Artifakte können Platzhalter zur Umgebungsspezifischen Installation enthalten z.B. für IP Adressen
+* Die Artefakte müssen noch nicht lauffähig sein. Sie müssen aber installierbar sein. 
+* Die Artefakte können Platzhalter zur Umgebungsspezifischen Installation enthalten z.B. für IP Adressen
 
 ==Eigenschaften der Deployment Phase==
-* Die Artifakte werden in die Zielumgebung transportiert
-* Die in den Artifakten enthaltenen Platzhalter werden durch Umgebungsspezifische Werte ersetzt.
+* Die Artefakte werden in die Zielumgebung transportiert
+* Die in den Artefakten enthaltenen Platzhalter werden durch Umgebungsspezifische Werte ersetzt.
 * In der Zielumgebung müssen evtl. weitere Aktionen ausgeführt werden (z.B. entpacken, kopieren, Dateirechte ändern)
 * Für den Transport müssen Login und Passwörter bereitgestellt werden
 * Der Installationsprozess in der Zielumgebung ist zu starten (falls gewünscht)
@@ -30,12 +30,12 @@ Autor: Thomas Schubert
 * Diese Phase wird in der Zielumgebung durchgeführt
 * Es werden evtl. Sonderberechtigungen (z.B. root Rechte) benötigt 
 * Möglicherweise muss ein Login untertützt werden um Root Rechte zu erlangen
-* Alle Artifakte die zur Installation benötigt werden müssen vorliegen
-* Manchmal werden fehlende Artifakte automatisch nachgeladen (eher selten)
-* Die Artifakte werden in der Zielumgebung an ihre konkreten Orte platziert, mit Rechten versehen und gestartet
-* Nach erfolgreicher Installation werden nicht benötigte Artifakte wieder entfernt
-* Es wird ein Prozess zur Deinstallation der Artifakte eingerichtet
-* Es wird ein Prozess zur Aktualisierung der Artifakte eingerichtet (für Hotfixes oder Updates)
+* Alle Artefakte die zur Installation benötigt werden müssen vorliegen
+* Manchmal werden fehlende Artefakte automatisch nachgeladen (eher selten)
+* Die Artefakte werden in der Zielumgebung an ihre konkreten Orte platziert, mit Rechten versehen und gestartet
+* Nach erfolgreicher Installation werden nicht benötigte Artefakte wieder entfernt
+* Es wird ein Prozess zur Deinstallation der Artefakte eingerichtet
+* Es wird ein Prozess zur Aktualisierung der Artefakte eingerichtet (für Hotfixes oder Updates)
 * Es wird ein Prozess zur Betriebsüberwachung eingerichtet
 * Es müssen verschiedenste Systeme konfiguriert werden (Server, Datenbanken, Clients, ...)
 * In der Regel müssen auch Datenbankskripte ausgeführt werden
@@ -45,26 +45,26 @@ Autor: Thomas Schubert
 * Der Build erfolgt ausschlieslich auf selbstverwaltbaren Quellen
 * Die Quellen müssen versioniert vorliegen
 * Der Build muss selbst versioniert erfolgen
-* Alle für den Build benötigten Artifakte (auch implizite Abhängigkeiten) müssen als eigene Quellen (z.B. eingecheckte jar Files) verfügbar sein
+* Alle für den Build benötigten Artefakte (auch implizite Abhängigkeiten) müssen als eigene Quellen (z.B. eingecheckte jar Files) verfügbar sein
 * Der Build muss reproduzierbar sein (auch nach Jahren)
-* Alle Artifakte müssen versioniert vorliegen und versioniert verwaltet werden
+* Alle Artefakte müssen versioniert vorliegen und versioniert verwaltet werden
 * Die Versionen des Buildsystems, der Buildskipte, der Anwendung und Legacy Systeme (Datenbanken, externe Systeme) müssen zu einander passen.
 * Die Build Skripte ggf. das ganze Buildsystem sind als Teil der Quellen einer Anwendung zu betrachten
 
 ==Anforderungen an das Liefersystem==
 * Die Beschreibung des Lieferprozesses muss einfach und mit wenig Text möglich sein
 * Der Lieferprozess muss sich willkürlich in Phasen (Deliverycycle) unterteilen lassen
-* Alle Logik wird durch ausgelagerte, generische Artifakte (Worker) bereitgestellt (Plugins, Ant-Tasks, ...)
+* Alle Logik wird durch ausgelagerte, generische Artefakte (Worker) bereitgestellt (Plugins, Ant-Tasks, ...)
 * Worker müssen konfigurierbar sein
 * Worker müssen versioniert und als eigene Quellen vorliegen
 * Worker müssen sich willkürlich den Phasen des Deliverycycle zurordnen (n:m Beziehungen möglich) lassen
 
-==Artifaktarten==
-Es ist wichtig die folgenden Artifakte zu unterscheiden:
-* Artifakte die nur für das Funktionieren des Liefersystems benötigt werden (Worker und Liefersystem)
-* Artifakte die nur für das Endprodukt (Programm) benötigt werden
-* Artifakte die nur den Ablauf der Lieferprozesse beschreiben (Lieferskripte)
-* Artifakte die nur Informationen über die Zielumgebung enthalten (Wertetabellen für Platzhalterersetzung)
-* Artifakte die dem Reporting und der Archivierung der Lieferungen dienen
+==Artefaktarten==
+Es ist wichtig die folgenden Artefakte zu unterscheiden:
+* Artefakte die nur für das Funktionieren des Liefersystems benötigt werden (Worker und Liefersystem)
+* Artefakte die nur für das Endprodukt (Programm) benötigt werden
+* Artefakte die nur den Ablauf der Lieferprozesse beschreiben (Lieferskripte)
+* Artefakte die nur Informationen über die Zielumgebung enthalten (Wertetabellen für Platzhalterersetzung)
+* Artefakte die dem Reporting und der Archivierung der Lieferungen dienen
 
 
