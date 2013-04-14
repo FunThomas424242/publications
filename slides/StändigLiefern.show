@@ -2,7 +2,7 @@
 =Ständig Liefern=
 Autor: Thomas Schubert
 
-''Nürnberg, 02.02.2013''
+''Stand vom 14.04.2013''
 
 ==Ziele in der Produktentwicklung==
 * Zu jedem Entwicklungszeitpunkt soll sich das Produkt weiterenwickeln.
@@ -63,6 +63,7 @@ Die Entwicklung der Features soll über eigene Branches entkoppelt werden um:
 ** Täglich versucht wird jeden Featurebranch in den Hauptbranch zu mergen und es dabei zu zeitlichen Überscheidungen kommt.
 ** Die Konflikte an Shared Komponenten beim Merge steigen.
 ** Häufig Treekonflikte auftreten obgleich dem Tool alle Informationen vorliegen (Erfahrung mit SVN).
+* Die SVN Historie enthält nur noch Merge Kommentare. Welcher Entwickler die aktuelle Kodestelle geändert oder ehemals eingefügt hat, kann nur in mühsamer Recherche herausgefunden werden.
 
 ==Verbesserung der Vorgehensweise II==
 * Der Aufwand der Merges soll reduziert werden indem entgegen {Kal2012} nicht wieder alle in einem Branch entwickelt werden, sondern die Featurebranches weiter abstrahiert werden. Jedes Feature wird nun in einem eigenen Repository entwickelt.
