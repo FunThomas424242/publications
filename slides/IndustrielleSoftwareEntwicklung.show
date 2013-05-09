@@ -1,9 +1,12 @@
-{Copyright: Geschützt durch die GNU Free Documentation License v1.3 und folgende}
-=Industrielle Softwareentwicklung=
+==Industrielle Softwareproduktion==
+
 Autor: Thomas Schubert
 
-''Nürnberg, 13.04.2013''
+''Nürnberg, 09.05.2013''
 
+----
+Geschützt durch die 
+GNU Free Documentation License v1.3 und folgende
 ==Motivation==
 
 Haben wir uns nicht schon alle einmal gewünscht das wir ein Programm wie eine Schraube am Fließband erstellen könnten?
@@ -35,28 +38,23 @@ Zu den fachlichen Anforderungen müssten wir User Stories formulieren. Eine User
 
 Durch eine Zuordnung mehrerer User Stories zu einer Anforderung kann geprüft werden ob die Anforderung von den zugeordneten User Stories vollständig abgedeckt wird.
 
-Ein Beispiel für eine Sprache welche User Stories beschreibt habe ich bislang nicht gefunden, allerdings gibt es Sprachen mit denen sich die Commitments einer User Story beschreiben lassen.
+Sprachen zur Beschreibung von User Stories sind im Bereich BDD (Verhaltensgetriebene Softwareentwicklung) zu finden. In der Regel erfolgt die Beschreibung in der Sprache Gherkin welche eine Aufteilung in ''Gegeben'', ''Wenn'' und ''Dann'' Bereiche vornimmt. Außerdem werden diese UserStories gleich mit dem JUnit Framework verbunden. 
 
-== Beschreibung der Story Commitments ==
+Beim konkreten Einsatz ist zu überlegen, wie die Commitments und die Conversation in der Sprache bedient werden können.
 
-Wenn man davon ausgeht, dass jede Anforderung durch User Stories vollständig abgedeckt wird und jede User Story als fachliches Abnahmekriterium die Commitments enthält, so genügt eine Abdeckung aller Commitments durch Akzeptanztests um die fachliche Korrektheit sicher zu stellen.
+* Gherkin: NatSpec, JNario, JBehave, NBehave, Cucumber, SpecFlow, SubSpec, ... 
+* Others: NatSpec, ...
 
-==Formulierung fachlicher Akzeptanztests==
-Wenn wir jedes Commitment einer User Story durch mehrere Akzeptanztests abdecken, können wir die korrekte fachliche Funktion sicherstellen.
 
-Zur Beschreibung von Akzeptanztests bieten sich verschiedene Sprachen an:
-* Fit - Beschreibung von Akzeptanztests in HTML Tabellen.
-* Verhaltensbasierte Testsprachen wie Cucumber, jbehave oder NatSpec. 
+== UserStory und Modultest ==
 
-Persönlich würde ich mich für NatSpec entscheiden, da die Syntax am natürlichsten erscheint und ein direktes Mapping auf JUnit Tests (technische Modultests) möglich ist.
+Es wird davon ausgegangen, dass alle UserStories zusammenn letzlich die gesamte fachliche Funktionalität vollständig beschreiben.
 
-==Modultests==
+Sollte etwas fehlen, wird ein Fehler vom Test gemeldet werden. Dann muss nachspezifiziert werden und es gibt eine neue UserStory - irgendwann ist das System vollständig beschrieben.
 
-An dieser Stelle verlassen wir den fachlichen Spezifikationsbereich und wechseln in den technischen Implementierungsbereich - dem Pflichtenheft.
+Letztlich werden die Userstories fachliche Workflows beschreiben. Die Programmmodule werden aber kleinere Einheiten bilden und allein keine UserStory abdecken. Daher sind weitere Moduttests mit JUnit notwendig. 
 
-Jeder Akzeptanztest muss durch eine Reihe von Modultests abgesichert werden. Modultests werden üblicherweise durch Junit auf Klassenebene implementiert.
-
-Bei einem angenommenen Top Down Ansatz, kommen wir aus der fachlichen Spezifikation direkt zu den JUnit Tests und sind somit Testdriven unterwegs. Letzteres wird von vielen Entwicklern begrüßt, da es enorm motivierend wirkt.
+Beim Modultest soll auch fachliches Verhalten getestet werden aber auf viel niedrigerem Niveau. So kann die fachliche Forderung eine sortierte Adressliste sein. Ein Modul könnte die Implementierung der Liste oder des Comperators sein. Auch dann kann fachliches Verhalten getestet werden aber das fachliche Verhalten entspringt nun der technischen Domäne und gehört damit nicht ins Lastenheft.
 
 ==Lösungsraum==
 
