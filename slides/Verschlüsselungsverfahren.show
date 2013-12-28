@@ -1,0 +1,40 @@
+{Copyright: Geschützt durch die GNU Free Documentation License v1.3 und folgende}
+=Verschlüsselungsverfahren=
+Autor: Thomas Schubert
+
+''Stand vom 28.12.2013''
+
+==Caesar basierte Verschlüsselung==
+
+
+
+Eigenschaften
+-------------
+
+* Verschiebechiffre
+* Substitutionsverfahren
+* monographisch 
+* monoalphabetisch
+* symmetrisch
+
+==Caesar Chiffre==
+
+Arbeitet im Original auf dem früheren latainischen Alphabet (Ende bei X).
+Das Geheimzeichen c wird durch Verschiebung um k Zeichen im Alphabet ermittelt. Cäsar benutzte eine feste Verschiebung von k=3. k stellt damit auch den Schlüssel dar.
+Bei einer Zeichenanzahl von 26 und einer Verschiebung von 13 ergibt sich eine Verschlüsselung welche doppelt angewendet den Klartext wieder erzeugt.
+
+==Atbasch==
+
+Arbeitet im Original auf dem hebräischen Alphabet (22 Zeichen).
+Das Verfahren beruht auf einer direkten Abbildungsvorschrift. Dazu wird das Alphabet in zwei Zeilen aufgeschrieben (die obere vorwärts, die darunter rückwärts). Beim Verschlüsseln wird von oben nach unten abgebildet beim Entschlüsseln umgekehrt.
+
+==ALBaM==
+Eine Variante des Atbasch. Das Alphabet wird in der oberen Zeile nur bis zur Hälfte aufgeschrieben. Anschließend wird in der unteren Zeile weiter geschrieben. Damit ergibt sich für 26 Zeichen der ROT13 Kode.
+
+==ROT-13==
+Ein Caesar Code welcher bei 26 Zeichen k=13 nutzt. Damit läuft Verschlüsselung und Entschlüsselung identisch ab.
+
+==ROT-47==
+Ein Caesar Code mit k=47 welcher auf das Alphabet der ASCII Zeichen von 33 bis 126 angewendet wird.
+
+
