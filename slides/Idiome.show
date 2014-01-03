@@ -1,0 +1,61 @@
+{Copyright: Geschützt durch die GNU Free Documentation License v1.3 und folgende}
+=Idiome=
+Autor: Thomas Schubert
+
+''Stand vom 02.01.2014''
+
+==Vorwort==
+
+Idiome werden hier im Sinne von [1] verwendet. Sie sind das Gegenteil der Smells (schlechten Gerüche) im Kode haben aber nicht die Abstraktionsebene von Entwurfsmuster oder Pattern da sie Sprachspezifisch sind.
+
+'''Verwendete Quellen'''
+
+[ 1 ] [http://www.bibsonomy.org/bibtex/87602eea49d6fcd0196da9e37d9470e2 "Code-Flavours Nützliche Java Idiome", Jens Jäger und André Janus, Java-Spectrum 1/2012, S.20 - 23.]
+
+==Holder Idiom==
+
+* Thread sicher, da die Initialisierungsphase einer Klasse garantiert (durch JVM) nicht nebenläufig erfolgt
+* Späte Bindung, da eine Holderinstanz erst beim ersten Zugriff erzeugt wird.
+{Code:java://com.github.funthomas424242.publications/idiome.holder.Singleton}
+
+==Localized Instance Idiom==
+
+{Code:java://com.github.funthomas424242.publications/idiome.localizedinstance.MyBusinessClass}
+
+* Eine Basisklasse welche je nach Parameter unterschiedliche Intanzen zurückgibt. 
+* Nützlich bei lokalisierter Businesslogik
+
+==Transfer Container==
+
+* Aufteilung der Verantwortlichkeiten - fachliche = Businessobject, technische = Status
+* Wrapper für ein fachliches Objekt
+
+{Code:java://com.github.funthomas424242.publications/idiome.transfercontainer.TransferContainer}
+
+==String Builder==
+
+* Zusammensetzen von Strings auf lesbarer Art 
+* In Java performanter als + oder StringBuffer
+* In bestimmten Fällen (bei denen DSLs hinterlegt sind wie im Beispiel) kann der Nutzen über eine Verallgemeinerung per FluentInterface weiter gesteigert werden.
+{Code:java://com.github.funthomas424242.publications/idiome.builder.Dao}
+
+==Finale Variablen==
+
+Methodenparameter und lokale Variablen mit final deklarieren bringt folgende Vorteile:
+
+* verbessert die Lesbarkeit
+* verhindert eine mehfache Initialisierung
+* erhöht die Verständlichkeit des Kodes
+* verhindert sinnlose Zuweisungen an Methodenparameter (welche in Java nur innerhalb der Methode wirksam würden aber eine Rückgabe der Werte suggerieren würden)
+
+==Enum Business Constants==
+
+Bei mehr als eine Konstante für den gleichen fachlichen Typ sollten Enums benutzt werden.
+
+* Verbesserte Typsicherheit
+* Verbesserte Lesbarkeit
+{Code:java://com.github.funthomas424242.publications/idiome.businessconstants.Factory}
+
+
+
+ 
