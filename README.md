@@ -10,6 +10,8 @@ Inhalt
 	
 				+ fruchtzucker, Infosammlung und Kochrezepte für Menschen mit Fruchtzuckerunverträglichkeit
 				+ IndustrielleSoftwareentwiclung, Ideensammlung zur automischen Fertigung von Programmen
++ epkfix Abstract zum [EPKfix Projekt](http://funthomas424242.github.io/publications/epkfix/index.html)
+
 
 [![Build Status](https://secure.travis-ci.org/FunThomas424242/publications.png)](http://travis-ci.org/FunThomas424242/publications)
 
